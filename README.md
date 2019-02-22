@@ -1,2 +1,2 @@
-# qtroute
-QTRoute /'kyoot•root/ n - Simple UX routing solution in Swift.
+# QTroute
+QTroute /'kyoot•root/ n - Simple UX routing solution in Swift.
