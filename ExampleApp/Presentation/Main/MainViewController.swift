@@ -2,7 +2,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var route: QTRoute = AppRoute.plan
+    var route: QTRoute? = AppRoute.plan
     var router: QTRouting? = AppRoute.rootRouter
     var mainTabBarController: UITabBarController?
 

@@ -2,7 +2,7 @@
 import UIKit
 
 class HelpViewController: UIViewController {
-    var route: QTRoute = AppRoute.plan.findDescendent(AppRoute.id.Help)!
+    var route: QTRoute? = AppRoute.plan.findDescendent(AppRoute.id.Help)!
     var router: QTRouting? = AppRoute.rootRouter
     var segueRouteCompletion: QTRoutableCompletion? = nil
 

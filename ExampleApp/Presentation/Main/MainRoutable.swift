@@ -8,7 +8,7 @@ private let RouteTab: [QTRouteId:Int] = [
 
 extension MainViewController: QTRoutable {
 
-    func routeToChild(_ route: QTRoute, completion: @escaping (QTRoutable) -> ()) {
+    func routeToChild(_ route: QTRoute, completion: @escaping QTRoutableCompletion) {
         if let index = RouteTab[route.id] {
             mainTabBarController?.selectedIndex = index
             if let navWrapper = mainTabBarController?.selectedViewController as? UINavigationController {
@@ -22,11 +22,11 @@ extension MainViewController: QTRoutable {
         }
     }
 
-    func routeToParent(completion: @escaping (QTRoutable) -> ()) {
+    func routeToParent(completion: @escaping QTRoutableCompletion) {
         assertionFailure("cannot route beyond root!")
     }
 
-    func routeToSelf(completion: @escaping (QTRoutable) -> ()) {
+    func routeToSelf(completion: @escaping QTRoutableCompletion) {
         completion(self)
     }
 }

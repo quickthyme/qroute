@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="41s-hI-EV0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8Y-dk-ywj">
+                                <rect key="frame" x="44" y="108" width="287" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oaJ-5p-OAx" firstAttribute="trailing" secondItem="T8Y-dk-ywj" secondAttribute="trailing" constant="44" id="3Ex-3k-t7M"/>
+                            <constraint firstItem="T8Y-dk-ywj" firstAttribute="leading" secondItem="oaJ-5p-OAx" secondAttribute="leading" constant="44" id="N0V-qw-nGh"/>
+                            <constraint firstItem="T8Y-dk-ywj" firstAttribute="top" secondItem="oaJ-5p-OAx" secondAttribute="top" constant="44" id="lCf-ZQ-dpn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oaJ-5p-OAx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Message Center" id="Ahe-eL-ZDf"/>

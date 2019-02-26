@@ -17,10 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="qDo-td-aLp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The thing I need to do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKp-Wy-n0s">
+                                <rect key="frame" x="44" y="108" width="287" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dvb-xi-pXJ" firstAttribute="trailing" secondItem="hKp-Wy-n0s" secondAttribute="trailing" constant="44" id="X3n-gJ-ib9"/>
+                            <constraint firstItem="hKp-Wy-n0s" firstAttribute="leading" secondItem="dvb-xi-pXJ" secondAttribute="leading" constant="44" id="Za6-V1-zEI"/>
+                            <constraint firstItem="hKp-Wy-n0s" firstAttribute="top" secondItem="dvb-xi-pXJ" secondAttribute="top" constant="44" id="pQT-Or-aQ5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dvb-xi-pXJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ToDo Detail" id="Bcn-4J-e0p"/>
+                    <navigationItem key="navigationItem" title="To-Do Item" id="Bcn-4J-e0p">
+                        <barButtonItem key="rightBarButtonItem" title="Contact Us" id="Fk8-7B-oiF">
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="contactUsAction:" destination="WIF-dY-rgB" id="Qqz-C0-hRw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-J6-vql" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,20 +1,20 @@
 
 class QTRouter: QTRouting {
     func routeTo(_ targetId: QTRouteId, from source: QTRoutable, completion: QTRoutingCompletion?) {
-        let path = source.route.findPath(to: targetId)
-        QTRouter.routeNext(path: path, routable: source, router: self, finalCompletion: completion)
+        guard let path = source.route?.findPath(to: targetId) else { completion?(); return }
+        QTRouter.routeNext(path: path, routable: source, finalCompletion: completion)
     }
 
     func routeSub(_ targetId: QTRouteId, from source: QTRoutable, completion: QTRoutingCompletion?) {
         guard let clonePath = QTRouter.buildClonePath(to: targetId, from: source) else { completion?(); return }
-        QTRouter.routeNext(path: clonePath, routable: source, router: self, finalCompletion: completion)
+        QTRouter.routeNext(path: clonePath, routable: source, finalCompletion: completion)
     }
 }
 
 fileprivate extension QTRouter {
-    static func routeNext(path: QTRoutePath, routable: QTRoutable, router: QTRouting, finalCompletion: QTRoutingCompletion?) {
-        guard (path.count > 0) else { finalCompletion?(); return }
-        let stepCompletion = self.getStepCompletion(path, finalCompletion, router)
+    static func routeNext(path: QTRoutePath, routable: QTRoutable?, finalCompletion: QTRoutingCompletion?) {
+        guard let routable = routable, (path.count > 0) else { finalCompletion?(); return }
+        let stepCompletion = self.getStepCompletion(path, finalCompletion)
         QTRouter.driveRoutable(routable, path[0], stepCompletion)
     }
 
@@ -29,20 +29,18 @@ fileprivate extension QTRouter {
         }
     }
 
-    static func getStepCompletion(_ path: QTRoutePath, _ finalCompletion: QTRoutingCompletion?, _ router: QTRouting) -> QTRoutableCompletion {
-        return {
-            $0.router = router
-            QTRouter.routeNext(path: QTRoutePath( path.dropFirst() ),
+    static func getStepCompletion(_ path: QTRoutePath, _ finalCompletion: QTRoutingCompletion?) -> QTRoutableCompletion {
+        return { QTRouter.routeNext(path: QTRoutePath( path.dropFirst() ),
                                     routable: $0,
-                                    router: router,
                                     finalCompletion: finalCompletion) }
     }
 
     static func buildClonePath(to targetId: QTRouteId, from source: QTRoutable) -> QTRoutePath? {
-        let path = source.route.findPath(to: targetId)
+        guard let sourceRoute = source.route else { return nil }
+        let path = sourceRoute.findPath(to: targetId)
         guard let target = path.last?.route else { return nil }
         let clone = QTRoute(deepClone: target)
-        clone.parent = source.route
+        clone.parent = sourceRoute
         return [QTRoutePathNode(.DOWN, clone)]
     }
 }

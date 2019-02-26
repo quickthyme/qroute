@@ -2,7 +2,7 @@
 import XCTest
 
 class MockRoutable: QTRoutable {
-    var route: QTRoute
+    var route: QTRoute?
     var router: QTRouting? = nil
     var routeTrail: [QTRoute] = []
 
@@ -21,7 +21,7 @@ class MockRoutable: QTRoutable {
     var timesCalled_routeToParent: Int = 0
     func routeToParent(completion: @escaping QTRoutableCompletion) {
         timesCalled_routeToParent += 1
-        guard let parent = self.route.parent else { XCTFail("Tried to navigate out of bounds"); return }
+        guard let parent = self.route!.parent else { XCTFail("Tried to navigate out of bounds"); return }
         routeTrail.append(parent)
         self.route = parent
         completion(self)
@@ -30,7 +30,7 @@ class MockRoutable: QTRoutable {
     var timesCalled_routeToSelf: Int = 0
     func routeToSelf(completion: @escaping QTRoutableCompletion) {
         timesCalled_routeToSelf += 1
-        routeTrail.append(self.route)
+        routeTrail.append(self.route!)
         completion(self)
     }
 }

@@ -145,7 +145,7 @@ class QTRouterTests: XCTestCase {
                 subject.routeSub("Message Center", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to child 1 times landing at 'Message Center' clone") {
-                    let messageCenterClone = mockRoutable.route
+                    let messageCenterClone = mockRoutable.route!
                     XCTAssertEqual(mockRoutable.routeTrail, [messageCenterClone])
                     XCTAssertEqual(mockRoutable.route, messageCenterClone)
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 1)

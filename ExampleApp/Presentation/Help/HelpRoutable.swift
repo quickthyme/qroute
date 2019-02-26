@@ -3,7 +3,7 @@ import UIKit
 
 extension HelpViewController: QTRoutable {
 
-    func routeToChild(_ route: QTRoute, completion: @escaping (QTRoutable) -> ()) {
+    func routeToChild(_ route: QTRoute, completion: @escaping QTRoutableCompletion) {
         switch (route.id) {
         case AppRoute.id.ContactUs:
             segueRouteCompletion = completion
@@ -16,12 +16,12 @@ extension HelpViewController: QTRoutable {
         }
     }
 
-    func routeToParent(completion: @escaping (QTRoutable) -> ()) {
+    func routeToParent(completion: @escaping QTRoutableCompletion) {
         guard let parent = AppRoute.rootRoutable else { return /* abort */ }
         completion(parent)
     }
 
-    func routeToSelf(completion: @escaping (QTRoutable) -> ()) {
+    func routeToSelf(completion: @escaping QTRoutableCompletion) {
         completion(self)
     }
 }
