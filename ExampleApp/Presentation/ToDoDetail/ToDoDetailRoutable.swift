@@ -4,7 +4,13 @@ import UIKit
 extension ToDoDetailViewController: QTRoutable {
 
     func routeToChild(_ route: QTRoute, completion: @escaping QTRoutableCompletion) {
-        /* no-op */
+        if route.id == AppRoute.id.ContactUs {
+            if let vc = StoryboardLoader.loadViewController(from: "ContactUs") {
+                self.present(vc, animated: true) {
+                    completion(vc as? QTRoutable)
+                }
+            }
+        }
     }
 
     func routeToParent(completion: @escaping QTRoutableCompletion) {

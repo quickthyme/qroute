@@ -6,7 +6,11 @@ class ToDoDetailViewController: UIViewController {
     var router: QTRouting? = AppRoute.rootRouter
 
     @IBAction func contactUsAction(_ sender: AnyObject) {
-        router?.routeTo(AppRoute.id.ContactUs, from: self, completion: nil)
+        router?.routeSub(AppRoute.id.ContactUs, from: self, completion: nil)
+    }
+
+    @IBAction func messageCenterAction(_ sender: AnyObject) {
+        router?.routeTo(AppRoute.id.MessageCenter, from: self, completion: nil)
     }
 
     override func viewDidLoad() {
