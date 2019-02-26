@@ -25,8 +25,4 @@ extension MainViewController: QTRoutable {
     func routeToParent(completion: @escaping QTRoutableCompletion) {
         assertionFailure("cannot route beyond root!")
     }
-
-    func routeToSelf(completion: @escaping QTRoutableCompletion) {
-        completion(self)
-    }
 }

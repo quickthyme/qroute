@@ -37,8 +37,7 @@ fileprivate extension QTRouter {
 
     static func buildClonePath(to targetId: QTRouteId, from source: QTRoutable) -> QTRoutePath? {
         guard let sourceRoute = source.route else { return nil }
-        let path = sourceRoute.findPath(to: targetId)
-        guard let target = path.last?.route else { return nil }
+        guard let target = sourceRoute.findPath(to: targetId).last?.route else { return nil }
         let clone = QTRoute(deepClone: target)
         clone.parent = sourceRoute
         return [QTRoutePathNode(.DOWN, clone)]

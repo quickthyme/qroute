@@ -22,8 +22,4 @@ extension ToDoViewController: QTRoutable {
         guard let parent = AppRoute.rootRoutable else { return /* abort */ }
         completion(parent)
     }
-
-    func routeToSelf(completion: @escaping QTRoutableCompletion) {
-        completion(self)
-    }
 }

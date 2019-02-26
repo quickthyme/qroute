@@ -15,8 +15,4 @@ extension MessageCenterViewController: QTRoutable {
             }
         }
     }
-
-    func routeToSelf(completion: @escaping QTRoutableCompletion) {
-        completion(self)
-    }
 }
