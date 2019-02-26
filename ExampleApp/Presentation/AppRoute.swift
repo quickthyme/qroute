@@ -1,0 +1,25 @@
+
+class AppRoute {
+
+    struct id {
+        static let Root = "Root"
+        static let ToDo = "ToDo"
+        static let ToDoDetail = "ToDoDetail"
+        static let Help = "Help"
+        static let ContactUs = "ContactUs"
+        static let MessageCenter = "MessageCenter"
+    }
+
+    static var plan: QTRoute =
+        QTRoute(id.Root,
+                QTRoute(id.ToDo,
+                        QTRoute(id.ToDoDetail,
+                                runtimeDependencies: ["id":Int.self])),
+                QTRoute(id.Help,
+                        QTRoute(id.ContactUs),
+                        QTRoute(id.MessageCenter)))
+
+    static var rootRouter: QTRouting? = QTRouter()
+
+    static weak var rootRoutable: MainViewController? = nil
+}

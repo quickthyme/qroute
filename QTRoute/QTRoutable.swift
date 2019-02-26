@@ -1,9 +1,10 @@
 
-protocol QTRoutable {
+protocol QTRoutable: class {
     var route: QTRoute { get set }
-    func routeToChild(_ route: QTRoute, completion: QTRoutableCompletion)
-    func routeToParent(completion: QTRoutableCompletion)
-    func routeToSelf(completion: QTRoutableCompletion)
+    var router: QTRouting? { get set }
+    func routeToChild(_ route: QTRoute, completion: @escaping QTRoutableCompletion)
+    func routeToParent(completion: @escaping QTRoutableCompletion)
+    func routeToSelf(completion: @escaping QTRoutableCompletion)
 }
 
 typealias QTRoutableCompletion = (QTRoutable)->()
