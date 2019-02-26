@@ -34,7 +34,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="contactUsAction:" destination="WIF-dY-rgB" eventType="touchUpInside" id="4ym-MV-BDY"/>
+                                    <action selector="contactUsNearAction:" destination="WIF-dY-rgB" eventType="touchUpInside" id="1Oe-ZW-A0x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,10 +49,10 @@
                         <viewLayoutGuide key="safeArea" id="dvb-xi-pXJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="To-Do Item" id="Bcn-4J-e0p">
-                        <barButtonItem key="rightBarButtonItem" title="MC" id="Fk8-7B-oiF">
+                        <barButtonItem key="rightBarButtonItem" title="Contact" id="Fk8-7B-oiF">
                             <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="messageCenterAction:" destination="WIF-dY-rgB" id="CMM-2r-aip"/>
+                                <action selector="contactUsFarAction:" destination="WIF-dY-rgB" id="9qm-g3-bRK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
