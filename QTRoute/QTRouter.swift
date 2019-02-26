@@ -1,11 +1,11 @@
 
 class QTRouter: QTRouting {
-    func route(to targetId: QTRouteId, from source: QTRoutable, completion: QTRoutingCompletion?) {
+    func routeTo(_ targetId: QTRouteId, from source: QTRoutable, completion: QTRoutingCompletion?) {
         let path = source.route.findPath(to: targetId)
         QTRouter.routeNext(path: path, routable: source, finalCompletion: completion)
     }
 
-    func routeSub(to targetId: QTRouteId, from source: QTRoutable, completion: QTRoutingCompletion?) {
+    func routeSub(_ targetId: QTRouteId, from source: QTRoutable, completion: QTRoutingCompletion?) {
         guard let clonePath = QTRouter.buildClonePath(to: targetId, from: source) else { completion?(); return }
         QTRouter.routeNext(path: clonePath, routable: source, finalCompletion: completion)
     }

@@ -16,7 +16,7 @@ class QTRouterTests: XCTestCase {
 
             when("trying to route to non-existent route") {
                 let expectComplete = expectation(description: "complete")
-                subject.route(to: "polo", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeTo("polo", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should not go anywhere") {
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 0)
@@ -38,7 +38,7 @@ class QTRouterTests: XCTestCase {
             when("pabst routes to grumpy") {
                 let mockRoutable = MockRoutable(route: pabst)
                 let expectComplete = expectation(description: "complete")
-                subject.route(to: "grumpy", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeTo("grumpy", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to parent one times landing on 'grumpy'") {
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 0)
@@ -52,7 +52,7 @@ class QTRouterTests: XCTestCase {
             when("pabst routes to sissy") {
                 let mockRoutable = MockRoutable(route: pabst)
                 let expectComplete = expectation(description: "complete")
-                subject.route(to: "sissy", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeTo("sissy", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to child one times landing on sissy") {
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 1)
@@ -66,7 +66,7 @@ class QTRouterTests: XCTestCase {
             when("pabst routes to self") {
                 let mockRoutable = MockRoutable(route: pabst)
                 let expectComplete = expectation(description: "complete")
-                subject.route(to: "pabst", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeTo("pabst", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to self one times") {
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 0)
@@ -80,7 +80,7 @@ class QTRouterTests: XCTestCase {
             when("grumpy routes to sissy") {
                 let mockRoutable = MockRoutable(route: grumpy)
                 let expectComplete = expectation(description: "complete")
-                subject.route(to: "sissy", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeTo("sissy", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to child two times landing on 'sissy'") {
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 2)
@@ -94,7 +94,7 @@ class QTRouterTests: XCTestCase {
             when("sissy routes to grumpy") {
                 let mockRoutable = MockRoutable(route: sissy)
                 let expectComplete = expectation(description: "complete")
-                subject.route(to: "grumpy", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeTo("grumpy", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to parent two times lanfing on 'grumpy'") {
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 0)
@@ -119,7 +119,7 @@ class QTRouterTests: XCTestCase {
             when("routing 'To-Do Edit Image' to 'Message Center'") {
                 let mockRoutable = MockRoutable(route: toDoEditImage)
                 let expectComplete = expectation(description: "complete")
-                subject.route(to: "Message Center", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeTo("Message Center", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to parent 3 times and child 2 times landing at 'Message Center'") {
                     XCTAssertEqual(mockRoutable.timesCalled_routeToChild, 2)
@@ -141,7 +141,7 @@ class QTRouterTests: XCTestCase {
             when("substitute routing 'To-Do Detail' to 'Message Center'") {
                 let mockRoutable = MockRoutable(route: toDoDetail)
                 let expectComplete = expectation(description: "complete")
-                subject.routeSub(to: "Message Center", from: mockRoutable, completion: { expectComplete.fulfill() })
+                subject.routeSub("Message Center", from: mockRoutable, completion: { expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to child 1 times landing at 'Message Center' clone") {
                     let messageCenterClone = mockRoutable.route
