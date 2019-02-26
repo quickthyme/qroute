@@ -43,14 +43,7 @@ extension QTRoute {
         } else if let discoveredParent = self.findAncestor(targetId) {
             return QTRoute.buildPath(upTo: discoveredParent.id, from: self)
         }
-        return findComplexPath(to: targetId)
-    }
-
-    private func findComplexPath(to targetId: QTRouteId) -> QTRoutePath {
-        let root = self.findRoot()
-        guard let target = root.findDescendent(targetId) else { return [] }
-        let ancestor = self.findLowestCommonAncestor(otherRoute: target, root: root)
-        return QTRoute.buildPath(to: target, from: self, byWayOf: ancestor)
+        return QTRoute.buildComplexPath(to: targetId, from: self)
     }
 
     func findDescendent(_ id: QTRouteId) -> QTRoute? {
@@ -58,8 +51,7 @@ extension QTRoute {
     }
 
     static func findDescendent(_ id: QTRouteId, from route: QTRoute) -> QTRoute? {
-        return route.route(id)
-            ?? route.routes.compactMap { $0.findDescendent(id) } .first
+        return route.route(id) ?? route.routes.compactMap { $0.findDescendent(id) } .first
     }
 
     func findAncestor(_ id: QTRouteId) -> QTRoute? {
@@ -68,10 +60,7 @@ extension QTRoute {
 
     static func findAncestor(_ id: QTRouteId, from route:QTRoute) -> QTRoute? {
         guard let parent = route.parent else { return nil }
-        return
-            (parent.id == id)
-                ? parent
-                : findAncestor(id, from: parent)
+        return (parent.id == id) ? parent : findAncestor(id, from: parent)
     }
 
     func findRoot() -> QTRoute {
@@ -92,28 +81,29 @@ extension QTRoute {
         let right: [QTRoute] = QTRoute.buildPath(upTo: root.id, from: rhs).map { $0.route }
         return left.first { right.contains($0) } ?? root
     }
+}
 
-    private static func buildPath(downTo route: QTRoute, from fromId: QTRouteId, currentPath:QTRoutePath = []) -> QTRoutePath {
-        if (fromId == route.id) {
-            return currentPath
-        }
-        guard let parent = route.parent else { return [QTRoutePathNode(.DOWN, route)] + currentPath}
-        return buildPath(downTo: parent,
-                         from: fromId,
-                         currentPath: [QTRoutePathNode(.DOWN, route)] + currentPath)
+fileprivate extension QTRoute {
+    static func buildComplexPath(to targetId: QTRouteId, from: QTRoute) -> QTRoutePath {
+        let root = from.findRoot()
+        guard let target = root.findDescendent(targetId) else { return [] }
+        let ancestor = from.findLowestCommonAncestor(otherRoute: target, root: root)
+        return QTRoute.buildPath(to: target, from: from, byWayOf: ancestor)
     }
 
-    private static func buildPath(upTo toId: QTRouteId, from: QTRoute, currentPath:QTRoutePath = []) -> QTRoutePath {
-        if (toId == from.id) {
-            return currentPath
-        }
-        guard let parent = from.parent else { return currentPath}
-        return buildPath(upTo: toId,
-                         from: parent,
-                         currentPath: currentPath + [QTRoutePathNode(.UP, parent)])
+    static func buildPath(downTo route: QTRoute, from fromId: QTRouteId, currentPath:QTRoutePath = []) -> QTRoutePath {
+        if (fromId == route.id) { return currentPath }
+        guard let parent = route.parent else { return [QTRoutePathNode(.DOWN, route)] + currentPath }
+        return buildPath(downTo: parent, from: fromId, currentPath: [QTRoutePathNode(.DOWN, route)] + currentPath)
     }
 
-    private static func buildPath(to: QTRoute, from: QTRoute, byWayOf ancestor: QTRoute) -> QTRoutePath {
+    static func buildPath(upTo toId: QTRouteId, from: QTRoute, currentPath:QTRoutePath = []) -> QTRoutePath {
+        if (toId == from.id) { return currentPath }
+        guard let parent = from.parent else { return currentPath }
+        return buildPath(upTo: toId, from: parent, currentPath: currentPath + [QTRoutePathNode(.UP, parent)])
+    }
+
+    static func buildPath(to: QTRoute, from: QTRoute, byWayOf ancestor: QTRoute) -> QTRoutePath {
         let startPath = QTRoute.buildPath(upTo: ancestor.id, from: from)
         let endPath = QTRoute.buildPath(downTo: to, from: ancestor.id)
         return startPath + endPath

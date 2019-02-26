@@ -135,7 +135,8 @@ class QTRouterTests: XCTestCase {
     func testRouteSub() {
         given("MockRoutePlan") {
             let root = MockRoutePlan()
-            let toDoDetail = root.route("To-Do")!.route("To-Do Detail")!
+            let toDo = root.route("To-Do")!
+            let toDoDetail = toDo.route("To-Do Detail")!
             let messageCenter = root.route("Help")!.route("Message Center")!
 
             when("substitute routing 'To-Do Detail' to 'Message Center'") {
@@ -160,6 +161,13 @@ class QTRouterTests: XCTestCase {
                         XCTAssertEqual(toDoDetail.routes.count, 1)
                         XCTAssertNotNil(toDoDetail.route("To-Do Edit Image"))
                         XCTAssertNil(toDoDetail.route("Message Center"))
+                    }
+                    with("back trail following the original plan") {
+                        let foundPath = messageCenterClone.findPath(to: "Root")
+                        let expectedPath: [QTRoutePathNode] = [QTRoutePathNode(.UP, toDoDetail),
+                                                               QTRoutePathNode(.UP, toDo),
+                                                               QTRoutePathNode(.UP, root)]
+                        XCTAssertEqual(foundPath, expectedPath)
                     }
 
                     when("navigating back") {
