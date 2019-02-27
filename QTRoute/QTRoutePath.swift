@@ -1,35 +1,17 @@
 
 typealias QTRoutePath = Array<QTRoutePathNode>
 
-class QTRoutePathNode {
-    let direction: Direction
-    let route: QTRoute
-    init(_ direction: Direction, _ route: QTRoute) {
-        self.direction = direction
-        self.route = route
-    }
+enum QTRoutePathNode: Hashable {
+    case SELF(QTRoute)
+    case UP(QTRoute)
+    case DOWN(QTRoute)
 
-    enum Direction {
-        case SELF, UP, DOWN
-    }
-}
-
-extension QTRoutePathNode: Hashable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(route)
-        hasher.combine(direction)
-    }
-    static func == (lhs: QTRoutePathNode, rhs: QTRoutePathNode) -> Bool {
-        return (
-            lhs.route == rhs.route
-            && lhs.direction == rhs.direction
-        )
-    }
-}
-
-extension QTRoutePathNode: CustomDebugStringConvertible {
-    var debugDescription: String {
-        return "<\(type(of: self))> (\(self.direction), \"\(route.id)\")"
+    var route: QTRoute {
+        switch (self) {
+        case let .SELF(route):  return route
+        case let .UP(route):    return route
+        case let .DOWN(route):  return route
+        }
     }
 }
 
@@ -37,7 +19,7 @@ extension QTRoute {
     func findPath(to targetId: QTRouteId) -> QTRoutePath {
         guard (targetId != "") else { return [] }
         if (targetId == self.id) {
-            return [QTRoutePathNode(.SELF, self)]
+            return [.SELF(self)]
         } else if let discoveredChild = self.findDescendant(targetId) {
             return QTRoute.buildPath(downTo: discoveredChild, from: self.id)
         } else if let discoveredParent = self.findAncestor(targetId) {
@@ -93,14 +75,14 @@ fileprivate extension QTRoute {
 
     static func buildPath(downTo route: QTRoute, from fromId: QTRouteId, currentPath:QTRoutePath = []) -> QTRoutePath {
         if (fromId == route.id) { return currentPath }
-        guard let parent = route.parent else { return [QTRoutePathNode(.DOWN, route)] + currentPath }
-        return buildPath(downTo: parent, from: fromId, currentPath: [QTRoutePathNode(.DOWN, route)] + currentPath)
+        guard let parent = route.parent else { return [.DOWN(route)] + currentPath }
+        return buildPath(downTo: parent, from: fromId, currentPath: [.DOWN(route)] + currentPath)
     }
 
     static func buildPath(upTo toId: QTRouteId, from: QTRoute, currentPath:QTRoutePath = []) -> QTRoutePath {
         if (toId == from.id) { return currentPath }
         guard let parent = from.parent else { return currentPath }
-        return buildPath(upTo: toId, from: parent, currentPath: currentPath + [QTRoutePathNode(.UP, parent)])
+        return buildPath(upTo: toId, from: parent, currentPath: currentPath + [.UP(parent)])
     }
 
     static func buildPath(to: QTRoute, from: QTRoute, byWayOf ancestor: QTRoute) -> QTRoutePath {

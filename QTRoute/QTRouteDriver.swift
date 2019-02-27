@@ -24,13 +24,11 @@ fileprivate extension QTRouteDriver {
     }
 
     static func driveRoutable(_ routable: QTRoutable, _ pathNode: QTRoutePathNode, _ stepCompletion: @escaping QTRoutableCompletion) {
-        switch (pathNode.direction) {
-        case .DOWN:
-            routable.routeResolver?.resolveRouteToChild(pathNode.route, from: routable, completion: stepCompletion)
-        case .SELF:
-            routable.routeResolver?.resolveRouteToSelf(from: routable, completion: stepCompletion)
-        case .UP:
-            routable.routeResolver?.resolveRouteToParent(from: routable, completion: stepCompletion)
+        guard let resolver = routable.routeResolver else { return }
+        switch (pathNode) {
+        case let .DOWN(nextRoute): resolver.resolveRouteToChild(nextRoute, from: routable, completion: stepCompletion)
+        case .SELF: resolver.resolveRouteToSelf(from: routable, completion: stepCompletion)
+        case .UP:   resolver.resolveRouteToParent(from: routable, completion: stepCompletion)
         }
     }
 
@@ -45,6 +43,6 @@ fileprivate extension QTRouteDriver {
         guard let target = sourceRoute.findPath(to: targetId).last?.route else { return nil }
         let clone = QTRoute(deepClone: target)
         clone.parent = sourceRoute
-        return [QTRoutePathNode(.DOWN, clone)]
+        return [.DOWN(clone)]
     }
 }

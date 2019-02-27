@@ -17,7 +17,7 @@ class QTRoutePathTests: XCTestCase {
             when("trying to find path to itself") {
                 let path = route.findPath(to: "island")
                 then("it should return path to self") {
-                    XCTAssertEqual(path, [QTRoutePathNode(.SELF, route)])
+                    XCTAssertEqual(path, [.SELF(route)])
                 }
             }
         }
@@ -51,23 +51,23 @@ class QTRoutePathTests: XCTestCase {
                 let childPath = child.findPath(to: "island")
                 then("it should return path to self") {
                     XCTAssertNotNil(parentPath)
-                    XCTAssertEqual(parentPath, [QTRoutePathNode(.SELF, parent)])
+                    XCTAssertEqual(parentPath, [.SELF(parent)])
                     XCTAssertNotNil(childPath)
-                    XCTAssertEqual(childPath, [QTRoutePathNode(.SELF, child)])
+                    XCTAssertEqual(childPath, [.SELF(child)])
                 }
             }
 
             when("parent tries to find path to child") {
                 let path = parent.findPath(to: "island")
                 then("it should return path with single step to child [(DOWN, child)]") {
-                    XCTAssertEqual(path, [QTRoutePathNode(.DOWN, child)])
+                    XCTAssertEqual(path, [.DOWN(child)])
                 }
             }
 
             when("child tries to find path to parent") {
                 let path = child.findPath(to: "archipelago")
                 then("it should return path with single step to parent [(UP, parent)]") {
-                    XCTAssertEqual(path, [QTRoutePathNode(.UP, parent)])
+                    XCTAssertEqual(path, [.UP(parent)])
                 }
             }
         }
@@ -100,7 +100,7 @@ class QTRoutePathTests: XCTestCase {
                 let path = messageCenter.findPath(to: "Help")
                 then("it should return path with single step UP to Help [(UP, Help)]") {
                     XCTAssertEqual(path.count, 1)
-                    XCTAssertEqual(path, [QTRoutePathNode(.UP, help)])
+                    XCTAssertEqual(path, [.UP(help)])
                 }
             }
 
@@ -109,8 +109,8 @@ class QTRoutePathTests: XCTestCase {
                 then("it should return path with two steps UP to Root [(UP, Help), (UP, Root)]") {
                     XCTAssertEqual(path.count, 2)
                     XCTAssertEqual(path,
-                                   [QTRoutePathNode(.UP, help),
-                                    QTRoutePathNode(.UP, root)]
+                                   [.UP(help),
+                                    .UP(root)]
                     )
                 }
             }
@@ -120,8 +120,8 @@ class QTRoutePathTests: XCTestCase {
                 then("it should return path with two steps DOWN to Message Center [(DOWN, Help), (DOWN, Message Center)]") {
                     XCTAssertEqual(path.count, 2)
                     XCTAssertEqual(path,
-                                   [QTRoutePathNode(.DOWN, help),
-                                    QTRoutePathNode(.DOWN, messageCenter)]
+                                   [.DOWN(help),
+                                    .DOWN(messageCenter)]
                     )
                 }
             }
@@ -131,8 +131,8 @@ class QTRoutePathTests: XCTestCase {
                 then("it should return path with two steps: [(UP, Help), (DOWN, Contact Us)]") {
                     XCTAssertEqual(path.count, 2)
                     XCTAssertEqual(path,
-                                   [QTRoutePathNode(.UP, help),
-                                    QTRoutePathNode(.DOWN, contactUs)]
+                                   [.UP(help),
+                                    .DOWN(contactUs)]
                     )
                 }
             }
@@ -142,10 +142,10 @@ class QTRoutePathTests: XCTestCase {
                 then("it should return path with four steps: [UP, UP, DOWN, DOWN]") {
                     XCTAssertEqual(path.count, 4)
                     XCTAssertEqual(path,
-                                   [QTRoutePathNode(.UP, help),
-                                    QTRoutePathNode(.UP, root),
-                                    QTRoutePathNode(.DOWN, settings),
-                                    QTRoutePathNode(.DOWN, profileSettings)]
+                                   [.UP(help),
+                                    .UP(root),
+                                    .DOWN(settings),
+                                    .DOWN(profileSettings)]
                     )
                 }
             }
@@ -162,23 +162,6 @@ class QTRoutePathTests: XCTestCase {
                 let commonAncestor = messageCenter.findLowestCommonAncestor(otherRoute: foreignRoute)
                 then("it should return root") {
                     XCTAssertEqual(commonAncestor, root)
-                }
-            }
-        }
-    }
-
-    func testDebugDescription() {
-
-        given("path from parent to child") {
-            let child = QTRoute("child")
-            let parent = QTRoute("parent", child)
-            let path = parent.findPath(to: child.id)
-
-            when("debugDescription called") {
-                let desc = "\(path)"
-//                print(desc)
-                then("the output should match the expected length") {
-                    XCTAssertEqual(desc.lengthOfBytes(using: .utf8), 35)
                 }
             }
         }

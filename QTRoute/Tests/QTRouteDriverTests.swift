@@ -166,9 +166,9 @@ class QTRouteDriverTests: XCTestCase {
                     }
                     with("back trail following the original plan") {
                         let foundPath = messageCenterClone.findPath(to: "Root")
-                        let expectedPath: [QTRoutePathNode] = [QTRoutePathNode(.UP, toDoDetail),
-                                                               QTRoutePathNode(.UP, toDo),
-                                                               QTRoutePathNode(.UP, root)]
+                        let expectedPath: [QTRoutePathNode] = [.UP(toDoDetail),
+                                                               .UP(toDo),
+                                                               .UP(root)]
                         XCTAssertEqual(foundPath, expectedPath)
                     }
                     when("resolving to parent") {
