@@ -1,16 +1,17 @@
 
 import UIKit
 
-class ToDoDetailViewController: UIViewController {
+class ToDoDetailViewController: UIViewController, QTRoutable {
     var route: QTRoute? = AppRoute.plan.findDescendent(AppRoute.id.ToDoDetail)!
-    var router: QTRouting? = AppRoute.rootRouter
+    var routeResolver: QTRouteResolving? = ToDoDetailRouteResolver()
+    var routeDriver: QTRouteDriving? = AppRoute.driver
 
     @IBAction func contactUsNearAction(_ sender: AnyObject) {
-        router?.routeSub(AppRoute.id.ContactUs, from: self, completion: nil)
+        routeDriver?.driveSub(AppRoute.id.ContactUs, from: self, completion: nil)
     }
 
     @IBAction func contactUsFarAction(_ sender: AnyObject) {
-        router?.routeTo(AppRoute.id.ContactUs, from: self, completion: nil)
+        routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, completion: nil)
     }
 
     override func viewDidLoad() {

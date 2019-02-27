@@ -1,17 +1,18 @@
 
 import UIKit
 
-class HelpViewController: UIViewController {
+class HelpViewController: UIViewController, QTRoutable {
     var route: QTRoute? = AppRoute.plan.findDescendent(AppRoute.id.Help)!
-    var router: QTRouting? = AppRoute.rootRouter
+    var routeResolver: QTRouteResolving? = HelpRouteResolver()
+    var routeDriver: QTRouteDriving? = AppRoute.driver
     var segueRouteCompletion: QTRoutableCompletion? = nil
 
     @IBAction func messageCenterAction(_ sender: AnyObject) {
-        router?.routeTo(AppRoute.id.MessageCenter, from: self, completion: nil)
+        routeDriver?.driveTo(AppRoute.id.MessageCenter, from: self, completion: nil)
     }
 
     @IBAction func contactUsAction(_ sender: AnyObject) {
-        router?.routeTo(AppRoute.id.ContactUs, from: self, completion: nil)
+        routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, completion: nil)
     }
 
     override func viewDidLoad() {

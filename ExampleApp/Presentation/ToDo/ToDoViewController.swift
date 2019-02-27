@@ -1,12 +1,13 @@
 
 import UIKit
 
-class ToDoViewController: UIViewController {
+class ToDoViewController: UIViewController, QTRoutable {
     var route: QTRoute? = AppRoute.plan.findDescendent(AppRoute.id.ToDo)!
-    var router: QTRouting? = AppRoute.rootRouter
+    var routeResolver: QTRouteResolving? = ToDoRouteResolver()
+    var routeDriver: QTRouteDriving? = AppRoute.driver
 
     @IBAction func detailAction(_ sender: AnyObject) {
-        router?.routeTo(AppRoute.id.ToDoDetail, from: self, completion: nil)
+        routeDriver?.driveTo(AppRoute.id.ToDoDetail, from: self, completion: nil)
     }
 
     override func viewDidLoad() {

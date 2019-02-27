@@ -19,7 +19,7 @@ class AppRoute {
                         QTRoute(id.ContactUs),
                         QTRoute(id.MessageCenter)))
 
-    static var rootRouter: QTRouting? = QTRouter()
+    static var driver: QTRouteDriving? = QTRouteDriver()
 
     static weak var rootRoutable: MainViewController? = nil
 }

@@ -1,9 +1,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, QTRoutable {
     var route: QTRoute? = AppRoute.plan
-    var router: QTRouting? = AppRoute.rootRouter
+    var routeResolver: QTRouteResolving? = MainRouteResolver()
+    var routeDriver: QTRouteDriving? = AppRoute.driver
+
     var mainTabBarController: UITabBarController?
 
     override func viewDidLoad() {
