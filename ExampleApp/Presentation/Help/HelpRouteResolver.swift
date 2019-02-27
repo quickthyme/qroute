@@ -3,7 +3,7 @@ import UIKit
 
 class HelpRouteResolver: QTRouteResolving {
 
-    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion) {
         guard let vc = from as? HelpViewController else { return /* abort */ }
         switch (route.id) {
         case AppRoute.id.ContactUs:
@@ -17,7 +17,7 @@ class HelpRouteResolver: QTRouteResolving {
         }
     }
 
-    func resolveRouteToParent(from: QTRoutable, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToParent(from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion) {
         guard let parent = AppRoute.rootRoutable else { return /* abort */ }
         completion(parent)
     }

@@ -3,9 +3,9 @@ func MockRoutePlan() -> QTRoute {
     return
         QTRoute("Root",
               QTRoute("Log",
-                    QTRoute("Log Entry Detail", runtimeDependencies: ["id":Int.self, "name":String.self])),
+                    QTRoute("Log Entry Detail", dependencies: ["logId", "logName"])),
               QTRoute("To-Do",
-                    QTRoute("To-Do Detail", runtimeDependencies: ["id":Int.self],
+                    QTRoute("To-Do Detail", dependencies: ["todoId"],
                             QTRoute("To-Do Edit Image"))),
               QTRoute("Settings",
                     QTRoute("Profile Settings"),

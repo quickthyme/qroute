@@ -7,6 +7,6 @@ class ContactUsViewController: UIViewController, QTRoutable {
     var routeDriver: QTRouteDriving?
 
     @IBAction func dismissAction(_ sender: AnyObject?) {
-        routeDriver?.driveParent(from: self, completion: nil)
+        routeDriver?.driveParent(from: self, input: nil, completion: nil)
     }
 }

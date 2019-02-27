@@ -7,6 +7,7 @@ class ToDoViewController: UIViewController, QTRoutable {
     var routeDriver: QTRouteDriving?
 
     @IBAction func detailAction(_ sender: AnyObject?) {
-        routeDriver?.driveTo(AppRoute.id.ToDoDetail, from: self, completion: nil)
+        let id = sender?.tag ?? 0
+        routeDriver?.driveTo(AppRoute.id.ToDoDetail, from: self, input: ["todoId": "\(id)"], completion: nil)
     }
 }

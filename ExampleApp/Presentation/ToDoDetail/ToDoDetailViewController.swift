@@ -6,11 +6,15 @@ class ToDoDetailViewController: UIViewController, QTRoutable {
     var routeResolver: QTRouteResolving?
     var routeDriver: QTRouteDriving?
 
+    var todoId: String? {
+        didSet { self.navigationItem.title = "To-Do \(todoId ?? "?")" }
+    }
+
     @IBAction func contactUsNearAction(_ sender: AnyObject?) {
-        routeDriver?.driveSub(AppRoute.id.ContactUs, from: self, completion: nil)
+        routeDriver?.driveSub(AppRoute.id.ContactUs, from: self, input: nil, completion: nil)
     }
 
     @IBAction func contactUsFarAction(_ sender: AnyObject?) {
-        routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, completion: nil)
+        routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, input: nil, completion: nil)
     }
 }

@@ -25,10 +25,10 @@ class QTRouteTests: XCTestCase {
                     with("1 child route: 'Log Entry Detail'") {
                         XCTAssertEqual(route.routes.count, 1)
                         let child = route.route("Log Entry Detail")!
-                        with("2 runtime dependencies (id: Int, name: String)") {
-                            let runtimeDeps = child.runtimeDependencies
-                            XCTAssert(runtimeDeps["id"] == Int.self)
-                            XCTAssert(runtimeDeps["name"] == String.self)
+                        with("2 runtime dependencies (id, name)") {
+                            let deps = child.dependencies
+                            XCTAssertNotNil(deps.first {$0 == "logId" })
+                            XCTAssertNotNil(deps.first {$0 == "logName" })
                         }
                         with("parent property set") {
                             XCTAssertEqual(child.parent, route)
@@ -41,9 +41,9 @@ class QTRouteTests: XCTestCase {
                     with("1 child route: 'To-Do Detail'") {
                         XCTAssertEqual(route.routes.count, 1)
                         let toDoDetail = route.route("To-Do Detail")!
-                        with("1 runtime dependency (id: Int)") {
-                            let runtimeDeps = toDoDetail.runtimeDependencies
-                            XCTAssert(runtimeDeps["id"] == Int.self)
+                        with("1 runtime dependency (id)") {
+                            let deps = toDoDetail.dependencies
+                            XCTAssertNotNil(deps.first {$0 == "todoId" })
                         }
                         with("parent property set") {
                             XCTAssertEqual(toDoDetail.parent, route)
@@ -62,8 +62,8 @@ class QTRouteTests: XCTestCase {
                         let child1 = route.route("Profile Settings")!
                         let child2 = route.route("Payment Settings")!
                         with("no runtime dependencies") {
-                            XCTAssertEqual(child1.runtimeDependencies.count, 0)
-                            XCTAssertEqual(child2.runtimeDependencies.count, 0)
+                            XCTAssertEqual(child1.dependencies.count, 0)
+                            XCTAssertEqual(child2.dependencies.count, 0)
                         }
                         with("parent properties set") {
                             XCTAssertEqual(child1.parent, route)
@@ -79,8 +79,8 @@ class QTRouteTests: XCTestCase {
                         let child1 = route.route("Contact Us")!
                         let child2 = route.route("Message Center")!
                         with("no runtime dependencies") {
-                            XCTAssertEqual(child1.runtimeDependencies.count, 0)
-                            XCTAssertEqual(child2.runtimeDependencies.count, 0)
+                            XCTAssertEqual(child1.dependencies.count, 0)
+                            XCTAssertEqual(child2.dependencies.count, 0)
                         }
                         with("parent properties set") {
                             XCTAssertEqual(child1.parent, route)
@@ -99,7 +99,7 @@ class QTRouteTests: XCTestCase {
 //                print(routePlanRoot)
                 let desc = routePlanRoot.debugDescription
                 then("the output should match the expected length") {
-                    XCTAssertEqual(desc.lengthOfBytes(using: .utf8), 318)
+                    XCTAssertEqual(desc.lengthOfBytes(using: .utf8), 310)
                 }
             }
         }
@@ -144,7 +144,7 @@ class QTRouteTests: XCTestCase {
                 }
                 then("it should copy the id and runtime dependencies") {
                     XCTAssertEqual(result.id, "To-Do Detail")
-                    XCTAssert(result.runtimeDependencies["id"] == Int.self)
+                    XCTAssertNotNil(result.dependencies.first { $0 == "todoId" })
                 }
                 with("parent set to nil") {
                     XCTAssertNil(result.parent)
@@ -181,7 +181,7 @@ class QTRouteTests: XCTestCase {
                     XCTAssert(childClone1 !== child1)
                     XCTAssert(childClone2 !== child2)
                     with("runtime dependencies set") {
-                        XCTAssert(childClone1?.runtimeDependencies["id"] == Int.self)
+                        XCTAssertNotNil(childClone1?.dependencies.first { $0 == "todoId" })
                     }
                     with("parent set to parent") {
                         XCTAssertEqual(childClone1?.parent, result)

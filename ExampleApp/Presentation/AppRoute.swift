@@ -14,7 +14,7 @@ class AppRoute {
         QTRoute(id.Root,
                 QTRoute(id.ToDo,
                         QTRoute(id.ToDoDetail,
-                                runtimeDependencies: ["id":Int.self])),
+                                dependencies: ["toDoId"])),
                 QTRoute(id.Help,
                         QTRoute(id.ContactUs),
                         QTRoute(id.MessageCenter)))
