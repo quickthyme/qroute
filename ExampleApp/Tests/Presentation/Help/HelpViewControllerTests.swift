@@ -29,15 +29,7 @@ class HelpViewControllerTests: XCTestCase {
             when("contactUs action") {
                 mockRouteDriver.reset()
                 subject.contactUsAction(nil)
-                then("it should drive to Message Center") {
-                    XCTAssertEqual(mockRouteDriver.timesCalled_driveTo, 1)
-                    XCTAssertEqual(mockRouteDriver.valueFor_driveTo_targetId, AppRoute.id.ContactUs)
-                }
-            }
-            when("contactUs action") {
-                mockRouteDriver.reset()
-                subject.contactUsAction(nil)
-                then("it should drive to Message Center") {
+                then("it should drive to Contact Us") {
                     XCTAssertEqual(mockRouteDriver.timesCalled_driveTo, 1)
                     XCTAssertEqual(mockRouteDriver.valueFor_driveTo_targetId, AppRoute.id.ContactUs)
                 }

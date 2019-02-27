@@ -37,6 +37,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="clI-hz-EGX" userLabel="Root Injector" customClass="RootInjector" customModule="ExampleApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="BYZ-38-t0r" id="Z6L-Lb-aWY"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>

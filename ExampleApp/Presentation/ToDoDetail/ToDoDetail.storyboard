@@ -25,40 +25,51 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWQ-XV-kVB">
-                                <rect key="frame" x="225" y="593" width="128" height="30"/>
+                                <rect key="frame" x="153" y="593" width="200" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="qk8-Iw-ldx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="8Kq-08-XYh"/>
                                 </constraints>
-                                <state key="normal" title="Contact Us">
+                                <state key="normal" title="Contact Us (Over There)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="contactUsNearAction:" destination="WIF-dY-rgB" eventType="touchUpInside" id="1Oe-ZW-A0x"/>
+                                    <action selector="contactUsFarAction:" destination="WIF-dY-rgB" eventType="touchUpInside" id="P5O-7N-fQh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-qv-A5U">
+                                <rect key="frame" x="153" y="516" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Contact Us (Here)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="contactUsNearAction:" destination="WIF-dY-rgB" eventType="touchUpInside" id="pR4-lF-Jl8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dvb-xi-pXJ" firstAttribute="trailing" secondItem="O5c-qv-A5U" secondAttribute="trailing" constant="22" id="NPo-VE-z28"/>
                             <constraint firstItem="dvb-xi-pXJ" firstAttribute="trailing" secondItem="hKp-Wy-n0s" secondAttribute="trailing" constant="44" id="X3n-gJ-ib9"/>
                             <constraint firstItem="hKp-Wy-n0s" firstAttribute="leading" secondItem="dvb-xi-pXJ" secondAttribute="leading" constant="44" id="Za6-V1-zEI"/>
+                            <constraint firstItem="BWQ-XV-kVB" firstAttribute="width" secondItem="O5c-qv-A5U" secondAttribute="width" id="bkk-VO-PaB"/>
                             <constraint firstItem="dvb-xi-pXJ" firstAttribute="bottom" secondItem="BWQ-XV-kVB" secondAttribute="bottom" constant="44" id="cfQ-Sz-4jM"/>
                             <constraint firstItem="dvb-xi-pXJ" firstAttribute="trailing" secondItem="BWQ-XV-kVB" secondAttribute="trailing" constant="22" id="ez3-KQ-Ows"/>
+                            <constraint firstItem="BWQ-XV-kVB" firstAttribute="top" secondItem="O5c-qv-A5U" secondAttribute="bottom" constant="47" id="lMB-oO-Ytu"/>
                             <constraint firstItem="hKp-Wy-n0s" firstAttribute="top" secondItem="dvb-xi-pXJ" secondAttribute="top" constant="44" id="pQT-Or-aQ5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dvb-xi-pXJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="To-Do Item" id="Bcn-4J-e0p">
-                        <barButtonItem key="rightBarButtonItem" title="Contact" id="Fk8-7B-oiF">
-                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="contactUsFarAction:" destination="WIF-dY-rgB" id="9qm-g3-bRK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="To-Do Item" id="Bcn-4J-e0p"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWo-J6-vql" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="whh-SH-Pfu" userLabel="ToDo Detail Injector" customClass="ToDoDetailInjector" customModule="ExampleApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="WIF-dY-rgB" id="XFZ-x9-dhm"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="90" y="72"/>
         </scene>

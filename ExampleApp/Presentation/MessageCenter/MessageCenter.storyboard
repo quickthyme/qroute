@@ -37,6 +37,11 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuL-3S-p4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="M7e-hv-sGs" userLabel="MessageCenter Injector" customClass="MessageCenterInjector" customModule="ExampleApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="rs0-he-WSX" id="xwj-cW-SmV"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="292" y="-274"/>
         </scene>

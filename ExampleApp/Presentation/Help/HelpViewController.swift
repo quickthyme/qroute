@@ -2,10 +2,10 @@
 import UIKit
 
 class HelpViewController: UIViewController, QTRoutable {
-    var route: QTRoute? = AppRoute.plan.findDescendent(AppRoute.id.Help)!
-    var routeResolver: QTRouteResolving? = HelpRouteResolver()
-    var routeDriver: QTRouteDriving? = AppRoute.driver
-    var segueRouteCompletion: QTRoutableCompletion? = nil
+    var route: QTRoute?
+    var routeResolver: QTRouteResolving?
+    var routeDriver: QTRouteDriving?
+    var segueRouteCompletion: QTRoutableCompletion?
 
     @IBAction func messageCenterAction(_ sender: AnyObject?) {
         routeDriver?.driveTo(AppRoute.id.MessageCenter, from: self, completion: nil)
@@ -13,10 +13,6 @@ class HelpViewController: UIViewController, QTRoutable {
 
     @IBAction func contactUsAction(_ sender: AnyObject?) {
         routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, completion: nil)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

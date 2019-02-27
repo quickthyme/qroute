@@ -47,8 +47,7 @@
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "NO"
-            useTestSelectionWhitelist = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCE8367D2221C32F00E714F8"
@@ -56,57 +55,9 @@
                BlueprintName = "QTRouteTests"
                ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
-            <SelectedTests>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteSub()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteToFrom_complex()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteToFrom_nowhere()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteToFrom_shallow()">
-               </Test>
-               <Test
-                  Identifier = "QTRoutePathTests/testDebugDescription()">
-               </Test>
-               <Test
-                  Identifier = "QTRoutePathTests/testFindPath_many()">
-               </Test>
-               <Test
-                  Identifier = "QTRoutePathTests/testFindPath_single()">
-               </Test>
-               <Test
-                  Identifier = "QTRoutePathTests/testFindPath_two()">
-               </Test>
-               <Test
-                  Identifier = "QTRoutePathTests/testHashable()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteTests/testDebugDescription()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteTests/testDeepClone()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteTests/testFlattened()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteTests/testHashable()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteTests/testRouteStructure()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteTests/testShallowClone()">
-               </Test>
-            </SelectedTests>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            useTestSelectionWhitelist = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCE8368F2221D2C500E714F8"
@@ -114,29 +65,6 @@
                BlueprintName = "ExampleAppTests"
                ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
-            <SelectedTests>
-               <Test
-                  Identifier = "AppRouteTests/test_routesAreAllUnique()">
-               </Test>
-               <Test
-                  Identifier = "ContactUsViewControllerTests/test_configuration_and_events()">
-               </Test>
-               <Test
-                  Identifier = "HelpViewControllerTests/test_configuration_and_events()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteSub()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteToFrom_complex()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteToFrom_nowhere()">
-               </Test>
-               <Test
-                  Identifier = "QTRouteDriverTests/testRouteToFrom_shallow()">
-               </Test>
-            </SelectedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

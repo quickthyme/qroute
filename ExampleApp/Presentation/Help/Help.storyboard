@@ -52,6 +52,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCG-eS-Erm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="kWF-UA-ns4" userLabel="Help Injector" customClass="HelpInjector" customModule="ExampleApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="LDF-bj-A5G" id="AtV-sb-XJL"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="66" y="-143"/>
         </scene>

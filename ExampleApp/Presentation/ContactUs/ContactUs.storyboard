@@ -53,6 +53,11 @@
                     <navigationItem key="navigationItem" title="Contact Us" id="k24-1d-qq5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SB7-dL-KXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="LFE-38-Y6u" userLabel="Contact Us Injector" customClass="ContactUsInjector" customModule="ExampleApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="bYs-cB-wQr" id="i7v-Bc-tT9"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-71" y="168"/>
         </scene>
