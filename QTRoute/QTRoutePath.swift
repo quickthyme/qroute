@@ -38,7 +38,7 @@ extension QTRoute {
         guard (targetId != "") else { return [] }
         if (targetId == self.id) {
             return [QTRoutePathNode(.SELF, self)]
-        } else if let discoveredChild = self.findDescendent(targetId) {
+        } else if let discoveredChild = self.findDescendant(targetId) {
             return QTRoute.buildPath(downTo: discoveredChild, from: self.id)
         } else if let discoveredParent = self.findAncestor(targetId) {
             return QTRoute.buildPath(upTo: discoveredParent.id, from: self)
@@ -46,12 +46,12 @@ extension QTRoute {
         return QTRoute.buildComplexPath(to: targetId, from: self)
     }
 
-    func findDescendent(_ id: QTRouteId) -> QTRoute? {
-        return QTRoute.findDescendent(id, from: self)
+    func findDescendant(_ id: QTRouteId) -> QTRoute? {
+        return QTRoute.findDescendant(id, from: self)
     }
 
-    static func findDescendent(_ id: QTRouteId, from route: QTRoute) -> QTRoute? {
-        return route.route(id) ?? route.routes.compactMap { $0.findDescendent(id) } .first
+    static func findDescendant(_ id: QTRouteId, from route: QTRoute) -> QTRoute? {
+        return route.route(id) ?? route.routes.compactMap { $0.findDescendant(id) } .first
     }
 
     func findAncestor(_ id: QTRouteId) -> QTRoute? {
@@ -86,7 +86,7 @@ extension QTRoute {
 fileprivate extension QTRoute {
     static func buildComplexPath(to targetId: QTRouteId, from: QTRoute) -> QTRoutePath {
         let root = from.findRoot()
-        guard let target = root.findDescendent(targetId) else { return [] }
+        guard let target = root.findDescendant(targetId) else { return [] }
         let ancestor = from.findLowestCommonAncestor(otherRoute: target, root: root)
         return QTRoute.buildPath(to: target, from: from, byWayOf: ancestor)
     }

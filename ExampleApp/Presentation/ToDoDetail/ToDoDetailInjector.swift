@@ -6,7 +6,7 @@ class ToDoDetailInjector: NSObject {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewController.route = AppRoute.plan.findDescendent(AppRoute.id.ToDoDetail)!
+        viewController.route = AppRoute.plan.findDescendant(AppRoute.id.ToDoDetail)!
         viewController.routeResolver = ToDoDetailRouteResolver()
         viewController.routeDriver = AppRoute.driver
     }

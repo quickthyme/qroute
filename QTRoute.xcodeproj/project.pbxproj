@@ -30,6 +30,7 @@
 		DC4E06CD2226602500A69630 /* RootInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06CC2226602500A69630 /* RootInjector.swift */; };
 		DC4E06CE2226602500A69630 /* RootInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06CC2226602500A69630 /* RootInjector.swift */; };
 		DC4E06D12226615700A69630 /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06D02226611D00A69630 /* RootViewControllerTests.swift */; };
+		DC4E06D3222678B000A69630 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DC4E06D2222678B000A69630 /* README.md */; };
 		DC54492A222611A800578EC8 /* QTRouteResolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC544929222611A800578EC8 /* QTRouteResolving.swift */; };
 		DC54492B222611A800578EC8 /* QTRouteResolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC544929222611A800578EC8 /* QTRouteResolving.swift */; };
 		DC54492F222615CA00578EC8 /* MockRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54492C222615C300578EC8 /* MockRoutable.swift */; };
@@ -126,6 +127,7 @@
 		DC4E06CA22265FB700A69630 /* MessageCenterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewControllerTests.swift; sourceTree = "<group>"; };
 		DC4E06CC2226602500A69630 /* RootInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInjector.swift; sourceTree = "<group>"; };
 		DC4E06D02226611D00A69630 /* RootViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerTests.swift; sourceTree = "<group>"; };
+		DC4E06D2222678B000A69630 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC544929222611A800578EC8 /* QTRouteResolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolving.swift; sourceTree = "<group>"; };
 		DC54492C222615C300578EC8 /* MockRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoutable.swift; sourceTree = "<group>"; };
 		DC5449382226439100578EC8 /* ContactUsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewControllerTests.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		DC1F637B2220BC63003842BB = {
 			isa = PBXGroup;
 			children = (
+				DC4E06D2222678B000A69630 /* README.md */,
 				DC1F639B2220C0E6003842BB /* QTRoute */,
 				DC1F63862220BC63003842BB /* ExampleApp */,
 				DCE8369F2221D38E00E714F8 /* SharedTestHelpers */,
@@ -543,6 +546,7 @@
 				DC1F638D2220BC63003842BB /* Root.storyboard in Resources */,
 				DCA6BE752224FEA6009A2CF1 /* Help.storyboard in Resources */,
 				DCA6BE902224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */,
+				DC4E06D3222678B000A69630 /* README.md in Resources */,
 				DCA6BE892224FFB7009A2CF1 /* ContactUs.storyboard in Resources */,
 				DCA6BE852224FF30009A2CF1 /* ToDoDetail.storyboard in Resources */,
 			);
