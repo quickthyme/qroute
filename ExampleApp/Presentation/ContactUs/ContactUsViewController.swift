@@ -7,8 +7,7 @@ class ContactUsViewController: UIViewController, QTRoutable {
     var routeDriver: QTRouteDriving? = AppRoute.driver
 
     @IBAction func dismissAction(_ sender: AnyObject?) {
-        guard let parent = self.route?.parent else { return }
-        routeDriver?.driveTo(parent.id, from: self, completion: nil)
+        routeDriver?.driveParent(from: self, completion: nil)
     }
 
     override func viewDidLoad() {

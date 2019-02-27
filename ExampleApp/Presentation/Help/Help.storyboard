@@ -25,7 +25,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="contactUsAction:" destination="LDF-bj-A5G" eventType="touchUpInside" id="U2P-hA-z1w"/>
+                                    <action selector="contactUsAction:" destination="LDF-bj-A5G" eventType="touchUpInside" id="29e-fE-KPM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,7 +41,7 @@
                         <barButtonItem key="rightBarButtonItem" title="MC" id="3dr-QF-xeq">
                             <color key="tintColor" red="0.58105844259999995" green="0.12855249639999999" blue="0.57453137639999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="messageCenterAction:" destination="LDF-bj-A5G" id="PCb-gX-vot"/>
+                                <action selector="messageCenterAction:" destination="LDF-bj-A5G" id="lm8-dV-ZAL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

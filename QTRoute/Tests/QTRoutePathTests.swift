@@ -139,7 +139,6 @@ class QTRoutePathTests: XCTestCase {
 
             when("'Message Center' tries to find 'Profile Settings'") {
                 let path = messageCenter.findPath(to: "Profile Settings")
-                print("\n\n\(path)\n\n")
                 then("it should return path with four steps: [UP, UP, DOWN, DOWN]") {
                     XCTAssertEqual(path.count, 4)
                     XCTAssertEqual(path,

@@ -121,6 +121,18 @@ class QTRouteTests: XCTestCase {
         }
     }
 
+    func testFlattened() {
+        given("routePlan") {
+            let routePlanRoot = MockRoutePlan()
+            when("the root routes are flattened") {
+                let flats = routePlanRoot.flattened
+                then("it should contain all the routes") {
+                    XCTAssertEqual(flats.count, 12)
+                }
+            }
+        }
+    }
+
     func testShallowClone() {
         given("route from routePlan") {
             let routePlanRoot = MockRoutePlan()

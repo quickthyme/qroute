@@ -7,11 +7,11 @@ class HelpViewController: UIViewController, QTRoutable {
     var routeDriver: QTRouteDriving? = AppRoute.driver
     var segueRouteCompletion: QTRoutableCompletion? = nil
 
-    @IBAction func messageCenterAction(_ sender: AnyObject) {
+    @IBAction func messageCenterAction(_ sender: AnyObject?) {
         routeDriver?.driveTo(AppRoute.id.MessageCenter, from: self, completion: nil)
     }
 
-    @IBAction func contactUsAction(_ sender: AnyObject) {
+    @IBAction func contactUsAction(_ sender: AnyObject?) {
         routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, completion: nil)
     }
 

@@ -12,15 +12,19 @@ class QTRoute {
         return routes.first { $0.id == id }
     }
 
-    private func applyParent(_ parent: QTRoute) -> Self {
-        self.parent = parent
-        return self
+    var flattened: Set<QTRoute> {
+        return Set<QTRoute>( [self] + routes.flatMap { $0.flattened } )
     }
 
     required init(id:QTRouteId, runtimeDependencies: [AnyHashable:Any.Type], routes: [QTRoute]) {
         self.id = id
         self.runtimeDependencies = runtimeDependencies
         self.routes = routes.map { $0.applyParent(self) }
+    }
+
+    private func applyParent(_ parent: QTRoute) -> Self {
+        self.parent = parent
+        return self
     }
 }
 
