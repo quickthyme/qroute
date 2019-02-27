@@ -23,22 +23,25 @@ The project includes an example app called, *ExampleApp*, written for iOS that d
 
 ## Reference Documentation
 
-A little bit helpful.
+A little bit less helpful.
 
 ### QTRouteDriving
 
-**driveTo**
+**driveParent**
 
 ```
 driveParent(from: QTRoutable, completion: QTRouteDrivingCompletion?)
 ```
 Commands the `QTRouteDriver` to navigate to the *immediate logical parent* from `QTRoutable`.
 
+**driveSub**
+
 ```
 driveSub(QTRouteId, from: QTRoutable, completion: QTRouteDrivingCompletion?)
 ```
 Commands the `QTRouteDriver` to navigate to any other route in the hierarchy, regardless of location, *as if it were* an *immediate logical descendant* from the current route. (Essentially a subroutine version of `driveTo`.)
 
+**driveTo**
 
 ```
 driveTo(QTRouteId, from: QTRoutable, completion: QTRouteDrivingCompletion?)
