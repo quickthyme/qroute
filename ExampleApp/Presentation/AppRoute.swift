@@ -21,5 +21,5 @@ class AppRoute {
 
     static var driver: QTRouteDriving? = QTRouteDriver()
 
-    static weak var rootRoutable: MainViewController? = nil
+    static weak var rootRoutable: RootViewController? = nil
 }

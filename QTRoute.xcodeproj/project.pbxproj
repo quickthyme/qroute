@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DC1F63882220BC63003842BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63872220BC63003842BB /* AppDelegate.swift */; };
-		DC1F638A2220BC63003842BB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* MainViewController.swift */; };
-		DC1F638D2220BC63003842BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Main.storyboard */; };
+		DC1F638A2220BC63003842BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* RootViewController.swift */; };
+		DC1F638D2220BC63003842BB /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Root.storyboard */; };
 		DC1F638F2220BC64003842BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638E2220BC64003842BB /* Assets.xcassets */; };
 		DC1F63922220BC64003842BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F63902220BC64003842BB /* LaunchScreen.storyboard */; };
 		DC1F639D2220C169003842BB /* QTRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F639C2220C169003842BB /* QTRoute.swift */; };
@@ -55,10 +55,10 @@
 		DCA6BE962225032C009A2CF1 /* QTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD52223CC5E00CC080C /* QTRouteDriver.swift */; };
 		DCA6BE972225043C009A2CF1 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F639E2220C1F7003842BB /* AppRoute.swift */; };
 		DCA6BE9822250441009A2CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63872220BC63003842BB /* AppDelegate.swift */; };
-		DCA6BE9A222512BC009A2CF1 /* MainRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* MainRouteResolver.swift */; };
-		DCA6BE9B222512BC009A2CF1 /* MainRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* MainRouteResolver.swift */; };
-		DCA6BE9C22251394009A2CF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* MainViewController.swift */; };
-		DCA6BE9D2225139B009A2CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Main.storyboard */; };
+		DCA6BE9A222512BC009A2CF1 /* RootRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */; };
+		DCA6BE9B222512BC009A2CF1 /* RootRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */; };
+		DCA6BE9C22251394009A2CF1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* RootViewController.swift */; };
+		DCA6BE9D2225139B009A2CF1 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Root.storyboard */; };
 		DCA6BE9E222513A5009A2CF1 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE742224FEA6009A2CF1 /* Help.storyboard */; };
 		DCA6BE9F222513A5009A2CF1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE772224FEC5009A2CF1 /* HelpViewController.swift */; };
 		DCA6BEA122251401009A2CF1 /* HelpRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA022251401009A2CF1 /* HelpRouteResolver.swift */; };
@@ -101,8 +101,8 @@
 /* Begin PBXFileReference section */
 		DC1F63842220BC63003842BB /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1F63872220BC63003842BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC1F63892220BC63003842BB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DC1F638C2220BC63003842BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC1F63892220BC63003842BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DC1F638C2220BC63003842BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
 		DC1F638E2220BC64003842BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC1F63912220BC64003842BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC1F63932220BC64003842BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		DCA6BE8B2224FFC7009A2CF1 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DCA6BE8F2224FFFB009A2CF1 /* MessageCenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageCenter.storyboard; sourceTree = "<group>"; };
 		DCA6BE922225004B009A2CF1 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
-		DCA6BE99222512BC009A2CF1 /* MainRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouteResolver.swift; sourceTree = "<group>"; };
+		DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouteResolver.swift; sourceTree = "<group>"; };
 		DCA6BEA022251401009A2CF1 /* HelpRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRouteResolver.swift; sourceTree = "<group>"; };
 		DCA6BEA32225194C009A2CF1 /* ToDoRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRouteResolver.swift; sourceTree = "<group>"; };
 		DCA6BEA6222519AB009A2CF1 /* MessageCenterRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterRouteResolver.swift; sourceTree = "<group>"; };
@@ -203,14 +203,14 @@
 			path = ExampleApp;
 			sourceTree = "<group>";
 		};
-		DC1F63992220BEC5003842BB /* Main */ = {
+		DC1F63992220BEC5003842BB /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				DC1F638B2220BC63003842BB /* Main.storyboard */,
-				DC1F63892220BC63003842BB /* MainViewController.swift */,
-				DCA6BE99222512BC009A2CF1 /* MainRouteResolver.swift */,
+				DC1F638B2220BC63003842BB /* Root.storyboard */,
+				DC1F63892220BC63003842BB /* RootViewController.swift */,
+				DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */,
 			);
-			path = Main;
+			path = Root;
 			sourceTree = "<group>";
 		};
 		DC1F639A2220BEDA003842BB /* Presentation */ = {
@@ -220,7 +220,7 @@
 				DC1F639E2220C1F7003842BB /* AppRoute.swift */,
 				DCA6BE872224FF93009A2CF1 /* ContactUs */,
 				DCA6BE732224FE80009A2CF1 /* Help */,
-				DC1F63992220BEC5003842BB /* Main */,
+				DC1F63992220BEC5003842BB /* Root */,
 				DCA6BE8E2224FFEC009A2CF1 /* MessageCenter */,
 				DCA6BE722224FE76009A2CF1 /* ToDo */,
 				DCA6BE802224FF12009A2CF1 /* ToDoDetail */,
@@ -453,7 +453,7 @@
 				DCA6BE7B2224FED3009A2CF1 /* ToDo.storyboard in Resources */,
 				DC1F63922220BC64003842BB /* LaunchScreen.storyboard in Resources */,
 				DC1F638F2220BC64003842BB /* Assets.xcassets in Resources */,
-				DC1F638D2220BC63003842BB /* Main.storyboard in Resources */,
+				DC1F638D2220BC63003842BB /* Root.storyboard in Resources */,
 				DCA6BE752224FEA6009A2CF1 /* Help.storyboard in Resources */,
 				DCA6BE902224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */,
 				DCA6BE892224FFB7009A2CF1 /* ContactUs.storyboard in Resources */,
@@ -475,7 +475,7 @@
 				DCA6BE7C2224FED3009A2CF1 /* ToDo.storyboard in Resources */,
 				DCA6BE9E222513A5009A2CF1 /* Help.storyboard in Resources */,
 				DCA6BE862224FF30009A2CF1 /* ToDoDetail.storyboard in Resources */,
-				DCA6BE9D2225139B009A2CF1 /* Main.storyboard in Resources */,
+				DCA6BE9D2225139B009A2CF1 /* Root.storyboard in Resources */,
 				DCA6BE912224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */,
 				DCA6BE8A2224FFB7009A2CF1 /* ContactUs.storyboard in Resources */,
 			);
@@ -488,7 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC1F638A2220BC63003842BB /* MainViewController.swift in Sources */,
+				DC1F638A2220BC63003842BB /* RootViewController.swift in Sources */,
 				DCA6BEAB22251C12009A2CF1 /* UINavigationController+Completion.swift in Sources */,
 				DCA6BEA42225194C009A2CF1 /* ToDoRouteResolver.swift in Sources */,
 				DC9A7BD32223A88800CC080C /* QTRoutePath.swift in Sources */,
@@ -507,7 +507,7 @@
 				DCA6BE8C2224FFC7009A2CF1 /* ContactUsViewController.swift in Sources */,
 				DCA6BEA122251401009A2CF1 /* HelpRouteResolver.swift in Sources */,
 				DC54492A222611A800578EC8 /* QTRouteResolving.swift in Sources */,
-				DCA6BE9A222512BC009A2CF1 /* MainRouteResolver.swift in Sources */,
+				DCA6BE9A222512BC009A2CF1 /* RootRouteResolver.swift in Sources */,
 				DCA6BEAE22251E2F009A2CF1 /* ContactUsRouteResolver.swift in Sources */,
 				DCA6BEA7222519AB009A2CF1 /* MessageCenterRouteResolver.swift in Sources */,
 			);
@@ -539,7 +539,7 @@
 			files = (
 				DC544933222615D300578EC8 /* QTRouteTests.swift in Sources */,
 				DC544930222615CC00578EC8 /* MockRoutable.swift in Sources */,
-				DCA6BE9B222512BC009A2CF1 /* MainRouteResolver.swift in Sources */,
+				DCA6BE9B222512BC009A2CF1 /* RootRouteResolver.swift in Sources */,
 				DCA6BE942225004B009A2CF1 /* MessageCenterViewController.swift in Sources */,
 				DC544934222615D300578EC8 /* QTRoutePathTests.swift in Sources */,
 				DCA6BE7F2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */,
@@ -551,7 +551,7 @@
 				DCA6BE962225032C009A2CF1 /* QTRouteDriver.swift in Sources */,
 				DC544931222615D300578EC8 /* MockRouteResolver.swift in Sources */,
 				DCA6BEA222251401009A2CF1 /* HelpRouteResolver.swift in Sources */,
-				DCA6BE9C22251394009A2CF1 /* MainViewController.swift in Sources */,
+				DCA6BE9C22251394009A2CF1 /* RootViewController.swift in Sources */,
 				DCE836A02221D3A300E714F8 /* BDDTestHelpers.swift in Sources */,
 				DC7A67922225B1E400D60336 /* StoryboardLoader.swift in Sources */,
 				DC9A7BD42223A88900CC080C /* QTRoutePath.swift in Sources */,
@@ -581,12 +581,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DC1F638B2220BC63003842BB /* Main.storyboard */ = {
+		DC1F638B2220BC63003842BB /* Root.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DC1F638C2220BC63003842BB /* Base */,
 			);
-			name = Main.storyboard;
+			name = Root.storyboard;
 			sourceTree = "<group>";
 		};
 		DC1F63902220BC64003842BB /* LaunchScreen.storyboard */ = {

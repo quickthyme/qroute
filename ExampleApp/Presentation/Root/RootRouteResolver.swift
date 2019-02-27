@@ -6,15 +6,15 @@ private let RouteTab: [QTRouteId:Int] = [
     AppRoute.id.Help:1
 ]
 
-class MainRouteResolver: QTRouteResolving {
+class RootRouteResolver: QTRouteResolving {
 
     func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, completion: @escaping QTRoutableCompletion) {
-        guard let mainVC = from as? MainViewController,
-            let mainTabBarController = mainVC.mainTabBarController else { return /* abort */ }
+        guard let rootVC = from as? RootViewController,
+            let rootTabBarController = rootVC.rootTabBarController else { return /* abort */ }
 
         if let index = RouteTab[route.id] {
-            mainTabBarController.selectedIndex = index
-            if let navWrapper = mainTabBarController.selectedViewController as? UINavigationController {
+            rootTabBarController.selectedIndex = index
+            if let navWrapper = rootTabBarController.selectedViewController as? UINavigationController {
                 navWrapper.popToRootViewController(animated: false)
                 if let routable = navWrapper.topViewController as? QTRoutable {
                     completion(routable)
