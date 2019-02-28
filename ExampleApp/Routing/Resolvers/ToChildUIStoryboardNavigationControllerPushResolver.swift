@@ -1,7 +1,7 @@
 
 import UIKit
 
-func ToChildUIStoryboardNavigationControllerPushResolver() -> QTRouteResolver.ResolveToChild {
+func ToChildUIStoryboardNavigationControllerPushResolver() -> QTRouteResolver.ToChild {
     return { route, from, input, completion in
         guard
             let fromVC = from as? UIViewController,

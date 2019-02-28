@@ -8,8 +8,8 @@ class ContactUsInjector: NSObject {
         super.awakeFromNib()
         viewController.routeResolver = QTRouteResolver(
             AppRoute.plan.findDescendant(AppRoute.id.ContactUs)!,
-            resolveRouteToChild: ToChildNoOpResolver(),
-            resolveRouteToParent: ToParentDismissModalResolver()
+            toChild: ToChildNoOpResolver(),
+            toParent: ToParentDismissModalResolver()
         )
         viewController.routeDriver = AppRoute.driver
     }

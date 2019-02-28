@@ -8,8 +8,8 @@ class RootInjector: NSObject {
         super.awakeFromNib()
         viewController.routeResolver = QTRouteResolver(
             AppRoute.plan,
-            resolveRouteToChild: RootToChildResolver(),
-            resolveRouteToParent: RootToParentResolver()
+            toChild: RootToChildResolver(),
+            toParent: RootToParentResolver()
         )
         viewController.routeDriver = AppRoute.driver
 

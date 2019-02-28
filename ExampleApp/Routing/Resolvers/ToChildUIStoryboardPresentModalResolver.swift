@@ -1,7 +1,7 @@
 
 import UIKit
 
-func ToChildUIStoryboardPresentModalResolver() -> QTRouteResolver.ResolveToChild {
+func ToChildUIStoryboardPresentModalResolver() -> QTRouteResolver.ToChild {
     return { route, from, input, completion in
         guard
             let fromVC = from as? UIViewController,

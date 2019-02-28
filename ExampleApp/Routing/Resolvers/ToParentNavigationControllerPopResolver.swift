@@ -1,7 +1,7 @@
 
 import UIKit
 
-func ToParentNavigationControllerPopResolver() -> QTRouteResolver.ResolveToParent {
+func ToParentNavigationControllerPopResolver() -> QTRouteResolver.ToParent {
     return { from, input, completion in
         guard let fromVC = from as? UIViewController,
             let navController = fromVC.navigationController else { return }

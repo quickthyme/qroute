@@ -1,7 +1,7 @@
 
 import UIKit
 
-func HelpToChildResolver() -> QTRouteResolver.ResolveToChild {
+func HelpToChildResolver() -> QTRouteResolver.ToChild {
     return { route, from, input, completion in
         guard let vc = from as? HelpViewController else { return /* abort */ }
         switch (route.id) {

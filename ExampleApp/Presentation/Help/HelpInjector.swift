@@ -8,8 +8,8 @@ class HelpInjector: NSObject {
         super.awakeFromNib()
         viewController.routeResolver = QTRouteResolver(
             AppRoute.plan.findDescendant(AppRoute.id.Help)!,
-            resolveRouteToChild: HelpToChildResolver(),
-            resolveRouteToParent: ToParentAppRouteRootResolver()
+            toChild: HelpToChildResolver(),
+            toParent: ToParentAppRouteRootResolver()
         )
         viewController.routeDriver = AppRoute.driver
     }

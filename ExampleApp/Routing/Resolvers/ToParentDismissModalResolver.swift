@@ -1,7 +1,7 @@
 
 import UIKit
 
-func ToParentDismissModalResolver() -> QTRouteResolver.ResolveToParent {
+func ToParentDismissModalResolver() -> QTRouteResolver.ToParent {
     return { from, input, completion in
         guard
             let fromVC = from as? UIViewController,

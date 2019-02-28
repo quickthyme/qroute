@@ -1,31 +1,30 @@
 
 class QTRouteResolver: QTRouteResolving {
     var route: QTRoute
-    private let toChild: ResolveToChild
-    private let toParent: ResolveToParent
-    private let toSelf: ResolveToSelf?
+    private let toChild: ToChild
+    private let toParent: ToParent
+    private let toSelf: ToSelf
 
-    typealias ResolveToChild  = (QTRoute, QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
-    typealias ResolveToParent = (QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
-    typealias ResolveToSelf   = (QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
+    typealias ToChild  = (QTRoute, QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
+    typealias ToParent = (QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
+    typealias ToSelf   = (QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
 
-    init(_ route: QTRoute,
-         resolveRouteToChild: @escaping ResolveToChild,
-         resolveRouteToParent: @escaping ResolveToParent) {
-        self.route = route
-        self.toChild = resolveRouteToChild
-        self.toParent = resolveRouteToParent
-        self.toSelf = nil
+    convenience init(_ route: QTRoute,
+         toChild: @escaping ToChild,
+         toParent: @escaping ToParent) {
+        self.init(route, toChild: toChild, toParent: toParent, toSelf: {
+                from,input,completion in
+                QTRouteResolver.mergeInputDependencies(target: from, input: input)
+                completion(from) }
+        )
     }
 
-    init(_ route: QTRoute,
-         resolveRouteToChild: @escaping ResolveToChild,
-         resolveRouteToParent: @escaping ResolveToParent,
-         resolveRouteToSelf: @escaping ResolveToSelf) {
+    init(_ route: QTRoute,toChild: @escaping ToChild,
+         toParent: @escaping ToParent, toSelf: @escaping ToSelf) {
         self.route = route
-        self.toChild = resolveRouteToChild
-        self.toParent = resolveRouteToParent
-        self.toSelf = resolveRouteToSelf
+        self.toChild = toChild
+        self.toParent = toParent
+        self.toSelf = toSelf
     }
 
     func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
@@ -37,12 +36,7 @@ class QTRouteResolver: QTRouteResolving {
     }
 
     func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
-        if let toSelf = self.toSelf {
-            toSelf(from, input, completion)
-        } else {
-            QTRouteResolver.mergeInputDependencies(target: from, input: input)
-            completion(from)
-        }
+        toSelf(from, input, completion)
     }
 
 }
