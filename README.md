@@ -1,12 +1,14 @@
 # QTRoute
-**QTRoute** /'kyoot•root/ - *n* - Universal routing and pathfinding solution written in Swift.
 
-General purpose UI navigation routing model.
+[![Build status](https://build.appcenter.ms/v0.1/apps/eeadb9c7-ad47-4681-b433-4add23e88c15/branches/master/badge)](https://appcenter.ms)
+
+**QTRoute** /'kyoot•root/ - *n* - General purpose UI navigation routing model.
 
   - human readable composition of complex navigation hierarchies
   - automatic pathfinding between routes
   - asynchronous event-driven visitor pattern compatible with any kind of navigation
 
+<br />
 
 ## Getting Started
 
@@ -42,23 +44,27 @@ Quick Overview
 	}
 ```
 
+<br />
+
 ### Example App
 
 The project includes an example app called, *ExampleApp*, written for iOS that demonstrates how one
 might go about using various navigation mechanisms.
 
+<br />
 
 ## Reference Documentation
 
 The essential pieces required in order to implement QTRoute in an application. 
 
+<br />
 
 ### QTRoute
 
 The basic element of any route plan. Each "route" is a data structure that represents a contextual view
 or "scene" presented by the application. It can include child routes and run-time dependencies.
 
-
+<br />
 
 ### *QTRoutable* CustomRoutable
 
@@ -67,7 +73,7 @@ is not provided for you, the included ExampleApp contains several view controlle
 
 **routeResolver: QTRouteResolving** *(Required)*
 
-
+<br />
 
 ### *QTRouteDriving* QTRouteDriver
 
@@ -101,7 +107,7 @@ Calling this method will cause the `driver` to follow the nearest path to the de
 navigation events along the way to your custom `QTRouteResolving` `resolvers`. Pass any dependency
 requirements via the `input` parameter.
 
-
+<br />
 
 ### *QTRouteResolving* CustomResolver
 
@@ -159,6 +165,7 @@ mergeInputDependencies(target: QTRoutable, input: QTRoutableInput)
 The default implementation merges only those values defined as one of the target route's dependencies.
 However, this is not called by default, so your custom `resolver` must invoke it when necessary.
 
+<br />
 
 ### QTRoutableInput
 
@@ -167,7 +174,7 @@ However, this is not called by default, so your custom `resolver` must invoke it
 ```
 If a given route has declared any dependencies, you can use the contents of the input parameter to satisfy them. 
 
-
+<br />
 
 ### QTRoutableCompletion
 
