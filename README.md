@@ -138,7 +138,7 @@ invoking the completion handler will abort and cancel any remaining routing step
 resolveRouteToSelf(from: QTRoutable, input: QTRouteResolvingInput, completion: QTRoutableCompletion)
 ```
 The default implementation ignores the result and calls the completion handler passing the current routable,
-which should be sufficient most of the time. This event will be invoked in response to `driveTo` or `driveSub`,
+which should be sufficient most of the time. This event will be invoked in response to a `driveTo` event,
 whenever the `targetId` matches the `source`. †
 
 You might choose to opt-in to this behavior in situations where you want/need to directly invoke
