@@ -13,8 +13,34 @@ General purpose UI navigation routing model.
 Quick Overview
 
   1. Import the *QTRoute* folder into your project.
-  2. Compose a *route plan*.
-  3. Implement your *routables* and custom *resolvers* for the *routes*
+  
+  2. Compose a *route plan*:
+  
+```
+	let plan: QTRoute =
+	    QTRoute(id.Root,
+	        QTRoute(id.ToDo,
+	            QTRoute(id.ToDoDetail,
+	                    dependencies: ["toDoId"])),
+	    QTRoute(id.Help,
+	        QTRoute(id.ContactUs),
+	        QTRoute(id.MessageCenter)))
+```
+  
+  3. Implement your *routables* and custom *resolvers*:
+
+```
+	func resolveRouteToParent(from: QTRoutable, input: QTRouteResolvingInput,
+	                          completion: @escaping QTRoutableCompletion) {
+	    guard let vc = from as? UIViewController,
+	        let navController = vc.navigationController else { return }
+	    navController.popViewController(animated: true) {
+	        if let parent = navController.topViewController as? QTRoutable {
+	            completion(parent)
+	        }
+	    }
+	}
+```
 
 ### Example App
 
