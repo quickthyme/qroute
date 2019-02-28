@@ -34,15 +34,17 @@ The basic element of any route plan. Each "route" is a data structure that repre
 
 ### *QTRoutable* CustomRoutable
 
+This protocol is to be implemented by the view controller (or presenter, etc) for a given route. While one is not provided for you, the included ExampleApp contains several view controller examples.
+
 **route: QTRoute** *(Required)*
 
 **routeResolver: QTRouteResolving** *(Required)*
 
-This protocol is to be implemented by the view controller (or presenter, etc) for a given route.
-
 
 
 ### *QTRouteDriving* QTRouteDriver
+
+Drives path navigation and resolver events. The `QTRouteDriver` class (and suitable testing "mock") is provided for you.
 
 **driveParent()**
 
@@ -70,6 +72,8 @@ Commands the `QTRouteDriver` to navigate to any other route in the hierarchy, re
 
 
 ### *QTRouteResolving* CustomResolver
+
+The `resolver` is where you implement the actual navigation within your application by responding to navigation events triggered by the `QTRouteDriver`. While one is not provided for you, the included ExampleApp contains several resolver examples that you can use as a template.
 
 **resolveRouteToChild()** *(Required)*
 
