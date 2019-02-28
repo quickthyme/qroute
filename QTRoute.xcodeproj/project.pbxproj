@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1E3C9C2228A26F0080C4A2 /* QTRouteResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */; };
+		DC1E3C9D2228A2C20080C4A2 /* QTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */; };
 		DC1F63882220BC63003842BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63872220BC63003842BB /* AppDelegate.swift */; };
 		DC1F638A2220BC63003842BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* RootViewController.swift */; };
 		DC1F638D2220BC63003842BB /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Root.storyboard */; };
@@ -113,6 +115,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTests.swift; sourceTree = "<group>"; };
 		DC1F63842220BC63003842BB /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1F63872220BC63003842BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC1F63892220BC63003842BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +206,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC1E3C9E2228A3CE0080C4A2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DC54492C222615C300578EC8 /* MockRoutable.swift */,
+				DC4571B622213A5D00C2B296 /* MockRoutePlan.swift */,
+				DC9A7BD92223D1E000CC080C /* MockRouteResolver.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		DC1F637B2220BC63003842BB = {
 			isa = PBXGroup;
 			children = (
@@ -282,12 +295,11 @@
 			isa = PBXGroup;
 			children = (
 				DCE836822221C32F00E714F8 /* Info.plist */,
-				DC54492C222615C300578EC8 /* MockRoutable.swift */,
-				DC9A7BD92223D1E000CC080C /* MockRouteResolver.swift */,
-				DC4571B622213A5D00C2B296 /* MockRoutePlan.swift */,
 				DC4571AE2221395F00C2B296 /* QTRouteTests.swift */,
 				DC9A7BCF222359B200CC080C /* QTRoutePathTests.swift */,
 				DC9A7BD72223D0CA00CC080C /* QTRouteDriverTests.swift */,
+				DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */,
+				DC1E3C9E2228A3CE0080C4A2 /* Mocks */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -653,11 +665,13 @@
 			files = (
 				DCE836892221C38000E714F8 /* BDDTestHelpers.swift in Sources */,
 				DCE8368B2221C38E00E714F8 /* QTRoute.swift in Sources */,
+				DC1E3C9C2228A26F0080C4A2 /* QTRouteResolverTests.swift in Sources */,
 				DC9A7BDA2223D1E000CC080C /* MockRouteResolver.swift in Sources */,
 				DCE836A32221D5C200E714F8 /* QTRouteDriving.swift in Sources */,
 				DCE8368A2221C38400E714F8 /* MockRoutePlan.swift in Sources */,
 				DC54492F222615CA00578EC8 /* MockRoutable.swift in Sources */,
 				DCE836A72221D5D000E714F8 /* QTRoutable.swift in Sources */,
+				DC1E3C9D2228A2C20080C4A2 /* QTRouteResolver.swift in Sources */,
 				DC9A7BD22223677000CC080C /* QTRoutePath.swift in Sources */,
 				DCE836882221C37D00E714F8 /* QTRouteTests.swift in Sources */,
 				DC9A7BD82223D0CA00CC080C /* QTRouteDriverTests.swift in Sources */,
