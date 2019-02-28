@@ -14,9 +14,9 @@ class HelpViewControllerTests: XCTestCase {
 
     func test_configuration_and_events() {
         given_view_controller_has_been_presented(subject) {
-            with("route, routeResolver") {
-                XCTAssertEqual(subject.route?.id, AppRoute.id.Help)
+            with("routeResolver") {
                 XCTAssert(subject.routeResolver is HelpRouteResolver)
+                XCTAssertEqual(subject.routeResolver?.route.id, AppRoute.id.Help)
             }
             when("messageCenter action") {
                 mockRouteDriver.reset()

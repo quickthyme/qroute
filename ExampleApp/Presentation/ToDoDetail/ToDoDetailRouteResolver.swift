@@ -2,8 +2,13 @@
 import UIKit
 
 class ToDoDetailRouteResolver: QTRouteResolving {
+    let route: QTRoute
 
-    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion) {
+    required init(_ route: QTRoute) {
+        self.route = route
+    }
+
+    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
         if route.id == AppRoute.id.ContactUs {
             if let vc = StoryboardLoader.loadViewController(from: "ContactUs") {
                 (from as? UIViewController)?.present(vc, animated: true) {
@@ -13,7 +18,7 @@ class ToDoDetailRouteResolver: QTRouteResolving {
         }
     }
 
-    func resolveRouteToParent(from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
         guard let fromVC = from as? UIViewController,
             let navController = fromVC.navigationController else { return }
         navController.popViewController(animated: true) {

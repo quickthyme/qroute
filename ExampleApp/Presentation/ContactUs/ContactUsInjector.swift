@@ -6,8 +6,9 @@ class ContactUsInjector: NSObject {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewController.route = AppRoute.plan.findDescendant(AppRoute.id.ContactUs)!
-        viewController.routeResolver = ContactUsRouteResolver()
+        viewController.routeResolver = ContactUsRouteResolver(
+            AppRoute.plan.findDescendant(AppRoute.id.ContactUs)!
+        )
         viewController.routeDriver = AppRoute.driver
     }
 }

@@ -30,7 +30,7 @@ Quick Overview
   3. Implement your *routables* and custom *resolvers*:
 
 ```
-	func resolveRouteToParent(from: QTRoutable, input: QTRouteResolvingInput,
+	func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput,
 	                          completion: @escaping QTRoutableCompletion) {
 	    guard let vc = from as? UIViewController,
 	        let navController = vc.navigationController else { return }
@@ -65,8 +65,6 @@ or "scene" presented by the application. It can include child routes and run-tim
 This protocol is to be implemented by the view controller (or presenter, etc) for a given route. While one
 is not provided for you, the included ExampleApp contains several view controller examples.
 
-**route: QTRoute** *(Required)*
-
 **routeResolver: QTRouteResolving** *(Required)*
 
 
@@ -78,7 +76,7 @@ Drives path navigation and resolver events. The `QTRouteDriver` class (and suita
 **driveParent()**
 
 ```
-driveParent(from: QTRoutable, input: QTRouteResolvingInput, completion: QTRouteDrivingCompletion?)
+driveParent(from: QTRoutable, input: QTRoutableInput, completion: QTRoutableCompletion?)
 ```
 Commands the `QTRouteDriver` to navigate to the *immediate logical parent* from `QTRoutable`.
 
@@ -86,7 +84,7 @@ Commands the `QTRouteDriver` to navigate to the *immediate logical parent* from 
 **driveSub()**
 
 ```
-driveSub(QTRouteId, from: QTRoutable, input: QTRouteResolvingInput, completion: QTRouteDrivingCompletion?)
+driveSub(QTRouteId, from: QTRoutable, input: QTRoutableInput, completion: QTRoutableCompletion?)
 ```
 Commands the `QTRouteDriver` to navigate to any route in the hierarchy, regardless of location, *as if it were*
 an *immediate logical descendant* from the current route. (Essentially a subroutine version of `driveTo`.) Pass
@@ -96,7 +94,7 @@ any dependency requirements via the `input` parameter.
 **driveTo()**
 
 ```
-driveTo(QTRouteId, from: QTRoutable, input: QTRouteResolvingInput, completion: QTRouteDrivingCompletion?)
+driveTo(QTRouteId, from: QTRoutable, input: QTRoutableInput, completion: QTRoutableCompletion?)
 ```
 Commands the `QTRouteDriver` to navigate to any other route in the hierarchy, regardless of location.
 Calling this method will cause the `driver` to follow the nearest path to the destination route, raising the
@@ -111,10 +109,12 @@ The `resolver` is where you implement the actual navigation within your applicat
 to navigation events triggered by the `QTRouteDriver`. While one is not provided for you, the included
 ExampleApp contains several resolver examples that you can use as a template.
 
+**route: QTRoute** *(Required)*
+
 **resolveRouteToChild()** *(Required)*
 
 ```
-resolveRouteToChild(QTRoute, from: QTRoutable, input: QTRouteResolvingInput, completion: QTRoutableCompletion)
+resolveRouteToChild(QTRoute, from: QTRoutable, input: QTRoutableInput, completion: QTRoutableCompletion)
 ```
 The resolver is expected to perform the required steps to navigate to one of its *immediate logical
 descendants* matching the given `QTRoute`. If the navigation is successful, the resolver must invoke
@@ -125,7 +125,7 @@ cancel any remaining routing steps.
 **resolveRouteToParent()** *(Required)*
 
 ```
-resolveRouteToParent(from: QTRoutable, input: QTRouteResolvingInput, completion: QTRoutableCompletion)
+resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: QTRoutableCompletion)
 ```
 The resolver is expected to perform the required steps to navigate to its *immediate logical parent*. If the
 navigation is successful, the resolver must invoke the `QTRoutableCompletion` block before exiting. Not
@@ -135,7 +135,7 @@ invoking the completion handler will abort and cancel any remaining routing step
 **resolveRouteToSelf()** *(Optional)*
 
 ```
-resolveRouteToSelf(from: QTRoutable, input: QTRouteResolvingInput, completion: QTRoutableCompletion)
+resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: QTRoutableCompletion)
 ```
 The default implementation ignores the result and calls the completion handler passing the current routable,
 which should be sufficient most of the time. This event will be invoked in response to a `driveTo` event,
@@ -151,7 +151,7 @@ invoke the `QTRoutableCompletion` block before exiting.
 **†** While performing a `driveSub()` against *self*, the driver will invoke `resolveRouteToChild()` instead.  
 
 
-### QTRouteResolvingInput
+### QTRoutableInput
 
 ```
 [String:Any]

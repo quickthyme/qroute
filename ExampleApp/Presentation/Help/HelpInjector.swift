@@ -6,8 +6,9 @@ class HelpInjector: NSObject {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewController.route = AppRoute.plan.findDescendant(AppRoute.id.Help)!
-        viewController.routeResolver = HelpRouteResolver()
+        viewController.routeResolver = HelpRouteResolver(
+            AppRoute.plan.findDescendant(AppRoute.id.Help)!
+        )
         viewController.routeDriver = AppRoute.driver
     }
 }

@@ -6,8 +6,9 @@ class MessageCenterInjector: NSObject {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewController.route = AppRoute.plan.findDescendant(AppRoute.id.MessageCenter)!
-        viewController.routeResolver = MessageCenterRouteResolver()
+        viewController.routeResolver = MessageCenterRouteResolver(
+            AppRoute.plan.findDescendant(AppRoute.id.MessageCenter)!
+        )
         viewController.routeDriver = AppRoute.driver
     }
 }

@@ -1,13 +1,15 @@
 
 protocol QTRouteResolving: class {
-    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion)
-    func resolveRouteToParent(from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion)
+    var route: QTRoute { get }
+    init(_ route: QTRoute)
+    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion)
+    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion)
 // optional
-    func resolveRouteToSelf(from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion)
+    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion)
 }
 
 extension QTRouteResolving {
-    func resolveRouteToSelf(from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
         completion(from)
     }
 }

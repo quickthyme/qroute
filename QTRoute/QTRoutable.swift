@@ -1,7 +1,7 @@
 
 protocol QTRoutable: class {
-    var route: QTRoute? { get set }
-    var routeResolver: QTRouteResolving? { get set }
+    var routeResolver: QTRouteResolving? { get }
 }
 
+typealias QTRoutableInput = [String:Any]
 typealias QTRoutableCompletion = (QTRoutable?)->()

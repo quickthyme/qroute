@@ -12,18 +12,21 @@ class QTRouteDriverTests: XCTestCase {
     func testRouteToFrom_nowhere() {
         given("routable for route with no parent or children") {
             let marco = QTRoute("marco")
-            let mockRouteResolver = MockRouteResolver()
-            let mockRoutable = MockRoutable(route: marco, routeResolver: mockRouteResolver)
+            let mockRouteResolver = MockRouteResolver(marco)
+            let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
 
             when("trying to route to non-existent route") {
                 let expectComplete = expectation(description: "complete")
-                subject.driveTo("polo", from: mockRoutable, input: nil, completion: { _ in expectComplete.fulfill() })
+                var finalResolver: MockRouteResolver? = mockRouteResolver
+                subject.driveTo("polo", from: mockRoutable, input: nil, completion: {
+                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should not go anywhere") {
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 0)
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [])
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 0)
+                    XCTAssertEqual(finalResolver?.routeTrail, [])
                 }
             }
         }
@@ -36,72 +39,88 @@ class QTRouteDriverTests: XCTestCase {
             let grumpy = QTRoute("grumpy", pabst)
 
             when("pabst routes to grumpy") {
-                let mockRouteResolver = MockRouteResolver()
-                let mockRoutable = MockRoutable(route: pabst, routeResolver: mockRouteResolver)
+                let mockRouteResolver = MockRouteResolver(pabst)
+                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                subject.driveTo("grumpy", from: mockRoutable, input: nil, completion: { _ in expectComplete.fulfill() })
+                var finalResolver: MockRouteResolver? = mockRouteResolver
+                subject.driveTo("grumpy", from: mockRoutable, input: nil, completion: {
+                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to parent one times landing on 'grumpy'") {
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 1)
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [grumpy])
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 1)
+                    XCTAssertEqual(finalResolver?.routeTrail, [grumpy])
                 }
             }
 
             when("pabst routes to sissy") {
-                let mockRouteResolver = MockRouteResolver()
-                let mockRoutable = MockRoutable(route: pabst, routeResolver: mockRouteResolver)
+                let mockRouteResolver = MockRouteResolver(pabst)
+                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                subject.driveTo("sissy", from: mockRoutable, input: nil, completion: { _ in expectComplete.fulfill() })
+                var finalResolver: MockRouteResolver? = mockRouteResolver
+                subject.driveTo("sissy", from: mockRoutable, input: nil, completion: {
+                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to child one times landing on sissy") {
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 1)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 0)
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [sissy])
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 1)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 0)
+                    XCTAssertEqual(finalResolver?.routeTrail, [sissy])
                 }
             }
 
             when("pabst routes to self") {
-                let mockRouteResolver = MockRouteResolver()
-                let mockRoutable = MockRoutable(route: pabst, routeResolver: mockRouteResolver)
+                let mockRouteResolver = MockRouteResolver(pabst)
+                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                subject.driveTo("pabst", from: mockRoutable, input: nil, completion: { _ in expectComplete.fulfill() })
+                var finalResolver: MockRouteResolver? = mockRouteResolver
+                subject.driveTo("pabst", from: mockRoutable, input: nil, completion: {
+                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to self one times") {
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 1)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 0)
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [pabst])
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 1)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 0)
+                    XCTAssertEqual(finalResolver?.routeTrail, [pabst])
                 }
             }
 
             when("grumpy routes to sissy") {
-                let mockRouteResolver = MockRouteResolver()
-                let mockRoutable = MockRoutable(route: grumpy, routeResolver: mockRouteResolver)
+                let mockRouteResolver = MockRouteResolver(grumpy)
+                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                subject.driveTo("sissy", from: mockRoutable, input: nil, completion: { _ in expectComplete.fulfill() })
+                var finalResolver: MockRouteResolver? = mockRouteResolver
+                subject.driveTo("sissy", from: mockRoutable, input: nil, completion: {
+                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to child two times landing on 'sissy'") {
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 2)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 0)
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [pabst, sissy])
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 2)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 0)
+                    XCTAssertEqual(finalResolver?.routeTrail, [pabst, sissy])
+                    XCTAssertEqual(finalResolver?.route, sissy)
                 }
             }
 
             when("sissy routes to grumpy") {
-                let mockRouteResolver = MockRouteResolver()
-                let mockRoutable = MockRoutable(route: sissy, routeResolver: mockRouteResolver)
+                let mockRouteResolver = MockRouteResolver(sissy)
+                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                subject.driveTo("grumpy", from: mockRoutable, input: nil, completion: { _ in expectComplete.fulfill() })
+                var finalResolver: MockRouteResolver? = mockRouteResolver
+                subject.driveTo("grumpy", from: mockRoutable, input: nil, completion: {
+                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
-                then("it should have routed to parent two times lanfing on 'grumpy'") {
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 2)
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [pabst, grumpy])
+                then("it should have routed to parent two times landing on 'grumpy'") {
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 2)
+                    XCTAssertEqual(finalResolver?.routeTrail, [pabst, grumpy])
                 }
             }
         }
@@ -117,16 +136,19 @@ class QTRouteDriverTests: XCTestCase {
             let messageCenter = help.route("Message Center")!
 
             when("routing 'To-Do Edit Image' to 'Message Center'") {
-                let mockRouteResolver = MockRouteResolver()
-                let mockRoutable = MockRoutable(route: toDoEditImage, routeResolver: mockRouteResolver)
+                let mockRouteResolver = MockRouteResolver(toDoEditImage)
+                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                subject.driveTo("Message Center", from: mockRoutable, input: nil, completion: { _ in expectComplete.fulfill() })
+                var finalResolver: MockRouteResolver? = mockRouteResolver
+                subject.driveTo("Message Center", from: mockRoutable, input: nil, completion: {
+                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to parent 3 times and child 2 times landing at 'Message Center'") {
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 2)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 3)
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [toDoDetail, toDo, root, help, messageCenter])
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 2)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 3)
+                    XCTAssertEqual(finalResolver?.routeTrail, [toDoDetail, toDo, root, help, messageCenter])
                 }
             }
         }
@@ -140,19 +162,23 @@ class QTRouteDriverTests: XCTestCase {
             let messageCenter = root.route("Help")!.route("Message Center")!
 
             when("substitute routing 'To-Do Detail' to 'Message Center'") {
-                let mockRouteResolver = MockRouteResolver()
-                let mockRoutable = MockRoutable(route: toDoDetail, routeResolver: mockRouteResolver)
+                let mockRouteResolver = MockRouteResolver(toDoDetail)
+                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var landingRoutable: QTRoutable? = nil
+                var landingRoutable: MockRoutable?
+                var finalResolver: MockRouteResolver? = mockRouteResolver
                 subject.driveSub("Message Center", from: mockRoutable, input: nil,
-                                 completion: { landingRoutable = $0; expectComplete.fulfill() })
+                                 completion: {
+                                    landingRoutable = $0 as? MockRoutable
+                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    expectComplete.fulfill() })
                 wait(for: [expectComplete], timeout: 0.1)
                 then("it should have routed to child 1 times landing at 'Message Center' clone") {
-                    let messageCenterClone = landingRoutable!.route!
-                    XCTAssertEqual(mockRouteResolver.routeTrail, [messageCenterClone])
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToChild, 1)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToSelf, 0)
-                    XCTAssertEqual(mockRouteResolver.timesCalled_resolveRouteToParent, 0)
+                    let messageCenterClone = finalResolver!.route
+                    XCTAssertEqual(finalResolver?.routeTrail, [messageCenterClone])
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToChild, 1)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToSelf, 0)
+                    XCTAssertEqual(finalResolver?.timesCalled_resolveRouteToParent, 0)
                     with("'Message Center' Clone not the same instance as 'Message Center'") {
                         XCTAssert(messageCenterClone !== messageCenter)
                     }
@@ -177,7 +203,7 @@ class QTRouteDriverTests: XCTestCase {
                         subject.driveParent(from: landingRoutable!, input: nil) { backResult = $0; expectComplete.fulfill(); }
                         wait(for: [expectComplete], timeout: 0.1)
                         then("it should arrive back at 'To-Do Detail'") {
-                            XCTAssertEqual(backResult?.route, toDoDetail)
+                            XCTAssertEqual(backResult?.routeResolver?.route, toDoDetail)
                         }
                     }
                 }

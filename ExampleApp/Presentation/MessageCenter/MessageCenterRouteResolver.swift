@@ -2,8 +2,13 @@
 import UIKit
 
 class MessageCenterRouteResolver: QTRouteResolving {
+    let route: QTRoute
 
-    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion) {
+    required init(_ route: QTRoute) {
+        self.route = route
+    }
+
+    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
         guard let vc = from as? UIViewController,
             let navController = vc.navigationController,
             let newVc = StoryboardLoader.loadViewController(from: AppRoute.id.MessageCenter)
@@ -16,7 +21,7 @@ class MessageCenterRouteResolver: QTRouteResolving {
         }
     }
 
-    func resolveRouteToParent(from: QTRoutable, input: QTRouteResolvingInput, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
         guard let vc = from as? UIViewController,
             let navController = vc.navigationController else { return }
         navController.popViewController(animated: true) {

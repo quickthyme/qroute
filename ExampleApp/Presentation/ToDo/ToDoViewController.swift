@@ -2,7 +2,6 @@
 import UIKit
 
 class ToDoViewController: UIViewController, QTRoutable {
-    var route: QTRoute?
     var routeResolver: QTRouteResolving?
     var routeDriver: QTRouteDriving?
 

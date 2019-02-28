@@ -14,9 +14,9 @@ class ToDoDetailViewControllerTests: XCTestCase {
 
     func test_configuration_and_events() {
         given_view_controller_has_been_presented(subject) {
-            with("route, routeResolver") {
-                XCTAssertEqual(subject.route?.id, AppRoute.id.ToDoDetail)
+            with("routeResolver") {
                 XCTAssert(subject.routeResolver is ToDoDetailRouteResolver)
+                XCTAssertEqual(subject.routeResolver?.route.id, AppRoute.id.ToDoDetail)
             }
             when("contactUsNear action") {
                 mockRouteDriver.reset()

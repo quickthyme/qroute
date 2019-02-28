@@ -6,8 +6,7 @@ class RootInjector: NSObject {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewController.route = AppRoute.plan
-        viewController.routeResolver = RootRouteResolver()
+        viewController.routeResolver = RootRouteResolver(AppRoute.plan)
         viewController.routeDriver = AppRoute.driver
 
         AppRoute.rootRoutable = viewController

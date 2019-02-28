@@ -2,7 +2,6 @@
 import UIKit
 
 class HelpViewController: UIViewController, QTRoutable {
-    var route: QTRoute?
     var routeResolver: QTRouteResolving?
     var routeDriver: QTRouteDriving?
     var segueRouteCompletion: QTRoutableCompletion?
