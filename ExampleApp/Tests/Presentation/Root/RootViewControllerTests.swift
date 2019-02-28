@@ -15,7 +15,6 @@ class RootViewControllerTests: XCTestCase {
     func test_configuration_and_events() {
         given_view_controller_has_been_presented(subject) {
             with("routeResolver") {
-                XCTAssert(subject.routeResolver is RootRouteResolver)
                 XCTAssertEqual(subject.routeResolver?.route.id, AppRoute.id.Root)
             }
             with("rootTabBarController") {

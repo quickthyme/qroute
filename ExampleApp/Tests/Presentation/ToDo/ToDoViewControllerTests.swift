@@ -15,7 +15,6 @@ class ToDoViewControllerTests: XCTestCase {
     func test_configuration_and_events() {
         given_view_controller_has_been_presented(subject) {
             with("routeResolver") {
-                XCTAssert(subject.routeResolver is ToDoRouteResolver)
                 XCTAssertEqual(subject.routeResolver?.route.id, AppRoute.id.ToDo)
             }
             when("making selection") {

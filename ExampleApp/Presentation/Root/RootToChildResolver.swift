@@ -6,14 +6,8 @@ private let RouteTab: [QTRouteId:Int] = [
     AppRoute.id.Help:1
 ]
 
-class RootRouteResolver: QTRouteResolving {
-    let route: QTRoute
-
-    required init(_ route: QTRoute) {
-        self.route = route
-    }
-
-    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
+func RootToChildResolver() -> QTRouteResolver.ResolveToChild {
+    return { route, from, input, completion in
         guard let rootVC = from as? RootViewController,
             let rootTabBarController = rootVC.rootTabBarController else { return /* abort */ }
 
@@ -27,8 +21,10 @@ class RootRouteResolver: QTRouteResolving {
             }
         }
     }
+}
 
-    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
+func RootToParentResolver() -> QTRouteResolver.ResolveToParent {
+    return { _, _, _ in
         assertionFailure("cannot route beyond root!")
     }
 }

@@ -19,7 +19,6 @@ class ToDoDetailViewControllerTests: XCTestCase {
             given_view_controller_has_been_presented(subject) {
 
                 with("routeResolver") {
-                    XCTAssert(subject.routeResolver is ToDoDetailRouteResolver)
                     XCTAssertEqual(subject.routeResolver?.route.id, AppRoute.id.ToDoDetail)
                 }
                 with("title incudes the route input toDoId") {

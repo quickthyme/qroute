@@ -71,26 +71,32 @@
 		DCA6BE962225032C009A2CF1 /* QTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD52223CC5E00CC080C /* QTRouteDriver.swift */; };
 		DCA6BE972225043C009A2CF1 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F639E2220C1F7003842BB /* AppRoute.swift */; };
 		DCA6BE9822250441009A2CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63872220BC63003842BB /* AppDelegate.swift */; };
-		DCA6BE9A222512BC009A2CF1 /* RootRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */; };
-		DCA6BE9B222512BC009A2CF1 /* RootRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */; };
+		DCA6BE9A222512BC009A2CF1 /* RootToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */; };
+		DCA6BE9B222512BC009A2CF1 /* RootToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */; };
 		DCA6BE9C22251394009A2CF1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* RootViewController.swift */; };
 		DCA6BE9D2225139B009A2CF1 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Root.storyboard */; };
 		DCA6BE9E222513A5009A2CF1 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE742224FEA6009A2CF1 /* Help.storyboard */; };
 		DCA6BE9F222513A5009A2CF1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE772224FEC5009A2CF1 /* HelpViewController.swift */; };
-		DCA6BEA122251401009A2CF1 /* HelpRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA022251401009A2CF1 /* HelpRouteResolver.swift */; };
-		DCA6BEA222251401009A2CF1 /* HelpRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA022251401009A2CF1 /* HelpRouteResolver.swift */; };
-		DCA6BEA42225194C009A2CF1 /* ToDoRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA32225194C009A2CF1 /* ToDoRouteResolver.swift */; };
-		DCA6BEA52225194C009A2CF1 /* ToDoRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA32225194C009A2CF1 /* ToDoRouteResolver.swift */; };
-		DCA6BEA7222519AB009A2CF1 /* MessageCenterRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA6222519AB009A2CF1 /* MessageCenterRouteResolver.swift */; };
-		DCA6BEA8222519AB009A2CF1 /* MessageCenterRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA6222519AB009A2CF1 /* MessageCenterRouteResolver.swift */; };
+		DCA6BEA122251401009A2CF1 /* HelpToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */; };
+		DCA6BEA222251401009A2CF1 /* HelpToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */; };
 		DCA6BEAB22251C12009A2CF1 /* UINavigationController+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */; };
 		DCA6BEAC22251C12009A2CF1 /* UINavigationController+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */; };
-		DCA6BEAE22251E2F009A2CF1 /* ContactUsRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEAD22251E2F009A2CF1 /* ContactUsRouteResolver.swift */; };
-		DCA6BEAF22251E2F009A2CF1 /* ContactUsRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEAD22251E2F009A2CF1 /* ContactUsRouteResolver.swift */; };
-		DCA6BEB122251E5D009A2CF1 /* ToDoDetailRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEB022251E5D009A2CF1 /* ToDoDetailRouteResolver.swift */; };
-		DCA6BEB222251E5D009A2CF1 /* ToDoDetailRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEB022251E5D009A2CF1 /* ToDoDetailRouteResolver.swift */; };
 		DCC508262227C64800804586 /* ToDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508252227C64800804586 /* ToDoTableViewManager.swift */; };
 		DCC508272227C64800804586 /* ToDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508252227C64800804586 /* ToDoTableViewManager.swift */; };
+		DCC5082B2227D5ED00804586 /* QTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */; };
+		DCC5082C2227D5ED00804586 /* QTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */; };
+		DCC5082E2227DA9700804586 /* ToParentAppRouteRootResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */; };
+		DCC5082F2227DA9700804586 /* ToParentAppRouteRootResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */; };
+		DCC508312227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */; };
+		DCC508322227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */; };
+		DCC508342227DE7000804586 /* ToParentNavigationControllerPopResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */; };
+		DCC508352227DE7000804586 /* ToParentNavigationControllerPopResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */; };
+		DCC508372227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */; };
+		DCC508382227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */; };
+		DCC5083A2227E39100804586 /* ToChildNoOpResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508392227E39100804586 /* ToChildNoOpResolver.swift */; };
+		DCC5083B2227E39100804586 /* ToChildNoOpResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508392227E39100804586 /* ToChildNoOpResolver.swift */; };
+		DCC5083D2227E42E00804586 /* ToParentDismissModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */; };
+		DCC5083E2227E42E00804586 /* ToParentDismissModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */; };
 		DCE836882221C37D00E714F8 /* QTRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571AE2221395F00C2B296 /* QTRouteTests.swift */; };
 		DCE836892221C38000E714F8 /* BDDTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */; };
 		DCE8368A2221C38400E714F8 /* MockRoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B622213A5D00C2B296 /* MockRoutePlan.swift */; };
@@ -152,14 +158,17 @@
 		DCA6BE8B2224FFC7009A2CF1 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		DCA6BE8F2224FFFB009A2CF1 /* MessageCenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageCenter.storyboard; sourceTree = "<group>"; };
 		DCA6BE922225004B009A2CF1 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
-		DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouteResolver.swift; sourceTree = "<group>"; };
-		DCA6BEA022251401009A2CF1 /* HelpRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRouteResolver.swift; sourceTree = "<group>"; };
-		DCA6BEA32225194C009A2CF1 /* ToDoRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRouteResolver.swift; sourceTree = "<group>"; };
-		DCA6BEA6222519AB009A2CF1 /* MessageCenterRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterRouteResolver.swift; sourceTree = "<group>"; };
+		DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootToChildResolver.swift; sourceTree = "<group>"; };
+		DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpToChildResolver.swift; sourceTree = "<group>"; };
 		DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Completion.swift"; sourceTree = "<group>"; };
-		DCA6BEAD22251E2F009A2CF1 /* ContactUsRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsRouteResolver.swift; sourceTree = "<group>"; };
-		DCA6BEB022251E5D009A2CF1 /* ToDoDetailRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailRouteResolver.swift; sourceTree = "<group>"; };
 		DCC508252227C64800804586 /* ToDoTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewManager.swift; sourceTree = "<group>"; };
+		DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolver.swift; sourceTree = "<group>"; };
+		DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentAppRouteRootResolver.swift; sourceTree = "<group>"; };
+		DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardNavigationControllerPushResolver.swift; sourceTree = "<group>"; };
+		DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentNavigationControllerPopResolver.swift; sourceTree = "<group>"; };
+		DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardPresentModalResolver.swift; sourceTree = "<group>"; };
+		DCC508392227E39100804586 /* ToChildNoOpResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildNoOpResolver.swift; sourceTree = "<group>"; };
+		DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentDismissModalResolver.swift; sourceTree = "<group>"; };
 		DCE8367E2221C32F00E714F8 /* QTRouteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QTRouteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE836822221C32F00E714F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE836902221D2C500E714F8 /* ExampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +232,7 @@
 				DC1F638E2220BC64003842BB /* Assets.xcassets */,
 				DCA6BEA922251BF5009A2CF1 /* Helpers */,
 				DC1F639A2220BEDA003842BB /* Presentation */,
+				DCC508282227D53100804586 /* Routing */,
 				DCE836912221D2C500E714F8 /* Tests */,
 			);
 			path = ExampleApp;
@@ -234,7 +244,7 @@
 				DC1F638B2220BC63003842BB /* Root.storyboard */,
 				DC4E06CC2226602500A69630 /* RootInjector.swift */,
 				DC1F63892220BC63003842BB /* RootViewController.swift */,
-				DCA6BE99222512BC009A2CF1 /* RootRouteResolver.swift */,
+				DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -243,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				DC1F63872220BC63003842BB /* AppDelegate.swift */,
-				DC1F639E2220C1F7003842BB /* AppRoute.swift */,
 				DCA6BE872224FF93009A2CF1 /* ContactUs */,
 				DCA6BE732224FE80009A2CF1 /* Help */,
 				DC1F63992220BEC5003842BB /* Root */,
@@ -263,6 +272,7 @@
 				DCE836A12221D5C200E714F8 /* QTRouteDriving.swift */,
 				DC9A7BD52223CC5E00CC080C /* QTRouteDriver.swift */,
 				DC544929222611A800578EC8 /* QTRouteResolving.swift */,
+				DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */,
 				DC4571AD2221395F00C2B296 /* Tests */,
 			);
 			path = QTRoute;
@@ -345,7 +355,6 @@
 				DC4E06C022265DB700A69630 /* ToDoInjector.swift */,
 				DCC508252227C64800804586 /* ToDoTableViewManager.swift */,
 				DCA6BE7D2224FEE5009A2CF1 /* ToDoViewController.swift */,
-				DCA6BEA32225194C009A2CF1 /* ToDoRouteResolver.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -356,7 +365,7 @@
 				DCA6BE742224FEA6009A2CF1 /* Help.storyboard */,
 				DC4E06B72226593D00A69630 /* HelpInjector.swift */,
 				DCA6BE772224FEC5009A2CF1 /* HelpViewController.swift */,
-				DCA6BEA022251401009A2CF1 /* HelpRouteResolver.swift */,
+				DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -367,7 +376,6 @@
 				DCA6BE842224FF30009A2CF1 /* ToDoDetail.storyboard */,
 				DC4E06BA22265A3100A69630 /* ToDoDetailInjector.swift */,
 				DCA6BE812224FF26009A2CF1 /* ToDoDetailViewController.swift */,
-				DCA6BEB022251E5D009A2CF1 /* ToDoDetailRouteResolver.swift */,
 			);
 			path = ToDoDetail;
 			sourceTree = "<group>";
@@ -378,7 +386,6 @@
 				DCA6BE882224FFB7009A2CF1 /* ContactUs.storyboard */,
 				DC4E06B4222656FC00A69630 /* ContactUsInjector.swift */,
 				DCA6BE8B2224FFC7009A2CF1 /* ContactUsViewController.swift */,
-				DCA6BEAD22251E2F009A2CF1 /* ContactUsRouteResolver.swift */,
 			);
 			path = ContactUs;
 			sourceTree = "<group>";
@@ -389,7 +396,6 @@
 				DCA6BE8F2224FFFB009A2CF1 /* MessageCenter.storyboard */,
 				DC4E06C622265F2000A69630 /* MessageCenterInjector.swift */,
 				DCA6BE922225004B009A2CF1 /* MessageCenterViewController.swift */,
-				DCA6BEA6222519AB009A2CF1 /* MessageCenterRouteResolver.swift */,
 			);
 			path = MessageCenter;
 			sourceTree = "<group>";
@@ -401,6 +407,28 @@
 				DC7A67902225B1E400D60336 /* StoryboardLoader.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DCC508282227D53100804586 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F639E2220C1F7003842BB /* AppRoute.swift */,
+				DCC508292227D56300804586 /* Resolvers */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		DCC508292227D56300804586 /* Resolvers */ = {
+			isa = PBXGroup;
+			children = (
+				DCC508392227E39100804586 /* ToChildNoOpResolver.swift */,
+				DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */,
+				DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */,
+				DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */,
+				DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */,
+				DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */,
+			);
+			path = Resolvers;
 			sourceTree = "<group>";
 		};
 		DCE836912221D2C500E714F8 /* Tests */ = {
@@ -585,34 +613,37 @@
 			files = (
 				DC1F638A2220BC63003842BB /* RootViewController.swift in Sources */,
 				DCA6BEAB22251C12009A2CF1 /* UINavigationController+Completion.swift in Sources */,
-				DCA6BEA42225194C009A2CF1 /* ToDoRouteResolver.swift in Sources */,
 				DC9A7BD32223A88800CC080C /* QTRoutePath.swift in Sources */,
 				DC4E06B5222656FC00A69630 /* ContactUsInjector.swift in Sources */,
 				DC4E06C822265F2000A69630 /* MessageCenterInjector.swift in Sources */,
+				DCC5083D2227E42E00804586 /* ToParentDismissModalResolver.swift in Sources */,
 				DC7A67912225B1E400D60336 /* StoryboardLoader.swift in Sources */,
 				DCC508262227C64800804586 /* ToDoTableViewManager.swift in Sources */,
 				DC4E06BC22265A3100A69630 /* ToDoDetailInjector.swift in Sources */,
+				DCC508372227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */,
+				DCC5083A2227E39100804586 /* ToChildNoOpResolver.swift in Sources */,
 				DC1F639F2220C1F7003842BB /* AppRoute.swift in Sources */,
 				DCA6BE822224FF26009A2CF1 /* ToDoDetailViewController.swift in Sources */,
 				DCA6BE782224FEC5009A2CF1 /* HelpViewController.swift in Sources */,
 				DC4E06C222265DB700A69630 /* ToDoInjector.swift in Sources */,
 				DCA6BE7E2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */,
+				DCC508342227DE7000804586 /* ToParentNavigationControllerPopResolver.swift in Sources */,
 				DCA6BE952225032B009A2CF1 /* QTRouteDriver.swift in Sources */,
 				DCE836A22221D5C200E714F8 /* QTRouteDriving.swift in Sources */,
-				DCA6BEB122251E5D009A2CF1 /* ToDoDetailRouteResolver.swift in Sources */,
 				DC54493C2226447A00578EC8 /* MockRouteDriver.swift in Sources */,
 				DC4E06CE2226602500A69630 /* RootInjector.swift in Sources */,
 				DCA6BE932225004B009A2CF1 /* MessageCenterViewController.swift in Sources */,
 				DC1F639D2220C169003842BB /* QTRoute.swift in Sources */,
+				DCC5082B2227D5ED00804586 /* QTRouteResolver.swift in Sources */,
 				DCE836A62221D5D000E714F8 /* QTRoutable.swift in Sources */,
+				DCC5082E2227DA9700804586 /* ToParentAppRouteRootResolver.swift in Sources */,
+				DCC508312227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */,
 				DC1F63882220BC63003842BB /* AppDelegate.swift in Sources */,
 				DCA6BE8C2224FFC7009A2CF1 /* ContactUsViewController.swift in Sources */,
-				DCA6BEA122251401009A2CF1 /* HelpRouteResolver.swift in Sources */,
+				DCA6BEA122251401009A2CF1 /* HelpToChildResolver.swift in Sources */,
 				DC4E06B82226593D00A69630 /* HelpInjector.swift in Sources */,
 				DC54492A222611A800578EC8 /* QTRouteResolving.swift in Sources */,
-				DCA6BE9A222512BC009A2CF1 /* RootRouteResolver.swift in Sources */,
-				DCA6BEAE22251E2F009A2CF1 /* ContactUsRouteResolver.swift in Sources */,
-				DCA6BEA7222519AB009A2CF1 /* MessageCenterRouteResolver.swift in Sources */,
+				DCA6BE9A222512BC009A2CF1 /* RootToChildResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC4E06BF22265ACB00A69630 /* ToDoDetailViewControllerTests.swift in Sources */,
-				DCA6BE9B222512BC009A2CF1 /* RootRouteResolver.swift in Sources */,
+				DCA6BE9B222512BC009A2CF1 /* RootToChildResolver.swift in Sources */,
 				DCA6BE942225004B009A2CF1 /* MessageCenterViewController.swift in Sources */,
 				DC54494322264C9100578EC8 /* HelpViewControllerTests.swift in Sources */,
 				DCC508272227C64800804586 /* ToDoTableViewManager.swift in Sources */,
@@ -649,12 +680,13 @@
 				DCA6BE7F2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */,
 				DCA6BE972225043C009A2CF1 /* AppRoute.swift in Sources */,
 				DCA6BE9822250441009A2CF1 /* AppDelegate.swift in Sources */,
-				DCA6BEAF22251E2F009A2CF1 /* ContactUsRouteResolver.swift in Sources */,
 				DC54493A2226439100578EC8 /* ContactUsViewControllerTests.swift in Sources */,
 				DC4E06C522265E2600A69630 /* ToDoViewControllerTests.swift in Sources */,
+				DCC5082F2227DA9700804586 /* ToParentAppRouteRootResolver.swift in Sources */,
+				DCC508382227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */,
 				DCA6BEAC22251C12009A2CF1 /* UINavigationController+Completion.swift in Sources */,
 				DCA6BE962225032C009A2CF1 /* QTRouteDriver.swift in Sources */,
-				DCA6BEA222251401009A2CF1 /* HelpRouteResolver.swift in Sources */,
+				DCA6BEA222251401009A2CF1 /* HelpToChildResolver.swift in Sources */,
 				DCA6BE9C22251394009A2CF1 /* RootViewController.swift in Sources */,
 				DCE836A02221D3A300E714F8 /* BDDTestHelpers.swift in Sources */,
 				DC7A67922225B1E400D60336 /* StoryboardLoader.swift in Sources */,
@@ -666,19 +698,21 @@
 				DC54493D2226447A00578EC8 /* MockRouteDriver.swift in Sources */,
 				DCE836A82221D5D000E714F8 /* QTRoutable.swift in Sources */,
 				DC4E06B92226593D00A69630 /* HelpInjector.swift in Sources */,
-				DCA6BEB222251E5D009A2CF1 /* ToDoDetailRouteResolver.swift in Sources */,
 				DCA6BE9F222513A5009A2CF1 /* HelpViewController.swift in Sources */,
 				DC4E06CD2226602500A69630 /* RootInjector.swift in Sources */,
 				DCE836B1222337A500E714F8 /* QTRoute.swift in Sources */,
 				DCA6BE8D2224FFC7009A2CF1 /* ContactUsViewController.swift in Sources */,
 				DC4E06B62226570000A69630 /* ContactUsInjector.swift in Sources */,
-				DCA6BEA52225194C009A2CF1 /* ToDoRouteResolver.swift in Sources */,
+				DCC5083B2227E39100804586 /* ToChildNoOpResolver.swift in Sources */,
 				DC4E06C122265DB700A69630 /* ToDoInjector.swift in Sources */,
+				DCC508352227DE7000804586 /* ToParentNavigationControllerPopResolver.swift in Sources */,
 				DCA6BE832224FF26009A2CF1 /* ToDoDetailViewController.swift in Sources */,
+				DCC508322227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */,
 				DC4E06D12226615700A69630 /* RootViewControllerTests.swift in Sources */,
 				DCE836A42221D5C200E714F8 /* QTRouteDriving.swift in Sources */,
 				DC4E06BB22265A3100A69630 /* ToDoDetailInjector.swift in Sources */,
-				DCA6BEA8222519AB009A2CF1 /* MessageCenterRouteResolver.swift in Sources */,
+				DCC5083E2227E42E00804586 /* ToParentDismissModalResolver.swift in Sources */,
+				DCC5082C2227D5ED00804586 /* QTRouteResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
