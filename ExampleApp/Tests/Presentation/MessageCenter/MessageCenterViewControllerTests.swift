@@ -18,6 +18,15 @@ class MessageCenterViewControllerTests: XCTestCase {
                 XCTAssertEqual(subject.route?.id, AppRoute.id.MessageCenter)
                 XCTAssert(subject.routeResolver is MessageCenterRouteResolver)
             }
+
+            when("play action") {
+                mockRouteDriver.reset()
+                subject.playAction(nil)
+                then("it should drive (sub) to `self`") {
+                    XCTAssertEqual(mockRouteDriver.timesCalled_driveSub, 1)
+                    XCTAssertEqual(mockRouteDriver.valueFor_driveSub_targetId, AppRoute.id.MessageCenter)
+                }
+            }
         }
     }
 }
