@@ -57,7 +57,6 @@ might go about using various navigation mechanisms.
 
 The essential pieces required in order to implement QTRoute in an application.
 
-<br />
 
 ### QTRoute
 
@@ -112,7 +111,8 @@ requirements via the `input` parameter.
 ### *QTRouteResolving* CustomResolver
 
 The `resolver` is where you implement the actual navigation within your application by responding
-to navigation events triggered by the `QTRouteDriver`. While one is not provided for you, the included
+to navigation events triggered by the `QTRouteDriver`. The project includes a general purpose
+`QTRouteResolver` which supports composition, or you can build one from scratch. The included
 ExampleApp contains several resolver examples that you can use as a template.
 
 **route: QTRoute** *(Required)*
