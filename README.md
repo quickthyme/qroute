@@ -1,6 +1,6 @@
 # QTRoute
 
-[![Build status](https://build.appcenter.ms/v0.1/apps/eeadb9c7-ad47-4681-b433-4add23e88c15/branches/master/badge)](https://appcenter.ms)
+[![Build status](https://build.appcenter.ms/v0.1/apps/73deb936-f18b-48aa-b738-d5f840b4d5d7/branches/master/badge)](https://appcenter.ms)
 
 **QTRoute** /'kyoot•root/ - *n* - General purpose UI navigation routing model.
 
@@ -15,9 +15,9 @@
 Quick Overview
 
   1. Import the *QTRoute* folder into your project.
-  
+
   2. Compose a *route plan*:
-  
+
 ```
 	let plan: QTRoute =
 	    QTRoute(id.Root,
@@ -28,7 +28,7 @@ Quick Overview
 	        QTRoute(id.ContactUs),
 	        QTRoute(id.MessageCenter)))
 ```
-  
+
   3. Implement your *routables* and custom *resolvers*:
 
 ```
@@ -55,7 +55,7 @@ might go about using various navigation mechanisms.
 
 ## Reference Documentation
 
-The essential pieces required in order to implement QTRoute in an application. 
+The essential pieces required in order to implement QTRoute in an application.
 
 <br />
 
@@ -154,7 +154,7 @@ If you choose to implement this, then the resolver is expected to perform the re
 to *itself*, in whatever which way that may be interpreted. If the navigation is successful, the resolver must
 invoke the `QTRoutableCompletion` block before exiting.
 
-**†** While performing a `driveSub()` against *self*, the driver will invoke `resolveRouteToChild()` instead.  
+**†** While performing a `driveSub()` against *self*, the driver will invoke `resolveRouteToChild()` instead.
 
 
 **mergeInputDependencies()** *(Optional)*
@@ -172,7 +172,7 @@ However, this is not called by default, so your custom `resolver` must invoke it
 ```
 [String:Any]
 ```
-If a given route has declared any dependencies, you can use the contents of the input parameter to satisfy them. 
+If a given route has declared any dependencies, you can use the contents of the input parameter to satisfy them.
 
 <br />
 
