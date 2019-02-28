@@ -9,15 +9,16 @@ class ToDoRouteResolver: QTRouteResolving {
     }
 
     func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
-        guard let fromVC = from as? UIViewController else { return }
-        if (route.id == AppRoute.id.ToDoDetail),
-            let todoId = input["todoId"] as? String,
-            let vc = StoryboardLoader.loadViewController(from: "ToDoDetail") as? ToDoDetailViewController {
-            vc.todoId = todoId
-            fromVC.navigationController?.pushViewController(vc, animated: true, completion: {
-                completion(vc)
-            })
-        }
+        guard
+            let fromVC = from as? UIViewController,
+            let vc = StoryboardLoader.loadViewController(from: route.id),
+            let vcRoutable = vc as? QTRoutable
+            else { return }
+
+        mergeInputDependencies(target: vcRoutable, input: input)
+        fromVC.navigationController?.pushViewController(vc, animated: true, completion: {
+            completion(vcRoutable)
+        })
     }
 
     func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {

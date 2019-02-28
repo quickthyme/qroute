@@ -137,9 +137,9 @@ invoking the completion handler will abort and cancel any remaining routing step
 ```
 resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: QTRoutableCompletion)
 ```
-The default implementation ignores the result and calls the completion handler passing the current routable,
-which should be sufficient most of the time. This event will be invoked in response to a `driveTo` event,
-whenever the `targetId` matches the `source`. †
+The default implementation ignores the result, but does merge input dependencies and calls the completion
+handler passing the current routable, which should be sufficient most of the time. This event will be invoked
+in response to a `driveTo` event, whenever the `targetId` matches the `source`. †
 
 You might choose to opt-in to this behavior in situations where you want/need to directly invoke
 a "refresh" or "re-route" on the current routable, or in cases where the target Id is uncertain.
@@ -149,6 +149,15 @@ to *itself*, in whatever which way that may be interpreted. If the navigation is
 invoke the `QTRoutableCompletion` block before exiting.
 
 **†** While performing a `driveSub()` against *self*, the driver will invoke `resolveRouteToChild()` instead.  
+
+
+**mergeInputDependencies()** *(Optional)*
+
+```
+mergeInputDependencies(target: QTRoutable, input: QTRoutableInput)
+```
+The default implementation merges only those values defined as one of the target route's dependencies.
+However, this is not called by default, so your custom `resolver` must invoke it when necessary.
 
 
 ### QTRoutableInput

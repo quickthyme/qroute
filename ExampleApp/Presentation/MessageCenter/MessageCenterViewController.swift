@@ -2,6 +2,7 @@
 import UIKit
 
 class MessageCenterViewController: UIViewController, QTRoutable {
+    var routeInput: QTRoutableInput?
     var routeResolver: QTRouteResolving?
     var routeDriver: QTRouteDriving?
 

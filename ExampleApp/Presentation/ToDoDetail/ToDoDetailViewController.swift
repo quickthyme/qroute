@@ -5,8 +5,10 @@ class ToDoDetailViewController: UIViewController, QTRoutable {
     var routeResolver: QTRouteResolving?
     var routeDriver: QTRouteDriving?
 
-    var todoId: String? {
-        didSet { self.navigationItem.title = "To-Do \(todoId ?? "?")" }
+    var routeInput: QTRoutableInput? {
+        didSet {
+            self.navigationItem.title = "Item \(routeInput?["toDoId"] as? Int ?? -1)"
+        }
     }
 
     @IBAction func contactUsNearAction(_ sender: AnyObject?) {

@@ -89,6 +89,8 @@
 		DCA6BEAF22251E2F009A2CF1 /* ContactUsRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEAD22251E2F009A2CF1 /* ContactUsRouteResolver.swift */; };
 		DCA6BEB122251E5D009A2CF1 /* ToDoDetailRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEB022251E5D009A2CF1 /* ToDoDetailRouteResolver.swift */; };
 		DCA6BEB222251E5D009A2CF1 /* ToDoDetailRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEB022251E5D009A2CF1 /* ToDoDetailRouteResolver.swift */; };
+		DCC508262227C64800804586 /* ToDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508252227C64800804586 /* ToDoTableViewManager.swift */; };
+		DCC508272227C64800804586 /* ToDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508252227C64800804586 /* ToDoTableViewManager.swift */; };
 		DCE836882221C37D00E714F8 /* QTRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571AE2221395F00C2B296 /* QTRouteTests.swift */; };
 		DCE836892221C38000E714F8 /* BDDTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */; };
 		DCE8368A2221C38400E714F8 /* MockRoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B622213A5D00C2B296 /* MockRoutePlan.swift */; };
@@ -157,6 +159,7 @@
 		DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Completion.swift"; sourceTree = "<group>"; };
 		DCA6BEAD22251E2F009A2CF1 /* ContactUsRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsRouteResolver.swift; sourceTree = "<group>"; };
 		DCA6BEB022251E5D009A2CF1 /* ToDoDetailRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailRouteResolver.swift; sourceTree = "<group>"; };
+		DCC508252227C64800804586 /* ToDoTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewManager.swift; sourceTree = "<group>"; };
 		DCE8367E2221C32F00E714F8 /* QTRouteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QTRouteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE836822221C32F00E714F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE836902221D2C500E714F8 /* ExampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +343,7 @@
 			children = (
 				DCA6BE7A2224FED3009A2CF1 /* ToDo.storyboard */,
 				DC4E06C022265DB700A69630 /* ToDoInjector.swift */,
+				DCC508252227C64800804586 /* ToDoTableViewManager.swift */,
 				DCA6BE7D2224FEE5009A2CF1 /* ToDoViewController.swift */,
 				DCA6BEA32225194C009A2CF1 /* ToDoRouteResolver.swift */,
 			);
@@ -586,6 +590,7 @@
 				DC4E06B5222656FC00A69630 /* ContactUsInjector.swift in Sources */,
 				DC4E06C822265F2000A69630 /* MessageCenterInjector.swift in Sources */,
 				DC7A67912225B1E400D60336 /* StoryboardLoader.swift in Sources */,
+				DCC508262227C64800804586 /* ToDoTableViewManager.swift in Sources */,
 				DC4E06BC22265A3100A69630 /* ToDoDetailInjector.swift in Sources */,
 				DC1F639F2220C1F7003842BB /* AppRoute.swift in Sources */,
 				DCA6BE822224FF26009A2CF1 /* ToDoDetailViewController.swift in Sources */,
@@ -639,6 +644,7 @@
 				DCA6BE9B222512BC009A2CF1 /* RootRouteResolver.swift in Sources */,
 				DCA6BE942225004B009A2CF1 /* MessageCenterViewController.swift in Sources */,
 				DC54494322264C9100578EC8 /* HelpViewControllerTests.swift in Sources */,
+				DCC508272227C64800804586 /* ToDoTableViewManager.swift in Sources */,
 				DC5449402226472600578EC8 /* UIViewControllerTestHelpers.swift in Sources */,
 				DCA6BE7F2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */,
 				DCA6BE972225043C009A2CF1 /* AppRoute.swift in Sources */,

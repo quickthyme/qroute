@@ -18,13 +18,13 @@ class ToDoViewControllerTests: XCTestCase {
                 XCTAssert(subject.routeResolver is ToDoRouteResolver)
                 XCTAssertEqual(subject.routeResolver?.route.id, AppRoute.id.ToDo)
             }
-            when("detail action") {
+            when("making selection") {
                 mockRouteDriver.reset()
-                subject.detailAction(nil)
-                then("it should drive to ToDoDetail with todoId input") {
+                subject.toDoTableViewManager(ToDoTableViewManager(), didSelectId: 36)
+                then("it should drive to ToDoDetail with toDoId input") {
                     XCTAssertEqual(mockRouteDriver.timesCalled_driveTo, 1)
                     XCTAssertEqual(mockRouteDriver.valueFor_driveTo_targetId, AppRoute.id.ToDoDetail)
-                    XCTAssertNotNil(mockRouteDriver.valueFor_driveTo_input?["todoId"])
+                    XCTAssertEqual(mockRouteDriver.valueFor_driveTo_input?["toDoId"] as? Int, 36)
                 }
             }
         }

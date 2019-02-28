@@ -2,11 +2,14 @@
 import UIKit
 
 class ToDoViewController: UIViewController, QTRoutable {
+    var routeInput: QTRoutableInput?
     var routeResolver: QTRouteResolving?
     var routeDriver: QTRouteDriving?
+}
 
-    @IBAction func detailAction(_ sender: AnyObject?) {
-        let id = sender?.tag ?? 0
-        routeDriver?.driveTo(AppRoute.id.ToDoDetail, from: self, input: ["todoId": "\(id)"], completion: nil)
+extension ToDoViewController: ToDoTableViewManagerDelegate {
+    func toDoTableViewManager(_ manager: ToDoTableViewManager, didSelectId id: Int) {
+        routeDriver?.driveTo(AppRoute.id.ToDoDetail, from: self,
+                             input: ["toDoId": id], completion: nil)
     }
 }

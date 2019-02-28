@@ -18,37 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og9-Fh-aju">
-                                <rect key="frame" x="44" y="108" width="287" height="35"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25074914380000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Item 1">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="66" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FmN-0P-Z5i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellReuseIdentifier" textLabel="tkx-lo-YpZ" style="IBUITableViewCellStyleDefault" id="vnP-FN-K35">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vnP-FN-K35" id="jmJ-rb-ZHq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tkx-lo-YpZ">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="65.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="detailAction:" destination="vPW-ju-6TJ" eventType="touchUpInside" id="Reg-Cx-yhU"/>
+                                    <outlet property="dataSource" destination="Jf7-bb-j8q" id="wDi-wC-pOC"/>
+                                    <outlet property="delegate" destination="Jf7-bb-j8q" id="eK3-dl-VOK"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bak-vC-vB2">
-                                <rect key="frame" x="44" y="170" width="287" height="35"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25074914380000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Item 2">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="detailAction:" destination="vPW-ju-6TJ" eventType="touchUpInside" id="4oq-gm-zYg"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="og9-Fh-aju" firstAttribute="leading" secondItem="vYx-Ys-owQ" secondAttribute="leading" constant="44" id="4Ln-GT-iae"/>
-                            <constraint firstItem="og9-Fh-aju" firstAttribute="top" secondItem="vYx-Ys-owQ" secondAttribute="top" constant="44" id="C2P-Mi-g8x"/>
-                            <constraint firstItem="bak-vC-vB2" firstAttribute="top" secondItem="og9-Fh-aju" secondAttribute="bottom" constant="27" id="IKM-4Y-8Y4"/>
-                            <constraint firstItem="bak-vC-vB2" firstAttribute="leading" secondItem="vYx-Ys-owQ" secondAttribute="leading" constant="44" id="OBg-Ly-DGR"/>
-                            <constraint firstItem="vYx-Ys-owQ" firstAttribute="trailing" secondItem="og9-Fh-aju" secondAttribute="trailing" constant="44" id="dQE-dl-iXq"/>
-                            <constraint firstItem="vYx-Ys-owQ" firstAttribute="trailing" secondItem="bak-vC-vB2" secondAttribute="trailing" constant="44" id="nVQ-Lp-RkH"/>
+                            <constraint firstItem="FmN-0P-Z5i" firstAttribute="leading" secondItem="vYx-Ys-owQ" secondAttribute="leading" id="Sd1-ef-34n"/>
+                            <constraint firstItem="vYx-Ys-owQ" firstAttribute="bottom" secondItem="FmN-0P-Z5i" secondAttribute="bottom" id="ZQk-EU-Ase"/>
+                            <constraint firstItem="vYx-Ys-owQ" firstAttribute="trailing" secondItem="FmN-0P-Z5i" secondAttribute="trailing" id="lmN-ri-kwl"/>
+                            <constraint firstItem="FmN-0P-Z5i" firstAttribute="top" secondItem="vYx-Ys-owQ" secondAttribute="top" id="szR-i5-6Pf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vYx-Ys-owQ"/>
                     </view>
@@ -59,6 +62,11 @@
                 <customObject id="l0C-zE-gzU" userLabel="ToDo Injector" customClass="ToDoInjector" customModule="ExampleApp" customModuleProvider="target">
                     <connections>
                         <outlet property="viewController" destination="vPW-ju-6TJ" id="ejQ-GT-YJh"/>
+                    </connections>
+                </customObject>
+                <customObject id="Jf7-bb-j8q" userLabel="ToDo Table View Manager" customClass="ToDoTableViewManager" customModule="ExampleApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="delegate" destination="vPW-ju-6TJ" id="LQw-2a-CrC"/>
                     </connections>
                 </customObject>
             </objects>
