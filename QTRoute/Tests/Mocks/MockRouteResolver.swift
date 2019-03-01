@@ -23,7 +23,7 @@ class MockRouteResolver: QTRouteResolving {
     var routeTrail: [QTRoute] = []
 
     func newMockRoutable(_ route: QTRoute) -> MockRoutable {
-        return MockRoutable(routeResolver: MockRouteResolver(clone: self, route: route))
+        return MockRoutable(MockRouteResolver(clone: self, route: route))
     }
 
     var timesCalled_resolveRouteToChild: Int = 0

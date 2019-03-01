@@ -2,7 +2,7 @@
 import UIKit
 import XCTest
 
-extension XCTest {
+extension XCTestCase {
 
     @discardableResult
     func given_view_controller_has_been_presented<Result>(_ viewController: UIViewController, block: () throws -> Result) rethrows -> Result {

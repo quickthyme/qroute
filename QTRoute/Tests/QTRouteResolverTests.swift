@@ -14,7 +14,7 @@ class QTRouteResolverTests: XCTestCase {
                                   toChild: stubResolvers.ToChild(),
                                   toParent: stubResolvers.ToParent(),
                                   toSelf: stubResolvers.ToSelf())
-        mockRoutable = MockRoutable(routeResolver: subject)
+        mockRoutable = MockRoutable(subject)
     }
 
     func testResolveRouteToParent() {
