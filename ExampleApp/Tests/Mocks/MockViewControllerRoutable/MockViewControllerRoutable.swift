@@ -46,11 +46,25 @@ class MockViewControllerRoutable: UIViewController, QTRoutable {
         set { _presentedViewController = newValue }
     }
 
+    var _presentingViewController: UIViewController?
+    override var presentingViewController: UIViewController? {
+        get { return _presentingViewController }
+    }
+
     var wasCalled_present: Bool = false
-    var valueFore_present_completion: (()->())?
     override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
         wasCalled_present = true
-        valueFore_present_completion = completion
         _presentedViewController = viewControllerToPresent
+        if let mockToPresent = viewControllerToPresent as? MockViewControllerRoutable {
+            mockToPresent._presentingViewController = self
+        }
+        completion?()
+    }
+
+    var wasCalled_dismiss: Bool = false
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        wasCalled_dismiss = true
+        _presentedViewController = nil
+        completion?()
     }
 }

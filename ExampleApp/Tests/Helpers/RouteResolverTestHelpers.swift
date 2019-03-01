@@ -1,6 +1,8 @@
 
 import XCTest
 
+class Captured<T> { var value: T? }
+
 extension XCTestCase {
 
     func expectationForRoutableCompletion(_ name: String = "") -> (XCTestExpectation, Captured<QTRoutable>, QTRoutableCompletion) {

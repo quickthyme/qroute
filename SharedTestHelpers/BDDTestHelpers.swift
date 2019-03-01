@@ -1,8 +1,6 @@
 
 import XCTest
 
-class Captured<T> { var value: T? }
-
 extension XCTestCase {
     @discardableResult
     func given<Result>(_ label: String, block: () throws -> Result) rethrows -> Result {

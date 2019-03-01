@@ -122,6 +122,8 @@
 		DCFDE7322228F92D0050F70E /* MockViewControllerRoutableInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */; };
 		DCFDE7342228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */; };
 		DCFDE7362229048B0050F70E /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7352229048B0050F70E /* MockNavigationController.swift */; };
+		DCFDE73822290F390050F70E /* ToParentDismissModalResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE73722290F390050F70E /* ToParentDismissModalResolverTests.swift */; };
+		DCFDE73922291F620050F70E /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7352229048B0050F70E /* MockNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +199,7 @@
 		DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerRoutableInjector.swift; sourceTree = "<group>"; };
 		DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardNavigationControllerPushResolverTests.swift; sourceTree = "<group>"; };
 		DCFDE7352229048B0050F70E /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
+		DCFDE73722290F390050F70E /* ToParentDismissModalResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentDismissModalResolverTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				DC54493B2226447A00578EC8 /* MockRouteDriver.swift */,
+				DCFDE7352229048B0050F70E /* MockNavigationController.swift */,
 				DCFDE7302228ED060050F70E /* MockViewControllerRoutable */,
 			);
 			path = Mocks;
@@ -519,6 +523,7 @@
 			children = (
 				DCFDE7212228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift */,
 				DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */,
+				DCFDE73722290F390050F70E /* ToParentDismissModalResolverTests.swift */,
 			);
 			path = Resolvers;
 			sourceTree = "<group>";
@@ -529,7 +534,6 @@
 				DCFDE72C2228EC9C0050F70E /* MockViewControllerRoutable.storyboard */,
 				DCFDE72A2228E8050050F70E /* MockViewControllerRoutable.swift */,
 				DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */,
-				DCFDE7352229048B0050F70E /* MockNavigationController.swift */,
 			);
 			path = MockViewControllerRoutable;
 			sourceTree = "<group>";
@@ -685,6 +689,7 @@
 				DC4E06BC22265A3100A69630 /* ToDoDetailInjector.swift in Sources */,
 				DCC508372227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */,
 				DCC5083A2227E39100804586 /* ToChildNoOpResolver.swift in Sources */,
+				DCFDE73922291F620050F70E /* MockNavigationController.swift in Sources */,
 				DC1F639F2220C1F7003842BB /* AppRoute.swift in Sources */,
 				DCA6BE822224FF26009A2CF1 /* ToDoDetailViewController.swift in Sources */,
 				DCA6BE782224FEC5009A2CF1 /* HelpViewController.swift in Sources */,
@@ -747,6 +752,7 @@
 				DCA6BE7F2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */,
 				DCFDE7322228F92D0050F70E /* MockViewControllerRoutableInjector.swift in Sources */,
 				DCA6BE972225043C009A2CF1 /* AppRoute.swift in Sources */,
+				DCFDE73822290F390050F70E /* ToParentDismissModalResolverTests.swift in Sources */,
 				DCA6BE9822250441009A2CF1 /* AppDelegate.swift in Sources */,
 				DC54493A2226439100578EC8 /* ContactUsViewControllerTests.swift in Sources */,
 				DC4E06C522265E2600A69630 /* ToDoViewControllerTests.swift in Sources */,

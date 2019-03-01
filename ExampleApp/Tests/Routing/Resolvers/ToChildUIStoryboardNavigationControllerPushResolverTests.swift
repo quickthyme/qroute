@@ -16,7 +16,6 @@ class ToChildUIStoryboardNavigationControllerPushResolverTests: XCTestCase {
             let target = QTRoute("MockViewControllerRoutable")
             let mockRoutable = MockViewControllerRoutable(QTRoute("source", target))
                 .inMockNavigationController
-                .inWindow
 
             when("executed") {
                 let (captured, completion) = captureRoutableCompletion()

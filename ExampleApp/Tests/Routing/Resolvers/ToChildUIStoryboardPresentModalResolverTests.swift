@@ -15,7 +15,6 @@ class ToChildUIStoryboardPresentModalResolverTests: XCTestCase {
         given("source, target, inputStream, animated, completion") {
             let target = QTRoute("MockViewControllerRoutable")
             let mockRoutable = MockViewControllerRoutable(QTRoute("source", target))
-                .inMockNavigationController
                 .inWindow
 
             when("executed") {
@@ -25,14 +24,10 @@ class ToChildUIStoryboardPresentModalResolverTests: XCTestCase {
                 then("it should have presented a view controller") {
                     XCTAssertTrue(mockRoutable.wasCalled_present)
                     XCTAssertNotNil(mockRoutable.presentedViewController)
+                }
 
-                    when("it completes the presentation transition") {
-                        mockRoutable.valueFore_present_completion?()
-
-                        then("it should have called the completion handler with correct routable") {
-                            XCTAssertEqual(captured.value?.routeResolver?.route, target)
-                        }
-                    }
+                then("it should have called the completion handler with correct routable") {
+                    XCTAssertEqual(captured.value?.routeResolver?.route, target)
                 }
             }
         }
