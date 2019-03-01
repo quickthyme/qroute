@@ -15,7 +15,7 @@ class ToChildUIStoryboardPresentModalResolverTests: XCTestCase {
         given("source, target, inputStream, animated, completion") {
             let target = QTRoute("MockViewControllerRoutable")
             let mockRoutable = MockViewControllerRoutable(QTRoute("source", target))
-                .inWindow
+                .embeddedInWindow
 
             when("executed") {
                 let (captured, completion) = captureRoutableCompletion()

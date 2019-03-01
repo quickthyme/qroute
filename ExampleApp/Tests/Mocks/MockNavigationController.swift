@@ -29,6 +29,10 @@ class MockNavigationController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void) {
         navigationStack.insert(viewController, at: 0)
         viewController.view.frame = self.view.bounds
+        self.view.addSubview(viewController.view)
+        if let mockVC = viewController as? MockViewController {
+            mockVC.mockNavigationController = self
+        }
         completion()
     }
 
@@ -38,6 +42,7 @@ class MockNavigationController: UINavigationController {
 
     override func popViewController(animated: Bool, completion: @escaping () -> Void) -> UIViewController? {
         let vc = navigationStack.remove(at: 0)
+        vc.view.removeFromSuperview()
         completion()
         return vc
     }
@@ -49,6 +54,7 @@ class MockNavigationController: UINavigationController {
     override func popToRootViewController(animated: Bool, completion: @escaping () -> Void) -> [UIViewController]? {
         let vcs = Array<UIViewController>(navigationStack.dropFirst())
         navigationStack = [navigationStack.first!]
+        for vc in vcs { vc.view.removeFromSuperview() }
         completion()
         return vcs
     }
