@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC1E3C9C2228A26F0080C4A2 /* QTRouteResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */; };
 		DC1E3C9D2228A2C20080C4A2 /* QTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */; };
+		DC1E3CA02228C3A80080C4A2 /* StubResolvers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E3C9F2228C3A80080C4A2 /* StubResolvers.swift */; };
 		DC1F63882220BC63003842BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63872220BC63003842BB /* AppDelegate.swift */; };
 		DC1F638A2220BC63003842BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* RootViewController.swift */; };
 		DC1F638D2220BC63003842BB /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Root.storyboard */; };
@@ -116,6 +117,7 @@
 
 /* Begin PBXFileReference section */
 		DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTests.swift; sourceTree = "<group>"; };
+		DC1E3C9F2228C3A80080C4A2 /* StubResolvers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubResolvers.swift; sourceTree = "<group>"; };
 		DC1F63842220BC63003842BB /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1F63872220BC63003842BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC1F63892220BC63003842BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				DC54492C222615C300578EC8 /* MockRoutable.swift */,
 				DC4571B622213A5D00C2B296 /* MockRoutePlan.swift */,
 				DC9A7BD92223D1E000CC080C /* MockRouteResolver.swift */,
+				DC1E3C9F2228C3A80080C4A2 /* StubResolvers.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE836892221C38000E714F8 /* BDDTestHelpers.swift in Sources */,
+				DC1E3CA02228C3A80080C4A2 /* StubResolvers.swift in Sources */,
 				DCE8368B2221C38E00E714F8 /* QTRoute.swift in Sources */,
 				DC1E3C9C2228A26F0080C4A2 /* QTRouteResolverTests.swift in Sources */,
 				DC9A7BDA2223D1E000CC080C /* MockRouteResolver.swift in Sources */,

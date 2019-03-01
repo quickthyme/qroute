@@ -3,16 +3,16 @@ protocol QTRouteResolving: class {
 
     // required
     var route: QTRoute { get }
-    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion)
-    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion)
+    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, animated: Bool, completion: @escaping QTRoutableCompletion)
+    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, animated:Bool, completion: @escaping QTRoutableCompletion)
 
     // optional
-    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion)
+    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, animated: Bool, completion: @escaping QTRoutableCompletion)
     static func mergeInputDependencies(target: QTRoutable, input: QTRoutableInput)
 }
 
 extension QTRouteResolving {
-    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, animated: Bool, completion: @escaping QTRoutableCompletion) {
         Self.mergeInputDependencies(target: from, input: input)
         completion(from)
     }

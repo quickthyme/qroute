@@ -1,8 +1,8 @@
 
 class QTRouteResolver: QTRouteResolving {
-    typealias ToChild  = (QTRoute, QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
-    typealias ToParent = (QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
-    typealias ToSelf   = (QTRoutable, QTRoutableInput, @escaping QTRoutableCompletion) -> ()
+    typealias ToChild  = (QTRoute, QTRoutable, QTRoutableInput, Bool, @escaping QTRoutableCompletion) -> ()
+    typealias ToParent = (QTRoutable, QTRoutableInput, Bool, @escaping QTRoutableCompletion) -> ()
+    typealias ToSelf   = (QTRoutable, QTRoutableInput, Bool, @escaping QTRoutableCompletion) -> ()
 
     var route: QTRoute
     private let toChild: ToChild
@@ -20,22 +20,25 @@ class QTRouteResolver: QTRouteResolving {
     }
 
     func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput,
+                             animated: Bool,
                              completion: @escaping QTRoutableCompletion) {
-        toChild(route, from, input, completion)
+        toChild(route, from, input, animated, completion)
     }
 
     func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput,
+                              animated: Bool,
                               completion: @escaping QTRoutableCompletion) {
-        toParent(from, input, completion)
+        toParent(from, input, animated, completion)
     }
 
     func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput,
+                            animated: Bool,
                             completion: @escaping QTRoutableCompletion) {
-        toSelf(from, input, completion)
+        toSelf(from, input, animated, completion)
     }
 
     private static var defaultToSelf: ToSelf {
-        return { from,input,completion in
+        return { from,input,_,completion in
             QTRouteResolver.mergeInputDependencies(target: from, input: input)
             completion(from)
         }

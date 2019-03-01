@@ -28,7 +28,7 @@ class MockRouteResolver: QTRouteResolving {
 
     var timesCalled_resolveRouteToChild: Int = 0
     var valueFor_resolveRouteToChild_input: QTRoutableInput = [:]
-    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToChild(_ route: QTRoute, from: QTRoutable, input: QTRoutableInput, animated: Bool, completion: @escaping QTRoutableCompletion) {
         timesCalled_resolveRouteToChild += 1
         valueFor_resolveRouteToChild_input = input
         routeTrail.append(route)
@@ -37,7 +37,7 @@ class MockRouteResolver: QTRouteResolving {
 
     var timesCalled_resolveRouteToParent: Int = 0
     var valueFor_resolveRouteToParent_input: QTRoutableInput = [:]
-    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput, animated: Bool, completion: @escaping QTRoutableCompletion) {
         timesCalled_resolveRouteToParent += 1
         valueFor_resolveRouteToParent_input = input
         guard let parent = from.routeResolver?.route.parent else { XCTFail("Tried to navigate out of bounds"); return }
@@ -47,7 +47,7 @@ class MockRouteResolver: QTRouteResolving {
 
     var timesCalled_resolveRouteToSelf: Int = 0
     var valueFor_resolveRouteToSelf_input: QTRoutableInput = [:]
-    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, completion: @escaping QTRoutableCompletion) {
+    func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, animated: Bool, completion: @escaping QTRoutableCompletion) {
         timesCalled_resolveRouteToSelf += 1
         valueFor_resolveRouteToSelf_input = input
         routeTrail.append(from.routeResolver!.route)

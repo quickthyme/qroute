@@ -3,17 +3,24 @@ class MockRouteDriver: QTRouteDriving {
 
     func reset() {
         timesCalled_driveParent = 0
+        valueFor_driveParent_input = nil
+
         timesCalled_driveSub = 0
         valueFor_driveSub_targetId = nil
+        valueFor_driveSub_input = nil
+
         timesCalled_driveTo = 0
         valueFor_driveTo_targetId = nil
+        valueFor_driveTo_input = nil
     }
 
     var timesCalled_driveParent: Int = 0
     var valueFor_driveParent_input: QTRoutableInput?
     var valueFor_driveParent_completion: QTRoutableCompletion?
 
-    func driveParent(from source: QTRoutable, input: QTRoutableInput?, completion: QTRoutableCompletion?) {
+    func driveParent(from source: QTRoutable, input: QTRoutableInput?,
+                     animated: Bool,
+                     completion: QTRoutableCompletion?) {
         timesCalled_driveParent += 1
         valueFor_driveParent_input = input
         valueFor_driveParent_completion = completion
@@ -25,7 +32,9 @@ class MockRouteDriver: QTRouteDriving {
     var valueFor_driveSub_input: QTRoutableInput?
     var valueFor_driveSub_completion: QTRoutableCompletion?
 
-    func driveSub(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?, completion: QTRoutableCompletion?) {
+    func driveSub(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?,
+                  animated: Bool,
+                  completion: QTRoutableCompletion?) {
         timesCalled_driveSub += 1
         valueFor_driveSub_targetId = targetId
         valueFor_driveSub_input = input
@@ -38,7 +47,9 @@ class MockRouteDriver: QTRouteDriving {
     var valueFor_driveTo_input: QTRoutableInput?
     var valueFor_driveTo_completion: QTRoutableCompletion?
 
-    func driveTo(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?, completion: QTRoutableCompletion?) {
+    func driveTo(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?,
+                 animated: Bool,
+                 completion: QTRoutableCompletion?) {
         timesCalled_driveTo += 1
         valueFor_driveTo_targetId = targetId
         valueFor_driveTo_input = input

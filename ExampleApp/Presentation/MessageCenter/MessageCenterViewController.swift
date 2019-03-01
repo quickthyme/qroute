@@ -7,6 +7,8 @@ class MessageCenterViewController: UIViewController, QTRoutable {
     var routeDriver: QTRouteDriving?
 
     @IBAction func playAction(_ sender: AnyObject?) {
-        routeDriver?.driveSub(routeResolver!.route.id, from: self, input: nil, completion: nil)
+        routeDriver?.driveSub(routeResolver!.route.id, from: self, input: nil,
+                              animated: true,
+                              completion: nil)
     }
 }

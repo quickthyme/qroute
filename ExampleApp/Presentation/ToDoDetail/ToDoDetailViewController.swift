@@ -12,10 +12,14 @@ class ToDoDetailViewController: UIViewController, QTRoutable {
     }
 
     @IBAction func contactUsNearAction(_ sender: AnyObject?) {
-        routeDriver?.driveSub(AppRoute.id.ContactUs, from: self, input: nil, completion: nil)
+        routeDriver?.driveSub(AppRoute.id.ContactUs, from: self, input: nil,
+                              animated: true,
+                              completion: nil)
     }
 
     @IBAction func contactUsFarAction(_ sender: AnyObject?) {
-        routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, input: nil, completion: nil)
+        routeDriver?.driveTo(AppRoute.id.ContactUs, from: self, input: nil,
+                             animated: true,
+                             completion: nil)
     }
 }

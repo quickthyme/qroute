@@ -9,7 +9,10 @@ class ToDoViewController: UIViewController, QTRoutable {
 
 extension ToDoViewController: ToDoTableViewManagerDelegate {
     func toDoTableViewManager(_ manager: ToDoTableViewManager, didSelectId id: Int) {
-        routeDriver?.driveTo(AppRoute.id.ToDoDetail, from: self,
-                             input: ["toDoId": id], completion: nil)
+        routeDriver?.driveTo(AppRoute.id.ToDoDetail,
+                             from: self,
+                             input: ["toDoId": id],
+                             animated: true,
+                             completion: nil)
     }
 }
