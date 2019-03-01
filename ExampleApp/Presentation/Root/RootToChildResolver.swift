@@ -7,15 +7,22 @@ private let RouteTab: [QTRouteId:Int] = [
 ]
 
 func RootToChildResolver() -> QTRouteResolver.ToChild {
-    return { route, from, input, completion in
-        guard let rootVC = from as? RootViewController,
-            let rootTabBarController = rootVC.rootTabBarController else { return /* abort */ }
+    return {
+        route, from, input, animated, completion in
 
-        if let index = RouteTab[route.id] {
-            rootTabBarController.selectedIndex = index
-            if let navWrapper = rootTabBarController.selectedViewController as? UINavigationController {
-                navWrapper.popToRootViewController(animated: false)
+        guard
+            let rootVC = from as? RootViewController,
+            let rootTabBarController = rootVC.rootTabBarController,
+            let index = RouteTab[route.id]
+            else { return /* abort */ }
+
+        rootTabBarController.selectedIndex = index
+
+        if let navWrapper = rootTabBarController.selectedViewController as? UINavigationController {
+            navWrapper.popToRootViewController(animated: animated) {
+
                 if let routable = navWrapper.topViewController as? QTRoutable {
+                    QTRouteResolver.mergeInputDependencies(target: routable, input: input)
                     completion(routable)
                 }
             }
@@ -24,7 +31,7 @@ func RootToChildResolver() -> QTRouteResolver.ToChild {
 }
 
 func RootToParentResolver() -> QTRouteResolver.ToParent {
-    return { _, _, _ in
+    return { _, _, _, _ in
         assertionFailure("cannot route beyond root!")
     }
 }
