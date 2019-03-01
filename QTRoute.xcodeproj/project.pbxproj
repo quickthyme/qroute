@@ -113,6 +113,15 @@
 		DCE836A72221D5D000E714F8 /* QTRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE836A52221D5D000E714F8 /* QTRoutable.swift */; };
 		DCE836A82221D5D000E714F8 /* QTRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE836A52221D5D000E714F8 /* QTRoutable.swift */; };
 		DCE836B1222337A500E714F8 /* QTRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F639C2220C169003842BB /* QTRoute.swift */; };
+		DCFDE7222228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7212228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift */; };
+		DCFDE7272228E2AD0050F70E /* RouteResolverTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7262228E2AD0050F70E /* RouteResolverTestHelpers.swift */; };
+		DCFDE7282228E6890050F70E /* MockRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54492C222615C300578EC8 /* MockRoutable.swift */; };
+		DCFDE7292228E6AB0050F70E /* MockRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD92223D1E000CC080C /* MockRouteResolver.swift */; };
+		DCFDE72B2228E8050050F70E /* MockViewControllerRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE72A2228E8050050F70E /* MockViewControllerRoutable.swift */; };
+		DCFDE72D2228EC9C0050F70E /* MockViewControllerRoutable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFDE72C2228EC9C0050F70E /* MockViewControllerRoutable.storyboard */; };
+		DCFDE7322228F92D0050F70E /* MockViewControllerRoutableInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */; };
+		DCFDE7342228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */; };
+		DCFDE7362229048B0050F70E /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7352229048B0050F70E /* MockNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,6 +190,13 @@
 		DCE8369B2221D33C00E714F8 /* AppRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouteTests.swift; sourceTree = "<group>"; };
 		DCE836A12221D5C200E714F8 /* QTRouteDriving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteDriving.swift; sourceTree = "<group>"; };
 		DCE836A52221D5D000E714F8 /* QTRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRoutable.swift; sourceTree = "<group>"; };
+		DCFDE7212228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardPresentModalResolverTests.swift; sourceTree = "<group>"; };
+		DCFDE7262228E2AD0050F70E /* RouteResolverTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteResolverTestHelpers.swift; sourceTree = "<group>"; };
+		DCFDE72A2228E8050050F70E /* MockViewControllerRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerRoutable.swift; sourceTree = "<group>"; };
+		DCFDE72C2228EC9C0050F70E /* MockViewControllerRoutable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MockViewControllerRoutable.storyboard; sourceTree = "<group>"; };
+		DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerRoutableInjector.swift; sourceTree = "<group>"; };
+		DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardNavigationControllerPushResolverTests.swift; sourceTree = "<group>"; };
+		DCFDE7352229048B0050F70E /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				DC54493F2226472600578EC8 /* UIViewControllerTestHelpers.swift */,
+				DCFDE7262228E2AD0050F70E /* RouteResolverTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -453,6 +470,7 @@
 				DC54493E222646DD00578EC8 /* Helpers */,
 				DCE8369E2221D34F00E714F8 /* Mocks */,
 				DCE8369A2221D30E00E714F8 /* Presentation */,
+				DCFDE71F2228DB170050F70E /* Routing */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -460,7 +478,6 @@
 		DCE8369A2221D30E00E714F8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				DCE8369B2221D33C00E714F8 /* AppRouteTests.swift */,
 				DC5449372226437500578EC8 /* ContactUs */,
 				DC54494122264C7900578EC8 /* Help */,
 				DC4E06CF2226611100A69630 /* Root */,
@@ -475,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				DC54493B2226447A00578EC8 /* MockRouteDriver.swift */,
+				DCFDE7302228ED060050F70E /* MockViewControllerRoutable */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -485,6 +503,35 @@
 				DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */,
 			);
 			path = SharedTestHelpers;
+			sourceTree = "<group>";
+		};
+		DCFDE71F2228DB170050F70E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				DCE8369B2221D33C00E714F8 /* AppRouteTests.swift */,
+				DCFDE7202228DB2F0050F70E /* Resolvers */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		DCFDE7202228DB2F0050F70E /* Resolvers */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDE7212228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift */,
+				DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */,
+			);
+			path = Resolvers;
+			sourceTree = "<group>";
+		};
+		DCFDE7302228ED060050F70E /* MockViewControllerRoutable */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDE72C2228EC9C0050F70E /* MockViewControllerRoutable.storyboard */,
+				DCFDE72A2228E8050050F70E /* MockViewControllerRoutable.swift */,
+				DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */,
+				DCFDE7352229048B0050F70E /* MockNavigationController.swift */,
+			);
+			path = MockViewControllerRoutable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -614,6 +661,7 @@
 				DCA6BE9E222513A5009A2CF1 /* Help.storyboard in Resources */,
 				DCA6BE862224FF30009A2CF1 /* ToDoDetail.storyboard in Resources */,
 				DCA6BE9D2225139B009A2CF1 /* Root.storyboard in Resources */,
+				DCFDE72D2228EC9C0050F70E /* MockViewControllerRoutable.storyboard in Resources */,
 				DCA6BE912224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */,
 				DCA6BE8A2224FFB7009A2CF1 /* ContactUs.storyboard in Resources */,
 			);
@@ -694,14 +742,17 @@
 				DCA6BE942225004B009A2CF1 /* MessageCenterViewController.swift in Sources */,
 				DC54494322264C9100578EC8 /* HelpViewControllerTests.swift in Sources */,
 				DCC508272227C64800804586 /* ToDoTableViewManager.swift in Sources */,
+				DCFDE7282228E6890050F70E /* MockRoutable.swift in Sources */,
 				DC5449402226472600578EC8 /* UIViewControllerTestHelpers.swift in Sources */,
 				DCA6BE7F2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */,
+				DCFDE7322228F92D0050F70E /* MockViewControllerRoutableInjector.swift in Sources */,
 				DCA6BE972225043C009A2CF1 /* AppRoute.swift in Sources */,
 				DCA6BE9822250441009A2CF1 /* AppDelegate.swift in Sources */,
 				DC54493A2226439100578EC8 /* ContactUsViewControllerTests.swift in Sources */,
 				DC4E06C522265E2600A69630 /* ToDoViewControllerTests.swift in Sources */,
 				DCC5082F2227DA9700804586 /* ToParentAppRouteRootResolver.swift in Sources */,
 				DCC508382227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */,
+				DCFDE7342228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift in Sources */,
 				DCA6BEAC22251C12009A2CF1 /* UINavigationController+Completion.swift in Sources */,
 				DCA6BE962225032C009A2CF1 /* QTRouteDriver.swift in Sources */,
 				DCA6BEA222251401009A2CF1 /* HelpToChildResolver.swift in Sources */,
@@ -710,14 +761,18 @@
 				DC7A67922225B1E400D60336 /* StoryboardLoader.swift in Sources */,
 				DC4E06CB22265FEF00A69630 /* MessageCenterViewControllerTests.swift in Sources */,
 				DC9A7BD42223A88900CC080C /* QTRoutePath.swift in Sources */,
+				DCFDE72B2228E8050050F70E /* MockViewControllerRoutable.swift in Sources */,
 				DCE8369C2221D33C00E714F8 /* AppRouteTests.swift in Sources */,
 				DC4E06C722265F2000A69630 /* MessageCenterInjector.swift in Sources */,
 				DC54492B222611A800578EC8 /* QTRouteResolving.swift in Sources */,
 				DC54493D2226447A00578EC8 /* MockRouteDriver.swift in Sources */,
 				DCE836A82221D5D000E714F8 /* QTRoutable.swift in Sources */,
+				DCFDE7292228E6AB0050F70E /* MockRouteResolver.swift in Sources */,
+				DCFDE7362229048B0050F70E /* MockNavigationController.swift in Sources */,
 				DC4E06B92226593D00A69630 /* HelpInjector.swift in Sources */,
 				DCA6BE9F222513A5009A2CF1 /* HelpViewController.swift in Sources */,
 				DC4E06CD2226602500A69630 /* RootInjector.swift in Sources */,
+				DCFDE7272228E2AD0050F70E /* RouteResolverTestHelpers.swift in Sources */,
 				DCE836B1222337A500E714F8 /* QTRoute.swift in Sources */,
 				DCA6BE8D2224FFC7009A2CF1 /* ContactUsViewController.swift in Sources */,
 				DC4E06B62226570000A69630 /* ContactUsInjector.swift in Sources */,
@@ -730,6 +785,7 @@
 				DCE836A42221D5C200E714F8 /* QTRouteDriving.swift in Sources */,
 				DC4E06BB22265A3100A69630 /* ToDoDetailInjector.swift in Sources */,
 				DCC5083E2227E42E00804586 /* ToParentDismissModalResolver.swift in Sources */,
+				DCFDE7222228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift in Sources */,
 				DCC5082C2227D5ED00804586 /* QTRouteResolver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

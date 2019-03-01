@@ -1,7 +1,9 @@
 
 import XCTest
 
-extension XCTest {
+class Captured<T> { var value: T? }
+
+extension XCTestCase {
     @discardableResult
     func given<Result>(_ label: String, block: () throws -> Result) rethrows -> Result {
         return try XCTContext.runActivity(named: "GIVEN \(label)") { _ in try block() }

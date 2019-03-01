@@ -13,7 +13,7 @@ class QTRouteDriverTests: XCTestCase {
         given("routable for route with no parent or children") {
             let marco = QTRoute("marco")
             let mockRouteResolver = MockRouteResolver(marco)
-            let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+            let mockRoutable = MockRoutable(mockRouteResolver)
 
             when("trying to route to non-existent route") {
                 let expectComplete = expectation(description: "complete")
@@ -44,7 +44,7 @@ class QTRouteDriverTests: XCTestCase {
 
             when("pabst routes to grumpy") {
                 let mockRouteResolver = MockRouteResolver(pabst)
-                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+                let mockRoutable = MockRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
                 var finalResolver: MockRouteResolver? = mockRouteResolver
 
@@ -65,7 +65,7 @@ class QTRouteDriverTests: XCTestCase {
 
             when("pabst routes to sissy") {
                 let mockRouteResolver = MockRouteResolver(pabst)
-                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+                let mockRoutable = MockRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
                 var finalResolver: MockRouteResolver? = mockRouteResolver
 
@@ -86,7 +86,7 @@ class QTRouteDriverTests: XCTestCase {
 
             when("pabst routes to self") {
                 let mockRouteResolver = MockRouteResolver(pabst)
-                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+                let mockRoutable = MockRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
                 var finalResolver: MockRouteResolver? = mockRouteResolver
 
@@ -107,7 +107,7 @@ class QTRouteDriverTests: XCTestCase {
 
             when("grumpy routes to sissy") {
                 let mockRouteResolver = MockRouteResolver(grumpy)
-                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+                let mockRoutable = MockRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
                 var finalResolver: MockRouteResolver? = mockRouteResolver
 
@@ -129,7 +129,7 @@ class QTRouteDriverTests: XCTestCase {
 
             when("sissy routes to grumpy") {
                 let mockRouteResolver = MockRouteResolver(sissy)
-                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+                let mockRoutable = MockRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
                 var finalResolver: MockRouteResolver? = mockRouteResolver
 
@@ -161,7 +161,7 @@ class QTRouteDriverTests: XCTestCase {
 
             when("routing 'To-Do Edit Image' to 'Message Center'") {
                 let mockRouteResolver = MockRouteResolver(toDoEditImage)
-                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+                let mockRoutable = MockRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
                 var finalResolver: MockRouteResolver? = mockRouteResolver
 
@@ -191,7 +191,7 @@ class QTRouteDriverTests: XCTestCase {
 
             when("substitute routing 'To-Do Detail' to 'Message Center'") {
                 let mockRouteResolver = MockRouteResolver(toDoDetail)
-                let mockRoutable = MockRoutable(routeResolver: mockRouteResolver)
+                let mockRoutable = MockRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
                 var landingRoutable: MockRoutable?
                 var finalResolver: MockRouteResolver? = mockRouteResolver
