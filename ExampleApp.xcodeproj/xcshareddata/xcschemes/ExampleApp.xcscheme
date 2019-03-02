@@ -51,6 +51,13 @@
             BlueprintName = "ExampleAppTests"
             ReferencedContainer = "container:ExampleApp.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DCE8367D2221C32F00E714F8"
+            BuildableName = "QTRouteTests.xctest"
+            BlueprintName = "QTRouteTests"
+            ReferencedContainer = "container:QTRoute.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
@@ -61,6 +68,16 @@
                BuildableName = "ExampleAppTests.xctest"
                BlueprintName = "ExampleAppTests"
                ReferencedContainer = "container:ExampleApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DCE8367D2221C32F00E714F8"
+               BuildableName = "QTRouteTests.xctest"
+               BlueprintName = "QTRouteTests"
+               ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

@@ -55,7 +55,7 @@ Quick Overview
             .navigationController?
             .popViewController(animated: true) {
                 if let parent = navController.topViewController as? QTRoutable {
-                    mergeInputDependencies(target: routable, input: input)
+                    mergeInputDependencies(target: parent, input: input)
                     completion(parent)
                 }}
 	}
