@@ -14,12 +14,12 @@
 
 Quick Overview
 
-  1. Import the *QTRoute* folder into your project.
+  1. Copy the *QTRoute* folder into your project.
 
   2. Compose a *route plan*:
 
 ```
-	let plan: QTRoute =
+	let plan =
 	    QTRoute(id.Root,
 	        QTRoute(id.ToDo,
 	            QTRoute(id.ToDoDetail,
@@ -29,20 +29,44 @@ Quick Overview
 	        QTRoute(id.MessageCenter)))
 ```
 
-  3. Implement your *routables* and custom *resolvers*:
+  3. Implement your *routables*:
+
+```
+    class ContactUsViewController: UIViewController, QTRoutable {
+        var routeInput: QTRoutableInput?
+        var routeResolver: QTRouteResolving?
+    }
+```
+  
+  4. Implement your custom *resolvers*:
 
 ```
 	func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput,
 	                          completion: @escaping QTRoutableCompletion) {
-	    guard let vc = from as? UIViewController,
-	        let navController = vc.navigationController else { return }
-	    navController.popViewController(animated: true) {
-	        if let parent = navController.topViewController as? QTRoutable {
-	            completion(parent)
-	        }
-	    }
+	    
+        (from as? UIViewController)?
+            .navigationController?
+            .popViewController(animated: true) {
+                if let parent = navController.topViewController as? QTRoutable {
+                    mergeInputDependencies(target: routable, input: input)
+                    completion(parent)
+                }}
 	}
 ```
+
+  5. Invoke the *driver*:
+
+```
+    var routeDriver: QTRouteDriving?
+
+    @IBAction func dismissAction(_ sender: AnyObject?) {
+        routeDriver?.driveParent(from: self, input: nil,
+                                 animated: true,
+                                 completion: nil)
+        }
+    }
+```
+
 
 <br />
 
@@ -71,6 +95,7 @@ This protocol is to be implemented by the view controller (or presenter, etc) fo
 is not provided for you, the included ExampleApp contains several view controller examples.
 
 **routeResolver: QTRouteResolving** *(Required)*
+**routeInput: QTRouteInput** *(Required)*
 
 <br />
 

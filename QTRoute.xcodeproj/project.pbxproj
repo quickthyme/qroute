@@ -24,6 +24,9 @@
 		DC23AC47222996E100A00D40 /* QTRouteDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD72223D0CA00CC080C /* QTRouteDriverTests.swift */; };
 		DC23AC482229972300A00D40 /* MockRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD92223D1E000CC080C /* MockRouteResolver.swift */; };
 		DC23AC492229973B00A00D40 /* MockRoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B622213A5D00C2B296 /* MockRoutePlan.swift */; };
+		DC23AC51222A2BDA00A00D40 /* QTRouteDriverStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */; };
+		DC23AC52222A2BDA00A00D40 /* QTRouteDriverStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */; };
+		DC23AC53222A2BDA00A00D40 /* QTRouteDriverStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */; };
 		DC4E06B5222656FC00A69630 /* ContactUsInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06B4222656FC00A69630 /* ContactUsInjector.swift */; };
 		DC4E06B62226570000A69630 /* ContactUsInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06B4222656FC00A69630 /* ContactUsInjector.swift */; };
 		DC4E06B82226593D00A69630 /* HelpInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06B72226593D00A69630 /* HelpInjector.swift */; };
@@ -142,6 +145,7 @@
 		DC1F639E2220C1F7003842BB /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		DC23AC412229896300A00D40 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		DC23AC432229922600A00D40 /* ToParentNavigationControllerPopResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentNavigationControllerPopResolverTests.swift; sourceTree = "<group>"; };
+		DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteDriverStep.swift; sourceTree = "<group>"; };
 		DC4571AE2221395F00C2B296 /* QTRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteTests.swift; sourceTree = "<group>"; };
 		DC4571B622213A5D00C2B296 /* MockRoutePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoutePlan.swift; sourceTree = "<group>"; };
 		DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDDTestHelpers.swift; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				DCE836A52221D5D000E714F8 /* QTRoutable.swift */,
 				DCE836A12221D5C200E714F8 /* QTRouteDriving.swift */,
 				DC9A7BD52223CC5E00CC080C /* QTRouteDriver.swift */,
+				DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */,
 				DC544929222611A800578EC8 /* QTRouteResolving.swift */,
 				DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */,
 				DC4571AD2221395F00C2B296 /* Tests */,
@@ -712,6 +717,7 @@
 				DCC508312227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */,
 				DC1F63882220BC63003842BB /* AppDelegate.swift in Sources */,
 				DCA6BE8C2224FFC7009A2CF1 /* ContactUsViewController.swift in Sources */,
+				DC23AC51222A2BDA00A00D40 /* QTRouteDriverStep.swift in Sources */,
 				DCA6BEA122251401009A2CF1 /* HelpToChildResolver.swift in Sources */,
 				DC4E06B82226593D00A69630 /* HelpInjector.swift in Sources */,
 				DC54492A222611A800578EC8 /* QTRouteResolving.swift in Sources */,
@@ -732,6 +738,7 @@
 				DC54492F222615CA00578EC8 /* MockRoutable.swift in Sources */,
 				DCE836A72221D5D000E714F8 /* QTRoutable.swift in Sources */,
 				DC1E3C9D2228A2C20080C4A2 /* QTRouteResolver.swift in Sources */,
+				DC23AC52222A2BDA00A00D40 /* QTRouteDriverStep.swift in Sources */,
 				DC9A7BD22223677000CC080C /* QTRoutePath.swift in Sources */,
 				DCE836882221C37D00E714F8 /* QTRouteTests.swift in Sources */,
 				DC9A7BD82223D0CA00CC080C /* QTRouteDriverTests.swift in Sources */,
@@ -770,6 +777,7 @@
 				DCE836A02221D3A300E714F8 /* BDDTestHelpers.swift in Sources */,
 				DC7A67922225B1E400D60336 /* StoryboardLoader.swift in Sources */,
 				DC4E06CB22265FEF00A69630 /* MessageCenterViewControllerTests.swift in Sources */,
+				DC23AC53222A2BDA00A00D40 /* QTRouteDriverStep.swift in Sources */,
 				DC9A7BD42223A88900CC080C /* QTRoutePath.swift in Sources */,
 				DC23AC422229896300A00D40 /* MockViewController.swift in Sources */,
 				DC23AC47222996E100A00D40 /* QTRouteDriverTests.swift in Sources */,

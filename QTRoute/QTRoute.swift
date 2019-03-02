@@ -22,7 +22,7 @@ class QTRoute {
         self.routes = routes.map { $0.applyParent(self) }
     }
 
-    private func applyParent(_ parent: QTRoute) -> Self {
+    func applyParent(_ parent: QTRoute) -> Self {
         self.parent = parent
         return self
     }
