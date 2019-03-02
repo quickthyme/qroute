@@ -14,7 +14,10 @@
 
 Quick Overview
 
-  1. Copy the *QTRoute* folder into your project.
+  1. Clone the repo or add it as a submodule. Once you have that:
+
+      - The QTRoute project builds the static library
+      - The ExampleApp project demonstrates its use
 
   2. Compose a *route plan*:
 

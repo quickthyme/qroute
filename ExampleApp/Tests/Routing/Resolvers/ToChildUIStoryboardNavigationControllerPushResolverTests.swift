@@ -1,10 +1,11 @@
 
 import XCTest
 import UIKit
+import QTRoute
 
 class ToChildUIStoryboardNavigationControllerPushResolverTests: XCTestCase {
 
-    let subject: QTRouteResolver.ToChild = ToChildUIStoryboardNavigationControllerPushResolver()
+    let subject: QTRouteResolver.ActionType.ToChild = ToChildUIStoryboardNavigationControllerPushResolver()
     let inputStream: QTRoutableInput = [
         "somethingForSusan":"123.45.678.910.11.12",
         "somethingForBruce":[1,-1]

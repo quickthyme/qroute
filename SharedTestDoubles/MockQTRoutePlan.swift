@@ -1,5 +1,7 @@
 
-func MockRoutePlan() -> QTRoute {
+import QTRoute
+
+public func MockQTRoutePlan() -> QTRoute {
     return
         QTRoute("Root",
               QTRoute("Log",

@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC1F63832220BC63003842BB"
-               BuildableName = "ExampleApp.app"
-               BlueprintName = "ExampleApp"
+               BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
+               BuildableName = "libQTRoute.a"
+               BlueprintName = "QTRoute"
+               ReferencedContainer = "container:QTRoute.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DCE8367D2221C32F00E714F8"
+               BuildableName = "QTRouteTests.xctest"
+               BlueprintName = "QTRouteTests"
                ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,21 +41,13 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DCE8368F2221D2C500E714F8"
-            BuildableName = "ExampleAppTests.xctest"
-            BlueprintName = "ExampleAppTests"
-            ReferencedContainer = "container:QTRoute.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DCE8367D2221C32F00E714F8"
-            BuildableName = "QTRouteTests.xctest"
-            BlueprintName = "QTRouteTests"
+            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
+            BuildableName = "libQTRoute.a"
+            BlueprintName = "QTRoute"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -56,23 +62,13 @@
                ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCE8368F2221D2C500E714F8"
-               BuildableName = "ExampleAppTests.xctest"
-               BlueprintName = "ExampleAppTests"
-               ReferencedContainer = "container:QTRoute.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC1F63832220BC63003842BB"
-            BuildableName = "ExampleApp.app"
-            BlueprintName = "ExampleApp"
+            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
+            BuildableName = "libQTRoute.a"
+            BlueprintName = "QTRoute"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -89,16 +85,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC1F63832220BC63003842BB"
-            BuildableName = "ExampleApp.app"
-            BlueprintName = "ExampleApp"
+            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
+            BuildableName = "libQTRoute.a"
+            BlueprintName = "QTRoute"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -108,16 +103,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC1F63832220BC63003842BB"
-            BuildableName = "ExampleApp.app"
-            BlueprintName = "ExampleApp"
+            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
+            BuildableName = "libQTRoute.a"
+            BlueprintName = "QTRoute"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

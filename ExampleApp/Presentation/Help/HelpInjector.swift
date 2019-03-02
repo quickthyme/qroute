@@ -1,5 +1,6 @@
 
 import UIKit
+import QTRoute
 
 class HelpInjector: NSObject {
     @IBOutlet weak var viewController: HelpViewController!

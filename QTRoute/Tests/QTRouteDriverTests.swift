@@ -1,5 +1,6 @@
 
 import XCTest
+import QTRoute
 
 class QTRouteDriverTests: XCTestCase {
 
@@ -12,17 +13,17 @@ class QTRouteDriverTests: XCTestCase {
     func test_driveTo_nowhere() {
         given("routable for route with no parent or children") {
             let marco = QTRoute("marco")
-            let mockRouteResolver = MockRouteResolver(marco)
-            let mockRoutable = MockRoutable(mockRouteResolver)
+            let mockRouteResolver = MockQTRouteResolver(marco)
+            let mockRoutable = MockQTRoutable(mockRouteResolver)
 
             when("trying to route to non-existent route") {
                 let expectComplete = expectation(description: "complete")
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveTo("polo", from: mockRoutable, input: nil,
                                 animated: true,
                                 completion: {
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)
@@ -43,15 +44,15 @@ class QTRouteDriverTests: XCTestCase {
             let grumpy = QTRoute("grumpy", pabst)
 
             when("pabst routes to grumpy") {
-                let mockRouteResolver = MockRouteResolver(pabst)
-                let mockRoutable = MockRoutable(mockRouteResolver)
+                let mockRouteResolver = MockQTRouteResolver(pabst)
+                let mockRoutable = MockQTRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveTo("grumpy", from: mockRoutable, input: nil,
                                 animated: true,
                                 completion: {
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)
@@ -64,15 +65,15 @@ class QTRouteDriverTests: XCTestCase {
             }
 
             when("pabst routes to sissy") {
-                let mockRouteResolver = MockRouteResolver(pabst)
-                let mockRoutable = MockRoutable(mockRouteResolver)
+                let mockRouteResolver = MockQTRouteResolver(pabst)
+                let mockRoutable = MockQTRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveTo("sissy", from: mockRoutable, input: nil,
                                 animated: false,
                                 completion: {
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)
@@ -85,15 +86,15 @@ class QTRouteDriverTests: XCTestCase {
             }
 
             when("pabst routes to self") {
-                let mockRouteResolver = MockRouteResolver(pabst)
-                let mockRoutable = MockRoutable(mockRouteResolver)
+                let mockRouteResolver = MockQTRouteResolver(pabst)
+                let mockRoutable = MockQTRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveTo("pabst", from: mockRoutable, input: nil,
                                 animated: false,
                                 completion: {
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)
@@ -106,15 +107,15 @@ class QTRouteDriverTests: XCTestCase {
             }
 
             when("grumpy routes to sissy") {
-                let mockRouteResolver = MockRouteResolver(grumpy)
-                let mockRoutable = MockRoutable(mockRouteResolver)
+                let mockRouteResolver = MockQTRouteResolver(grumpy)
+                let mockRoutable = MockQTRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveTo("sissy", from: mockRoutable, input: nil,
                                 animated: false,
                                 completion: {
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)
@@ -128,15 +129,15 @@ class QTRouteDriverTests: XCTestCase {
             }
 
             when("sissy routes to grumpy") {
-                let mockRouteResolver = MockRouteResolver(sissy)
-                let mockRoutable = MockRoutable(mockRouteResolver)
+                let mockRouteResolver = MockQTRouteResolver(sissy)
+                let mockRoutable = MockQTRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveTo("grumpy", from: mockRoutable, input: nil,
                                 animated: false,
                                 completion: {
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)
@@ -151,8 +152,8 @@ class QTRouteDriverTests: XCTestCase {
     }
 
     func test_driveTo_complex() {
-        given("MockRoutePlan") {
-            let root = MockRoutePlan()
+        given("MockQTRoutePlan") {
+            let root = MockQTRoutePlan()
             let toDo = root.route("To-Do")!
             let toDoDetail = toDo.route("To-Do Detail")!
             let toDoEditImage = toDoDetail.route("To-Do Edit Image")!
@@ -160,15 +161,15 @@ class QTRouteDriverTests: XCTestCase {
             let messageCenter = help.route("Message Center")!
 
             when("routing 'To-Do Edit Image' to 'Message Center'") {
-                let mockRouteResolver = MockRouteResolver(toDoEditImage)
-                let mockRoutable = MockRoutable(mockRouteResolver)
+                let mockRouteResolver = MockQTRouteResolver(toDoEditImage)
+                let mockRoutable = MockQTRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveTo("Message Center", from: mockRoutable, input: nil,
                                 animated: false,
                                 completion: {
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)
@@ -183,24 +184,24 @@ class QTRouteDriverTests: XCTestCase {
     }
 
     func test_driveSub() {
-        given("MockRoutePlan") {
-            let root = MockRoutePlan()
+        given("MockQTRoutePlan") {
+            let root = MockQTRoutePlan()
             let toDo = root.route("To-Do")!
             let toDoDetail = toDo.route("To-Do Detail")!
             let messageCenter = root.route("Help")!.route("Message Center")!
 
             when("substitute routing 'To-Do Detail' to 'Message Center'") {
-                let mockRouteResolver = MockRouteResolver(toDoDetail)
-                let mockRoutable = MockRoutable(mockRouteResolver)
+                let mockRouteResolver = MockQTRouteResolver(toDoDetail)
+                let mockRoutable = MockQTRoutable(mockRouteResolver)
                 let expectComplete = expectation(description: "complete")
-                var landingRoutable: MockRoutable?
-                var finalResolver: MockRouteResolver? = mockRouteResolver
+                var landingRoutable: MockQTRoutable?
+                var finalResolver: MockQTRouteResolver? = mockRouteResolver
 
                 subject.driveSub("Message Center", from: mockRoutable, input: nil,
                                  animated: false,
                                  completion: {
-                                    landingRoutable = $0 as? MockRoutable
-                                    finalResolver = $0?.routeResolver as? MockRouteResolver
+                                    landingRoutable = $0 as? MockQTRoutable
+                                    finalResolver = $0?.routeResolver as? MockQTRouteResolver
                                     expectComplete.fulfill() })
 
                 wait(for: [expectComplete], timeout: 0.1)

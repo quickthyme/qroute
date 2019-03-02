@@ -1,0 +1,986 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC1F63882220BC63003842BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63872220BC63003842BB /* AppDelegate.swift */; };
+		DC1F638A2220BC63003842BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* RootViewController.swift */; };
+		DC1F638D2220BC63003842BB /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Root.storyboard */; };
+		DC1F638F2220BC64003842BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638E2220BC64003842BB /* Assets.xcassets */; };
+		DC1F63922220BC64003842BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F63902220BC64003842BB /* LaunchScreen.storyboard */; };
+		DC1F639F2220C1F7003842BB /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F639E2220C1F7003842BB /* AppRoute.swift */; };
+		DC23ACAF222A6CD500A00D40 /* UINavigationController+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */; };
+		DC23ACB0222A6CD500A00D40 /* StoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A67902225B1E400D60336 /* StoryboardLoader.swift */; };
+		DC23ACBD222A6D4400A00D40 /* libQTRoute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23ACB7222A6D0F00A00D40 /* libQTRoute.a */; };
+		DC23ACC0222A6FEB00A00D40 /* libQTRoute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23ACB7222A6D0F00A00D40 /* libQTRoute.a */; };
+		DC23ACC1222A700500A00D40 /* UINavigationController+Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */; };
+		DC23ACC2222A700500A00D40 /* StoryboardLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A67902225B1E400D60336 /* StoryboardLoader.swift */; };
+		DC23ACC4222A702C00A00D40 /* ContactUsInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06B4222656FC00A69630 /* ContactUsInjector.swift */; };
+		DC23ACC5222A702C00A00D40 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE8B2224FFC7009A2CF1 /* ContactUsViewController.swift */; };
+		DC23ACC6222A703900A00D40 /* HelpInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06B72226593D00A69630 /* HelpInjector.swift */; };
+		DC23ACC7222A703900A00D40 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE772224FEC5009A2CF1 /* HelpViewController.swift */; };
+		DC23ACC8222A703900A00D40 /* HelpToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */; };
+		DC23ACC9222A705700A00D40 /* RootInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06CC2226602500A69630 /* RootInjector.swift */; };
+		DC23ACCA222A705700A00D40 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F63892220BC63003842BB /* RootViewController.swift */; };
+		DC23ACCB222A705700A00D40 /* RootToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */; };
+		DC23ACCC222A706300A00D40 /* MessageCenterInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06C622265F2000A69630 /* MessageCenterInjector.swift */; };
+		DC23ACCD222A706300A00D40 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE922225004B009A2CF1 /* MessageCenterViewController.swift */; };
+		DC23ACCE222A706C00A00D40 /* ToDoInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06C022265DB700A69630 /* ToDoInjector.swift */; };
+		DC23ACCF222A706C00A00D40 /* ToDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508252227C64800804586 /* ToDoTableViewManager.swift */; };
+		DC23ACD0222A706C00A00D40 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE7D2224FEE5009A2CF1 /* ToDoViewController.swift */; };
+		DC23ACD1222A707200A00D40 /* ToDoDetailInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06BA22265A3100A69630 /* ToDoDetailInjector.swift */; };
+		DC23ACD2222A707200A00D40 /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE812224FF26009A2CF1 /* ToDoDetailViewController.swift */; };
+		DC23ACD3222A707A00A00D40 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F639E2220C1F7003842BB /* AppRoute.swift */; };
+		DC23ACD4222A707F00A00D40 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */; };
+		DC23ACD5222A707F00A00D40 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */; };
+		DC23ACD6222A707F00A00D40 /* ToParentAppRouteRootResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */; };
+		DC23ACD7222A707F00A00D40 /* ToParentDismissModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */; };
+		DC23ACD8222A707F00A00D40 /* ToParentNavigationControllerPopResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */; };
+		DC23ACD9222A70BE00A00D40 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7352229048B0050F70E /* MockNavigationController.swift */; };
+		DC23ACDA222A70BE00A00D40 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC412229896300A00D40 /* MockViewController.swift */; };
+		DC23ACDB222A70C300A00D40 /* MockViewControllerRoutableInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */; };
+		DC23ACDC222A70C300A00D40 /* MockViewControllerRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE72A2228E8050050F70E /* MockViewControllerRoutable.swift */; };
+		DC23ACDD222A70DB00A00D40 /* ContactUsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5449382226439100578EC8 /* ContactUsViewControllerTests.swift */; };
+		DC23ACDE222A70DB00A00D40 /* HelpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54494222264C9100578EC8 /* HelpViewControllerTests.swift */; };
+		DC23ACDF222A70DB00A00D40 /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06D02226611D00A69630 /* RootViewControllerTests.swift */; };
+		DC23ACE0222A70DB00A00D40 /* MessageCenterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06CA22265FB700A69630 /* MessageCenterViewControllerTests.swift */; };
+		DC23ACE1222A70DB00A00D40 /* ToDoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06C422265DF000A69630 /* ToDoViewControllerTests.swift */; };
+		DC23ACE2222A70DB00A00D40 /* ToDoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06BE22265A8100A69630 /* ToDoDetailViewControllerTests.swift */; };
+		DC23ACE3222A70E600A00D40 /* AppRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE8369B2221D33C00E714F8 /* AppRouteTests.swift */; };
+		DC23ACE4222A70EB00A00D40 /* ToChildUIStoryboardPresentModalResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7212228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift */; };
+		DC23ACE5222A70EB00A00D40 /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */; };
+		DC23ACE6222A70EB00A00D40 /* ToParentDismissModalResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFDE73722290F390050F70E /* ToParentDismissModalResolverTests.swift */; };
+		DC23ACE7222A70EB00A00D40 /* ToParentNavigationControllerPopResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC432229922600A00D40 /* ToParentNavigationControllerPopResolverTests.swift */; };
+		DC23ACE8222A714C00A00D40 /* BDDTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */; };
+		DC23ACE9222A715400A00D40 /* QTRouteResolverTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23ACA7222A6C1A00A00D40 /* QTRouteResolverTestHelpers.swift */; };
+		DC23ACEA222A715400A00D40 /* UIViewControllerTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23ACA6222A6C1A00A00D40 /* UIViewControllerTestHelpers.swift */; };
+		DC23ACEB222A717200A00D40 /* MockQTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC98222A6BF700A00D40 /* MockQTRouteDriver.swift */; };
+		DC23ACEC222A717700A00D40 /* MockQTRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC97222A6BF700A00D40 /* MockQTRoutable.swift */; };
+		DC23ACED222A717A00A00D40 /* MockQTRoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC99222A6BF700A00D40 /* MockQTRoutePlan.swift */; };
+		DC23ACEE222A717A00A00D40 /* MockQTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC9A222A6BF700A00D40 /* MockQTRouteResolver.swift */; };
+		DC23ACEF222A717A00A00D40 /* StubQTResolverActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC9B222A6BF700A00D40 /* StubQTResolverActions.swift */; };
+		DC4E06B5222656FC00A69630 /* ContactUsInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06B4222656FC00A69630 /* ContactUsInjector.swift */; };
+		DC4E06B82226593D00A69630 /* HelpInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06B72226593D00A69630 /* HelpInjector.swift */; };
+		DC4E06BC22265A3100A69630 /* ToDoDetailInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06BA22265A3100A69630 /* ToDoDetailInjector.swift */; };
+		DC4E06C222265DB700A69630 /* ToDoInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06C022265DB700A69630 /* ToDoInjector.swift */; };
+		DC4E06C822265F2000A69630 /* MessageCenterInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06C622265F2000A69630 /* MessageCenterInjector.swift */; };
+		DC4E06CE2226602500A69630 /* RootInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4E06CC2226602500A69630 /* RootInjector.swift */; };
+		DC4E06D3222678B000A69630 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DC4E06D2222678B000A69630 /* README.md */; };
+		DCA6BE752224FEA6009A2CF1 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE742224FEA6009A2CF1 /* Help.storyboard */; };
+		DCA6BE782224FEC5009A2CF1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE772224FEC5009A2CF1 /* HelpViewController.swift */; };
+		DCA6BE7B2224FED3009A2CF1 /* ToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE7A2224FED3009A2CF1 /* ToDo.storyboard */; };
+		DCA6BE7C2224FED3009A2CF1 /* ToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE7A2224FED3009A2CF1 /* ToDo.storyboard */; };
+		DCA6BE7E2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE7D2224FEE5009A2CF1 /* ToDoViewController.swift */; };
+		DCA6BE822224FF26009A2CF1 /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE812224FF26009A2CF1 /* ToDoDetailViewController.swift */; };
+		DCA6BE852224FF30009A2CF1 /* ToDoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE842224FF30009A2CF1 /* ToDoDetail.storyboard */; };
+		DCA6BE862224FF30009A2CF1 /* ToDoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE842224FF30009A2CF1 /* ToDoDetail.storyboard */; };
+		DCA6BE892224FFB7009A2CF1 /* ContactUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE882224FFB7009A2CF1 /* ContactUs.storyboard */; };
+		DCA6BE8A2224FFB7009A2CF1 /* ContactUs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE882224FFB7009A2CF1 /* ContactUs.storyboard */; };
+		DCA6BE8C2224FFC7009A2CF1 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE8B2224FFC7009A2CF1 /* ContactUsViewController.swift */; };
+		DCA6BE902224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE8F2224FFFB009A2CF1 /* MessageCenter.storyboard */; };
+		DCA6BE912224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE8F2224FFFB009A2CF1 /* MessageCenter.storyboard */; };
+		DCA6BE932225004B009A2CF1 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE922225004B009A2CF1 /* MessageCenterViewController.swift */; };
+		DCA6BE9A222512BC009A2CF1 /* RootToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */; };
+		DCA6BE9D2225139B009A2CF1 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F638B2220BC63003842BB /* Root.storyboard */; };
+		DCA6BE9E222513A5009A2CF1 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA6BE742224FEA6009A2CF1 /* Help.storyboard */; };
+		DCA6BEA122251401009A2CF1 /* HelpToChildResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */; };
+		DCC508262227C64800804586 /* ToDoTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508252227C64800804586 /* ToDoTableViewManager.swift */; };
+		DCC5082E2227DA9700804586 /* ToParentAppRouteRootResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */; };
+		DCC508312227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */; };
+		DCC508342227DE7000804586 /* ToParentNavigationControllerPopResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */; };
+		DCC508372227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */; };
+		DCC5083D2227E42E00804586 /* ToParentDismissModalResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */; };
+		DCFDE72D2228EC9C0050F70E /* MockViewControllerRoutable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCFDE72C2228EC9C0050F70E /* MockViewControllerRoutable.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC23ACB6222A6D0F00A00D40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC23ACB1222A6D0F00A00D40 /* QTRoute.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC23AC58222A56AE00A00D40;
+			remoteInfo = QTRoute;
+		};
+		DC23ACB8222A6D0F00A00D40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC23ACB1222A6D0F00A00D40 /* QTRoute.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DCE8367E2221C32F00E714F8;
+			remoteInfo = QTRouteTests;
+		};
+		DC23ACBA222A6D3C00A00D40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC23ACB1222A6D0F00A00D40 /* QTRoute.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DC23AC57222A56AE00A00D40;
+			remoteInfo = QTRoute;
+		};
+		DC23ACBE222A6FE000A00D40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC23ACB1222A6D0F00A00D40 /* QTRoute.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DC23AC57222A56AE00A00D40;
+			remoteInfo = QTRoute;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC1F63842220BC63003842BB /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1F63872220BC63003842BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC1F63892220BC63003842BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DC1F638C2220BC63003842BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
+		DC1F638E2220BC64003842BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC1F63912220BC64003842BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC1F63932220BC64003842BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC1F639E2220C1F7003842BB /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		DC23AC412229896300A00D40 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		DC23AC432229922600A00D40 /* ToParentNavigationControllerPopResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentNavigationControllerPopResolverTests.swift; sourceTree = "<group>"; };
+		DC23AC97222A6BF700A00D40 /* MockQTRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRoutable.swift; sourceTree = "<group>"; };
+		DC23AC98222A6BF700A00D40 /* MockQTRouteDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRouteDriver.swift; sourceTree = "<group>"; };
+		DC23AC99222A6BF700A00D40 /* MockQTRoutePlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRoutePlan.swift; sourceTree = "<group>"; };
+		DC23AC9A222A6BF700A00D40 /* MockQTRouteResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRouteResolver.swift; sourceTree = "<group>"; };
+		DC23AC9B222A6BF700A00D40 /* StubQTResolverActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubQTResolverActions.swift; sourceTree = "<group>"; };
+		DC23ACA6222A6C1A00A00D40 /* UIViewControllerTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTestHelpers.swift; sourceTree = "<group>"; };
+		DC23ACA7222A6C1A00A00D40 /* QTRouteResolverTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTestHelpers.swift; sourceTree = "<group>"; };
+		DC23ACB1222A6D0F00A00D40 /* QTRoute.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = QTRoute.xcodeproj; sourceTree = "<group>"; };
+		DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDDTestHelpers.swift; sourceTree = "<group>"; };
+		DC4E06B4222656FC00A69630 /* ContactUsInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsInjector.swift; sourceTree = "<group>"; };
+		DC4E06B72226593D00A69630 /* HelpInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpInjector.swift; sourceTree = "<group>"; };
+		DC4E06BA22265A3100A69630 /* ToDoDetailInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailInjector.swift; sourceTree = "<group>"; };
+		DC4E06BE22265A8100A69630 /* ToDoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		DC4E06C022265DB700A69630 /* ToDoInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInjector.swift; sourceTree = "<group>"; };
+		DC4E06C422265DF000A69630 /* ToDoViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewControllerTests.swift; sourceTree = "<group>"; };
+		DC4E06C622265F2000A69630 /* MessageCenterInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterInjector.swift; sourceTree = "<group>"; };
+		DC4E06CA22265FB700A69630 /* MessageCenterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewControllerTests.swift; sourceTree = "<group>"; };
+		DC4E06CC2226602500A69630 /* RootInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInjector.swift; sourceTree = "<group>"; };
+		DC4E06D02226611D00A69630 /* RootViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerTests.swift; sourceTree = "<group>"; };
+		DC4E06D2222678B000A69630 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DC5449382226439100578EC8 /* ContactUsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewControllerTests.swift; sourceTree = "<group>"; };
+		DC54494222264C9100578EC8 /* HelpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewControllerTests.swift; sourceTree = "<group>"; };
+		DC7A67902225B1E400D60336 /* StoryboardLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoader.swift; sourceTree = "<group>"; };
+		DCA6BE742224FEA6009A2CF1 /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
+		DCA6BE772224FEC5009A2CF1 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		DCA6BE7A2224FED3009A2CF1 /* ToDo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDo.storyboard; sourceTree = "<group>"; };
+		DCA6BE7D2224FEE5009A2CF1 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		DCA6BE812224FF26009A2CF1 /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
+		DCA6BE842224FF30009A2CF1 /* ToDoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToDoDetail.storyboard; sourceTree = "<group>"; };
+		DCA6BE882224FFB7009A2CF1 /* ContactUs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactUs.storyboard; sourceTree = "<group>"; };
+		DCA6BE8B2224FFC7009A2CF1 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		DCA6BE8F2224FFFB009A2CF1 /* MessageCenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageCenter.storyboard; sourceTree = "<group>"; };
+		DCA6BE922225004B009A2CF1 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
+		DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootToChildResolver.swift; sourceTree = "<group>"; };
+		DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpToChildResolver.swift; sourceTree = "<group>"; };
+		DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Completion.swift"; sourceTree = "<group>"; };
+		DCC508252227C64800804586 /* ToDoTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewManager.swift; sourceTree = "<group>"; };
+		DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentAppRouteRootResolver.swift; sourceTree = "<group>"; };
+		DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardNavigationControllerPushResolver.swift; sourceTree = "<group>"; };
+		DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentNavigationControllerPopResolver.swift; sourceTree = "<group>"; };
+		DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardPresentModalResolver.swift; sourceTree = "<group>"; };
+		DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentDismissModalResolver.swift; sourceTree = "<group>"; };
+		DCE836902221D2C500E714F8 /* ExampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCE836942221D2C500E714F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCE8369B2221D33C00E714F8 /* AppRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouteTests.swift; sourceTree = "<group>"; };
+		DCFDE7212228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardPresentModalResolverTests.swift; sourceTree = "<group>"; };
+		DCFDE72A2228E8050050F70E /* MockViewControllerRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerRoutable.swift; sourceTree = "<group>"; };
+		DCFDE72C2228EC9C0050F70E /* MockViewControllerRoutable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MockViewControllerRoutable.storyboard; sourceTree = "<group>"; };
+		DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewControllerRoutableInjector.swift; sourceTree = "<group>"; };
+		DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToChildUIStoryboardNavigationControllerPushResolverTests.swift; sourceTree = "<group>"; };
+		DCFDE7352229048B0050F70E /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
+		DCFDE73722290F390050F70E /* ToParentDismissModalResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToParentDismissModalResolverTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC1F63812220BC63003842BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC23ACBD222A6D4400A00D40 /* libQTRoute.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE8368D2221D2C500E714F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC23ACC0222A6FEB00A00D40 /* libQTRoute.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC1F637B2220BC63003842BB = {
+			isa = PBXGroup;
+			children = (
+				DC4E06D2222678B000A69630 /* README.md */,
+				DC1F63862220BC63003842BB /* ExampleApp */,
+				DC23AC96222A6BF700A00D40 /* SharedTestDoubles */,
+				DCE8369F2221D38E00E714F8 /* SharedTestHelpers */,
+				DC23AC95222A6BDB00A00D40 /* Dependencies */,
+				DC1F63852220BC63003842BB /* Products */,
+				DC23ACBC222A6D4400A00D40 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DC1F63852220BC63003842BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F63842220BC63003842BB /* ExampleApp.app */,
+				DCE836902221D2C500E714F8 /* ExampleAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC1F63862220BC63003842BB /* ExampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F63932220BC64003842BB /* Info.plist */,
+				DC1F63902220BC64003842BB /* LaunchScreen.storyboard */,
+				DC1F638E2220BC64003842BB /* Assets.xcassets */,
+				DCA6BEA922251BF5009A2CF1 /* Helpers */,
+				DC1F639A2220BEDA003842BB /* Presentation */,
+				DCC508282227D53100804586 /* Routing */,
+				DCE836912221D2C500E714F8 /* Tests */,
+			);
+			path = ExampleApp;
+			sourceTree = "<group>";
+		};
+		DC1F63992220BEC5003842BB /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F638B2220BC63003842BB /* Root.storyboard */,
+				DC4E06CC2226602500A69630 /* RootInjector.swift */,
+				DC1F63892220BC63003842BB /* RootViewController.swift */,
+				DCA6BE99222512BC009A2CF1 /* RootToChildResolver.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DC1F639A2220BEDA003842BB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F63872220BC63003842BB /* AppDelegate.swift */,
+				DCA6BE872224FF93009A2CF1 /* ContactUs */,
+				DCA6BE732224FE80009A2CF1 /* Help */,
+				DC1F63992220BEC5003842BB /* Root */,
+				DCA6BE8E2224FFEC009A2CF1 /* MessageCenter */,
+				DCA6BE722224FE76009A2CF1 /* ToDo */,
+				DCA6BE802224FF12009A2CF1 /* ToDoDetail */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DC23AC95222A6BDB00A00D40 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				DC23ACB1222A6D0F00A00D40 /* QTRoute.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		DC23AC96222A6BF700A00D40 /* SharedTestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				DC23AC97222A6BF700A00D40 /* MockQTRoutable.swift */,
+				DC23AC98222A6BF700A00D40 /* MockQTRouteDriver.swift */,
+				DC23AC99222A6BF700A00D40 /* MockQTRoutePlan.swift */,
+				DC23AC9A222A6BF700A00D40 /* MockQTRouteResolver.swift */,
+				DC23AC9B222A6BF700A00D40 /* StubQTResolverActions.swift */,
+			);
+			path = SharedTestDoubles;
+			sourceTree = "<group>";
+		};
+		DC23ACB2222A6D0F00A00D40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC23ACB7222A6D0F00A00D40 /* libQTRoute.a */,
+				DC23ACB9222A6D0F00A00D40 /* QTRouteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC23ACBC222A6D4400A00D40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC4E06BD22265A7500A69630 /* ToDoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DC4E06BE22265A8100A69630 /* ToDoDetailViewControllerTests.swift */,
+			);
+			path = ToDoDetail;
+			sourceTree = "<group>";
+		};
+		DC4E06C322265DE600A69630 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				DC4E06C422265DF000A69630 /* ToDoViewControllerTests.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		DC4E06C922265FA800A69630 /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				DC4E06CA22265FB700A69630 /* MessageCenterViewControllerTests.swift */,
+			);
+			path = MessageCenter;
+			sourceTree = "<group>";
+		};
+		DC4E06CF2226611100A69630 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DC4E06D02226611D00A69630 /* RootViewControllerTests.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DC5449372226437500578EC8 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				DC5449382226439100578EC8 /* ContactUsViewControllerTests.swift */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		DC54494122264C7900578EC8 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				DC54494222264C9100578EC8 /* HelpViewControllerTests.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		DCA6BE722224FE76009A2CF1 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				DCA6BE7A2224FED3009A2CF1 /* ToDo.storyboard */,
+				DC4E06C022265DB700A69630 /* ToDoInjector.swift */,
+				DCC508252227C64800804586 /* ToDoTableViewManager.swift */,
+				DCA6BE7D2224FEE5009A2CF1 /* ToDoViewController.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		DCA6BE732224FE80009A2CF1 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				DCA6BE742224FEA6009A2CF1 /* Help.storyboard */,
+				DC4E06B72226593D00A69630 /* HelpInjector.swift */,
+				DCA6BE772224FEC5009A2CF1 /* HelpViewController.swift */,
+				DCA6BEA022251401009A2CF1 /* HelpToChildResolver.swift */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		DCA6BE802224FF12009A2CF1 /* ToDoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DCA6BE842224FF30009A2CF1 /* ToDoDetail.storyboard */,
+				DC4E06BA22265A3100A69630 /* ToDoDetailInjector.swift */,
+				DCA6BE812224FF26009A2CF1 /* ToDoDetailViewController.swift */,
+			);
+			path = ToDoDetail;
+			sourceTree = "<group>";
+		};
+		DCA6BE872224FF93009A2CF1 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				DCA6BE882224FFB7009A2CF1 /* ContactUs.storyboard */,
+				DC4E06B4222656FC00A69630 /* ContactUsInjector.swift */,
+				DCA6BE8B2224FFC7009A2CF1 /* ContactUsViewController.swift */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		DCA6BE8E2224FFEC009A2CF1 /* MessageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				DCA6BE8F2224FFFB009A2CF1 /* MessageCenter.storyboard */,
+				DC4E06C622265F2000A69630 /* MessageCenterInjector.swift */,
+				DCA6BE922225004B009A2CF1 /* MessageCenterViewController.swift */,
+			);
+			path = MessageCenter;
+			sourceTree = "<group>";
+		};
+		DCA6BEA922251BF5009A2CF1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DCA6BEAA22251C12009A2CF1 /* UINavigationController+Completion.swift */,
+				DC7A67902225B1E400D60336 /* StoryboardLoader.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DCC508282227D53100804586 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				DC1F639E2220C1F7003842BB /* AppRoute.swift */,
+				DCC508292227D56300804586 /* Resolvers */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		DCC508292227D56300804586 /* Resolvers */ = {
+			isa = PBXGroup;
+			children = (
+				DCC508362227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift */,
+				DCC508302227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift */,
+				DCC5082D2227DA9700804586 /* ToParentAppRouteRootResolver.swift */,
+				DCC5083C2227E42E00804586 /* ToParentDismissModalResolver.swift */,
+				DCC508332227DE7000804586 /* ToParentNavigationControllerPopResolver.swift */,
+			);
+			path = Resolvers;
+			sourceTree = "<group>";
+		};
+		DCE836912221D2C500E714F8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DCE836942221D2C500E714F8 /* Info.plist */,
+				DCE8369E2221D34F00E714F8 /* Mocks */,
+				DCE8369A2221D30E00E714F8 /* Presentation */,
+				DCFDE71F2228DB170050F70E /* Routing */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		DCE8369A2221D30E00E714F8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DC5449372226437500578EC8 /* ContactUs */,
+				DC54494122264C7900578EC8 /* Help */,
+				DC4E06CF2226611100A69630 /* Root */,
+				DC4E06C922265FA800A69630 /* MessageCenter */,
+				DC4E06C322265DE600A69630 /* ToDo */,
+				DC4E06BD22265A7500A69630 /* ToDoDetail */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DCE8369E2221D34F00E714F8 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDE7352229048B0050F70E /* MockNavigationController.swift */,
+				DC23AC412229896300A00D40 /* MockViewController.swift */,
+				DCFDE7302228ED060050F70E /* MockViewControllerRoutable */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DCE8369F2221D38E00E714F8 /* SharedTestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */,
+				DC23ACA7222A6C1A00A00D40 /* QTRouteResolverTestHelpers.swift */,
+				DC23ACA6222A6C1A00A00D40 /* UIViewControllerTestHelpers.swift */,
+			);
+			path = SharedTestHelpers;
+			sourceTree = "<group>";
+		};
+		DCFDE71F2228DB170050F70E /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				DCE8369B2221D33C00E714F8 /* AppRouteTests.swift */,
+				DCFDE7202228DB2F0050F70E /* Resolvers */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		DCFDE7202228DB2F0050F70E /* Resolvers */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDE7212228DB5B0050F70E /* ToChildUIStoryboardPresentModalResolverTests.swift */,
+				DCFDE7332228FB910050F70E /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift */,
+				DCFDE73722290F390050F70E /* ToParentDismissModalResolverTests.swift */,
+				DC23AC432229922600A00D40 /* ToParentNavigationControllerPopResolverTests.swift */,
+			);
+			path = Resolvers;
+			sourceTree = "<group>";
+		};
+		DCFDE7302228ED060050F70E /* MockViewControllerRoutable */ = {
+			isa = PBXGroup;
+			children = (
+				DCFDE72C2228EC9C0050F70E /* MockViewControllerRoutable.storyboard */,
+				DCFDE7312228F92D0050F70E /* MockViewControllerRoutableInjector.swift */,
+				DCFDE72A2228E8050050F70E /* MockViewControllerRoutable.swift */,
+			);
+			path = MockViewControllerRoutable;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC1F63832220BC63003842BB /* ExampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC1F63962220BC64003842BB /* Build configuration list for PBXNativeTarget "ExampleApp" */;
+			buildPhases = (
+				DC1F63802220BC63003842BB /* Sources */,
+				DC1F63812220BC63003842BB /* Frameworks */,
+				DC1F63822220BC63003842BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC23ACBB222A6D3C00A00D40 /* PBXTargetDependency */,
+			);
+			name = ExampleApp;
+			productName = QTroute;
+			productReference = DC1F63842220BC63003842BB /* ExampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCE8368F2221D2C500E714F8 /* ExampleAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCE836972221D2C500E714F8 /* Build configuration list for PBXNativeTarget "ExampleAppTests" */;
+			buildPhases = (
+				DCE8368C2221D2C500E714F8 /* Sources */,
+				DCE8368D2221D2C500E714F8 /* Frameworks */,
+				DCE8368E2221D2C500E714F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC23ACBF222A6FE000A00D40 /* PBXTargetDependency */,
+			);
+			name = ExampleAppTests;
+			productName = ExampleAppTests;
+			productReference = DCE836902221D2C500E714F8 /* ExampleAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC1F637C2220BC63003842BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Quickthyme;
+				TargetAttributes = {
+					DC1F63832220BC63003842BB = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DCE8368F2221D2C500E714F8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = DC1F637F2220BC63003842BB /* Build configuration list for PBXProject "ExampleApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC1F637B2220BC63003842BB;
+			productRefGroup = DC1F63852220BC63003842BB /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DC23ACB2222A6D0F00A00D40 /* Products */;
+					ProjectRef = DC23ACB1222A6D0F00A00D40 /* QTRoute.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				DC1F63832220BC63003842BB /* ExampleApp */,
+				DCE8368F2221D2C500E714F8 /* ExampleAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DC23ACB7222A6D0F00A00D40 /* libQTRoute.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQTRoute.a;
+			remoteRef = DC23ACB6222A6D0F00A00D40 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC23ACB9222A6D0F00A00D40 /* QTRouteTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = QTRouteTests.xctest;
+			remoteRef = DC23ACB8222A6D0F00A00D40 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC1F63822220BC63003842BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA6BE7B2224FED3009A2CF1 /* ToDo.storyboard in Resources */,
+				DC1F63922220BC64003842BB /* LaunchScreen.storyboard in Resources */,
+				DC1F638F2220BC64003842BB /* Assets.xcassets in Resources */,
+				DC1F638D2220BC63003842BB /* Root.storyboard in Resources */,
+				DCA6BE752224FEA6009A2CF1 /* Help.storyboard in Resources */,
+				DCA6BE902224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */,
+				DC4E06D3222678B000A69630 /* README.md in Resources */,
+				DCA6BE892224FFB7009A2CF1 /* ContactUs.storyboard in Resources */,
+				DCA6BE852224FF30009A2CF1 /* ToDoDetail.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE8368E2221D2C500E714F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA6BE7C2224FED3009A2CF1 /* ToDo.storyboard in Resources */,
+				DCA6BE9E222513A5009A2CF1 /* Help.storyboard in Resources */,
+				DCA6BE862224FF30009A2CF1 /* ToDoDetail.storyboard in Resources */,
+				DCA6BE9D2225139B009A2CF1 /* Root.storyboard in Resources */,
+				DCFDE72D2228EC9C0050F70E /* MockViewControllerRoutable.storyboard in Resources */,
+				DCA6BE912224FFFB009A2CF1 /* MessageCenter.storyboard in Resources */,
+				DCA6BE8A2224FFB7009A2CF1 /* ContactUs.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC1F63802220BC63003842BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC23ACB0222A6CD500A00D40 /* StoryboardLoader.swift in Sources */,
+				DC1F638A2220BC63003842BB /* RootViewController.swift in Sources */,
+				DC23ACAF222A6CD500A00D40 /* UINavigationController+Completion.swift in Sources */,
+				DC4E06B5222656FC00A69630 /* ContactUsInjector.swift in Sources */,
+				DC4E06C822265F2000A69630 /* MessageCenterInjector.swift in Sources */,
+				DCC5083D2227E42E00804586 /* ToParentDismissModalResolver.swift in Sources */,
+				DCC508262227C64800804586 /* ToDoTableViewManager.swift in Sources */,
+				DC4E06BC22265A3100A69630 /* ToDoDetailInjector.swift in Sources */,
+				DCC508372227DF1600804586 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */,
+				DC1F639F2220C1F7003842BB /* AppRoute.swift in Sources */,
+				DCA6BE822224FF26009A2CF1 /* ToDoDetailViewController.swift in Sources */,
+				DCA6BE782224FEC5009A2CF1 /* HelpViewController.swift in Sources */,
+				DC4E06C222265DB700A69630 /* ToDoInjector.swift in Sources */,
+				DCA6BE7E2224FEE5009A2CF1 /* ToDoViewController.swift in Sources */,
+				DCC508342227DE7000804586 /* ToParentNavigationControllerPopResolver.swift in Sources */,
+				DC4E06CE2226602500A69630 /* RootInjector.swift in Sources */,
+				DCA6BE932225004B009A2CF1 /* MessageCenterViewController.swift in Sources */,
+				DCC5082E2227DA9700804586 /* ToParentAppRouteRootResolver.swift in Sources */,
+				DCC508312227DBB700804586 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */,
+				DC1F63882220BC63003842BB /* AppDelegate.swift in Sources */,
+				DCA6BE8C2224FFC7009A2CF1 /* ContactUsViewController.swift in Sources */,
+				DCA6BEA122251401009A2CF1 /* HelpToChildResolver.swift in Sources */,
+				DC4E06B82226593D00A69630 /* HelpInjector.swift in Sources */,
+				DCA6BE9A222512BC009A2CF1 /* RootToChildResolver.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE8368C2221D2C500E714F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC23ACE9222A715400A00D40 /* QTRouteResolverTestHelpers.swift in Sources */,
+				DC23ACE5222A70EB00A00D40 /* ToChildUIStoryboardNavigationControllerPushResolverTests.swift in Sources */,
+				DC23ACE1222A70DB00A00D40 /* ToDoViewControllerTests.swift in Sources */,
+				DC23ACE3222A70E600A00D40 /* AppRouteTests.swift in Sources */,
+				DC23ACE4222A70EB00A00D40 /* ToChildUIStoryboardPresentModalResolverTests.swift in Sources */,
+				DC23ACDA222A70BE00A00D40 /* MockViewController.swift in Sources */,
+				DC23ACC6222A703900A00D40 /* HelpInjector.swift in Sources */,
+				DC23ACC7222A703900A00D40 /* HelpViewController.swift in Sources */,
+				DC23ACCA222A705700A00D40 /* RootViewController.swift in Sources */,
+				DC23ACE7222A70EB00A00D40 /* ToParentNavigationControllerPopResolverTests.swift in Sources */,
+				DC23ACD6222A707F00A00D40 /* ToParentAppRouteRootResolver.swift in Sources */,
+				DC23ACC1222A700500A00D40 /* UINavigationController+Completion.swift in Sources */,
+				DC23ACD5222A707F00A00D40 /* ToChildUIStoryboardNavigationControllerPushResolver.swift in Sources */,
+				DC23ACC4222A702C00A00D40 /* ContactUsInjector.swift in Sources */,
+				DC23ACEF222A717A00A00D40 /* StubQTResolverActions.swift in Sources */,
+				DC23ACEB222A717200A00D40 /* MockQTRouteDriver.swift in Sources */,
+				DC23ACDF222A70DB00A00D40 /* RootViewControllerTests.swift in Sources */,
+				DC23ACDC222A70C300A00D40 /* MockViewControllerRoutable.swift in Sources */,
+				DC23ACCB222A705700A00D40 /* RootToChildResolver.swift in Sources */,
+				DC23ACC2222A700500A00D40 /* StoryboardLoader.swift in Sources */,
+				DC23ACDD222A70DB00A00D40 /* ContactUsViewControllerTests.swift in Sources */,
+				DC23ACEE222A717A00A00D40 /* MockQTRouteResolver.swift in Sources */,
+				DC23ACEC222A717700A00D40 /* MockQTRoutable.swift in Sources */,
+				DC23ACE0222A70DB00A00D40 /* MessageCenterViewControllerTests.swift in Sources */,
+				DC23ACCD222A706300A00D40 /* MessageCenterViewController.swift in Sources */,
+				DC23ACC5222A702C00A00D40 /* ContactUsViewController.swift in Sources */,
+				DC23ACCC222A706300A00D40 /* MessageCenterInjector.swift in Sources */,
+				DC23ACED222A717A00A00D40 /* MockQTRoutePlan.swift in Sources */,
+				DC23ACEA222A715400A00D40 /* UIViewControllerTestHelpers.swift in Sources */,
+				DC23ACD8222A707F00A00D40 /* ToParentNavigationControllerPopResolver.swift in Sources */,
+				DC23ACD1222A707200A00D40 /* ToDoDetailInjector.swift in Sources */,
+				DC23ACD3222A707A00A00D40 /* AppRoute.swift in Sources */,
+				DC23ACD0222A706C00A00D40 /* ToDoViewController.swift in Sources */,
+				DC23ACD7222A707F00A00D40 /* ToParentDismissModalResolver.swift in Sources */,
+				DC23ACC8222A703900A00D40 /* HelpToChildResolver.swift in Sources */,
+				DC23ACCF222A706C00A00D40 /* ToDoTableViewManager.swift in Sources */,
+				DC23ACE8222A714C00A00D40 /* BDDTestHelpers.swift in Sources */,
+				DC23ACDB222A70C300A00D40 /* MockViewControllerRoutableInjector.swift in Sources */,
+				DC23ACCE222A706C00A00D40 /* ToDoInjector.swift in Sources */,
+				DC23ACD4222A707F00A00D40 /* ToChildUIStoryboardPresentModalResolver.swift in Sources */,
+				DC23ACE6222A70EB00A00D40 /* ToParentDismissModalResolverTests.swift in Sources */,
+				DC23ACD2222A707200A00D40 /* ToDoDetailViewController.swift in Sources */,
+				DC23ACC9222A705700A00D40 /* RootInjector.swift in Sources */,
+				DC23ACE2222A70DB00A00D40 /* ToDoDetailViewControllerTests.swift in Sources */,
+				DC23ACD9222A70BE00A00D40 /* MockNavigationController.swift in Sources */,
+				DC23ACDE222A70DB00A00D40 /* HelpViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC23ACBB222A6D3C00A00D40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QTRoute;
+			targetProxy = DC23ACBA222A6D3C00A00D40 /* PBXContainerItemProxy */;
+		};
+		DC23ACBF222A6FE000A00D40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QTRoute;
+			targetProxy = DC23ACBE222A6FE000A00D40 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC1F638B2220BC63003842BB /* Root.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC1F638C2220BC63003842BB /* Base */,
+			);
+			name = Root.storyboard;
+			sourceTree = "<group>";
+		};
+		DC1F63902220BC64003842BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC1F63912220BC64003842BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC1F63942220BC64003842BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC1F63952220BC64003842BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC1F63972220BC64003842BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ExampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.quickthyme.qtroute.ExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC1F63982220BC64003842BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ExampleApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.quickthyme.qtroute.ExampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DCE836982221D2C500E714F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ExampleApp/Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.quickthyme.exampleapp.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCE836992221D2C500E714F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ExampleApp/Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.quickthyme.exampleapp.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC1F637F2220BC63003842BB /* Build configuration list for PBXProject "ExampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC1F63942220BC64003842BB /* Debug */,
+				DC1F63952220BC64003842BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC1F63962220BC64003842BB /* Build configuration list for PBXNativeTarget "ExampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC1F63972220BC64003842BB /* Debug */,
+				DC1F63982220BC64003842BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCE836972221D2C500E714F8 /* Build configuration list for PBXNativeTarget "ExampleAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCE836982221D2C500E714F8 /* Debug */,
+				DCE836992221D2C500E714F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC1F637C2220BC63003842BB /* Project object */;
+}

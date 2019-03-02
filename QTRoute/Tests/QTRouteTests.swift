@@ -1,12 +1,13 @@
 
 import XCTest
+import QTRoute
 
 class QTRouteTests: XCTestCase {
 
     func testRouteStructure() {
 
         given("routePlan") {
-            let routePlanRoot = MockRoutePlan()
+            let routePlanRoot = MockQTRoutePlan()
 
             with("id 'Root'") {
                 XCTAssertEqual(routePlanRoot.id, "Root")
@@ -94,7 +95,7 @@ class QTRouteTests: XCTestCase {
 
     func testDebugDescription() {
         given("routePlan") {
-            let routePlanRoot = MockRoutePlan()
+            let routePlanRoot = MockQTRoutePlan()
             when("debugDescription called") {
 //                print(routePlanRoot)
                 let desc = routePlanRoot.debugDescription
@@ -107,7 +108,7 @@ class QTRouteTests: XCTestCase {
 
     func testHashable() {
         given("routePlan") {
-            let routePlanRoot = MockRoutePlan()
+            let routePlanRoot = MockQTRoutePlan()
             when("the root routes are added to a set") {
                 let result = Set<QTRoute>(routePlanRoot.routes)
                 then("it should be able to retrieve all four routes") {
@@ -123,7 +124,7 @@ class QTRouteTests: XCTestCase {
 
     func testFlattened() {
         given("routePlan") {
-            let routePlanRoot = MockRoutePlan()
+            let routePlanRoot = MockQTRoutePlan()
             when("the root routes are flattened") {
                 let flats = routePlanRoot.flattened
                 then("it should contain all the routes") {
@@ -135,7 +136,7 @@ class QTRouteTests: XCTestCase {
 
     func testShallowClone() {
         given("route from routePlan") {
-            let routePlanRoot = MockRoutePlan()
+            let routePlanRoot = MockQTRoutePlan()
             let route = routePlanRoot.route("To-Do")!.route("To-Do Detail")!
             when("shallow cloning") {
                 let result = QTRoute(shallowClone: route)
@@ -158,7 +159,7 @@ class QTRouteTests: XCTestCase {
 
     func testDeepClone() {
         given("route from routePlan") {
-            let routePlanRoot = MockRoutePlan()
+            let routePlanRoot = MockQTRoutePlan()
             let route = routePlanRoot.route("To-Do")!
             when("deep cloning") {
                 let result = QTRoute(deepClone: route)

@@ -1,5 +1,7 @@
 
-class MockRouteDriver: QTRouteDriving {
+import QTRoute
+
+class MockQTRouteDriver: QTRouteDriving {
 
     func reset() {
         timesCalled_driveParent = 0

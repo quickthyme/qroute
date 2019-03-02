@@ -1,5 +1,6 @@
 
 import UIKit
+import QTRoute
 
 class MockViewControllerRoutable: MockViewController, QTRoutable {
 
@@ -8,7 +9,7 @@ class MockViewControllerRoutable: MockViewController, QTRoutable {
 
     init(_ route: QTRoute? = nil) {
         super.init(nibName: nil, bundle: nil)
-        self.routeResolver = MockRouteResolver(route ?? QTRoute("\(type(of: self))"))
+        self.routeResolver = MockQTRouteResolver(route ?? QTRoute("\(type(of: self))"))
     }
 
     required init?(coder aDecoder: NSCoder) {

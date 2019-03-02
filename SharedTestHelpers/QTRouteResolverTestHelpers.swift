@@ -1,5 +1,6 @@
 
 import XCTest
+import QTRoute
 
 class Captured<T> { var value: T? }
 

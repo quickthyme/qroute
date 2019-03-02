@@ -1,20 +1,21 @@
 
 import XCTest
+import QTRoute
 
 class QTRouteResolverTests: XCTestCase {
 
     var subject: QTRouteResolver!
-    var stubResolvers: StubResolvers!
-    var mockRoutable: MockRoutable!
+    var stubResolvers: StubQTResolverActions!
+    var mockRoutable: MockQTRoutable!
     let route = QTRoute("route")
 
     override func setUp() {
-        stubResolvers = StubResolvers()
+        stubResolvers = StubQTResolverActions()
         subject = QTRouteResolver(route,
                                   toChild: stubResolvers.ToChild(),
                                   toParent: stubResolvers.ToParent(),
                                   toSelf: stubResolvers.ToSelf())
-        mockRoutable = MockRoutable(subject)
+        mockRoutable = MockQTRoutable(subject)
     }
 
     func testResolveRouteToParent() {

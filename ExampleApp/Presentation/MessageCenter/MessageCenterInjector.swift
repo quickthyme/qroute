@@ -1,5 +1,6 @@
 
 import UIKit
+import QTRoute
 
 class MessageCenterInjector: NSObject {
     @IBOutlet weak var viewController: MessageCenterViewController!

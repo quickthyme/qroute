@@ -1,5 +1,5 @@
 
-protocol QTRouteDriving: class {
+public protocol QTRouteDriving: class {
 
     func driveParent(from source: QTRoutable,
                      input: QTRoutableInput?,
