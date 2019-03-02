@@ -24,12 +24,15 @@ Quick Overview
 ```
 	let plan =
 	    QTRoute(id.Root,
+
 	        QTRoute(id.ToDo,
 	            QTRoute(id.ToDoDetail,
 	                    dependencies: ["toDoId"])),
-	    QTRoute(id.Help,
-	        QTRoute(id.ContactUs),
-	        QTRoute(id.MessageCenter)))
+
+	        QTRoute(id.Help,
+	            QTRoute(id.ContactUs),
+	            QTRoute(id.MessageCenter)))
+
 ```
 
   3. Implement your *routables*:
@@ -39,14 +42,15 @@ Quick Overview
         var routeInput: QTRoutableInput?
         var routeResolver: QTRouteResolving?
     }
+
 ```
-  
+
   4. Implement your custom *resolvers*:
 
 ```
 	func resolveRouteToParent(from: QTRoutable, input: QTRoutableInput,
 	                          completion: @escaping QTRoutableCompletion) {
-	    
+
         (from as? UIViewController)?
             .navigationController?
             .popViewController(animated: true) {
@@ -55,6 +59,7 @@ Quick Overview
                     completion(parent)
                 }}
 	}
+
 ```
 
   5. Invoke the *driver*:
@@ -68,6 +73,7 @@ Quick Overview
                                  completion: nil)
         }
     }
+
 ```
 
 
