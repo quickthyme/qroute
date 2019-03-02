@@ -1,5 +1,5 @@
 
-class QTRouteDriverStep {
+internal final class QTRouteDriverStep {
 
     static func perform(_ routable: QTRoutable, _ pathNode: QTRoutePathNode, _ input: QTRoutableInput,
                         _ animated: Bool,

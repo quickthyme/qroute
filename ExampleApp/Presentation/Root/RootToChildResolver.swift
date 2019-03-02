@@ -1,12 +1,13 @@
 
 import UIKit
+import QTRoute
 
 private let RouteTab: [QTRouteId:Int] = [
     AppRoute.id.ToDo:0,
     AppRoute.id.Help:1
 ]
 
-func RootToChildResolver() -> QTRouteResolver.ToChild {
+func RootToChildResolver() -> QTRouteResolver.ActionType.ToChild {
     return {
         route, from, input, animated, completion in
 
@@ -30,7 +31,7 @@ func RootToChildResolver() -> QTRouteResolver.ToChild {
     }
 }
 
-func RootToParentResolver() -> QTRouteResolver.ToParent {
+func RootToParentResolver() -> QTRouteResolver.ActionType.ToParent {
     return { _, _, _, _ in
         assertionFailure("cannot route beyond root!")
     }

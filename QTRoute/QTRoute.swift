@@ -1,73 +1,74 @@
 
-typealias QTRouteId = String
+public typealias QTRouteId = String
 
-class QTRoute {
-    let id: QTRouteId
-    let dependencies: [String]
-    var routes: [QTRoute] = []
+public class QTRoute: Hashable, CustomDebugStringConvertible {
 
-    weak var parent: QTRoute? = nil
+    public let id: QTRouteId
+    public let dependencies: [String]
+    public var routes: [QTRoute] = []
 
-    func route(_ id:QTRouteId) -> QTRoute? {
+    public weak var parent: QTRoute? = nil
+
+    public func route(_ id:QTRouteId) -> QTRoute? {
         return routes.first { $0.id == id }
     }
 
-    var flattened: Set<QTRoute> {
+    public var flattened: Set<QTRoute> {
         return Set<QTRoute>( [self] + routes.flatMap { $0.flattened } )
     }
 
-    required init(id:QTRouteId, dependencies: [String], routes: [QTRoute]) {
+    public func applyParent(_ parent: QTRoute) -> Self {
+        self.parent = parent
+        return self
+    }
+
+    public static func == (lhs: QTRoute, rhs: QTRoute) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    public var debugDescription: String {
+        return debugRouteDescription()
+    }
+
+    public required init(id:QTRouteId, dependencies: [String], routes: [QTRoute]) {
         self.id = id
         self.dependencies = dependencies
         self.routes = routes.map { $0.applyParent(self) }
     }
 
-    func applyParent(_ parent: QTRoute) -> Self {
-        self.parent = parent
-        return self
-    }
-}
-
-extension QTRoute {
-
-    convenience init(_ id:QTRouteId, dependencies: [String], _ routes: QTRoute...) {
+    public convenience init(_ id:QTRouteId, dependencies: [String], _ routes: QTRoute...) {
         self.init(id: id, dependencies: dependencies, routes: routes)
     }
 
-    convenience init(_ id:QTRouteId, dependencies: [String]) {
+    public convenience init(_ id:QTRouteId, dependencies: [String]) {
         self.init(id: id, dependencies: dependencies, routes: [])
     }
 
-    convenience init(_ id:QTRouteId, _ routes: QTRoute...) {
+    public convenience init(_ id:QTRouteId, _ routes: QTRoute...) {
         self.init(id: id, dependencies: [], routes: routes)
     }
 
-    convenience init(_ id:QTRouteId) {
+    public convenience init(_ id:QTRouteId) {
         self.init(id: id, dependencies: [], routes: [])
     }
 
-    convenience init(shallowClone route: QTRoute) {
+    public convenience init(shallowClone route: QTRoute) {
         self.init(id: route.id, dependencies: route.dependencies, routes: [])
         self.parent = nil
     }
 
-    convenience init(deepClone route: QTRoute) {
+    public convenience init(deepClone route: QTRoute) {
         let newRoutes: [QTRoute] = route.routes.map { QTRoute(deepClone: $0) }
         self.init(id: route.id, dependencies: route.dependencies, routes: newRoutes)
         self.parent = nil
     }
 }
 
-extension QTRoute: Hashable {
-    static func == (lhs: QTRoute, rhs: QTRoute) -> Bool {
-        return lhs.id == rhs.id
-    }
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-extension QTRoute: CustomDebugStringConvertible {
+fileprivate extension QTRoute {
 
     func debugRouteDescription() -> String {
         return self.debugRouteDescription("")
@@ -88,9 +89,5 @@ extension QTRoute: CustomDebugStringConvertible {
             output += "\n"
         }
         return output
-    }
-
-    var debugDescription: String {
-        return debugRouteDescription()
     }
 }

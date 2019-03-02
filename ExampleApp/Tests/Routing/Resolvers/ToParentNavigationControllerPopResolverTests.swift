@@ -1,10 +1,11 @@
 
 import XCTest
 import UIKit
+import QTRoute
 
 class ToParentNavigationControllerPopResolverTests: XCTestCase {
 
-    let subject: QTRouteResolver.ToParent = ToParentNavigationControllerPopResolver()
+    let subject: QTRouteResolver.ActionType.ToParent = ToParentNavigationControllerPopResolver()
 
     func test_resolve() {
 

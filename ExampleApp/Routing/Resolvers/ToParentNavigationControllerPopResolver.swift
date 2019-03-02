@@ -1,7 +1,8 @@
 
 import UIKit
+import QTRoute
 
-func ToParentNavigationControllerPopResolver() -> QTRouteResolver.ToParent {
+func ToParentNavigationControllerPopResolver() -> QTRouteResolver.ActionType.ToParent {
     return {
         from, input, animated, completion in
 

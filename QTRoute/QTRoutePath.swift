@@ -1,12 +1,12 @@
 
-typealias QTRoutePath = Array<QTRoutePathNode>
+public typealias QTRoutePath = Array<QTRoutePathNode>
 
-enum QTRoutePathNode: Hashable {
+public enum QTRoutePathNode: Hashable {
     case SELF(QTRoute)
     case UP(QTRoute)
     case DOWN(QTRoute)
 
-    var route: QTRoute {
+    public var route: QTRoute {
         switch (self) {
         case let .SELF(route):  return route
         case let .UP(route):    return route
@@ -15,49 +15,49 @@ enum QTRoutePathNode: Hashable {
     }
 }
 
-extension QTRoute {
-    func findPath(to targetId: QTRouteId) -> QTRoutePath {
+public extension QTRoute {
+    public func findPath(to targetId: QTRouteId) -> QTRoutePath {
         guard (targetId != "") else { return [] }
         if (targetId == self.id) {
             return [.SELF(self)]
-        } else if let discoveredChild = self.findDescendant(targetId) {
-            return QTRoute.buildPath(downTo: discoveredChild, from: self.id)
-        } else if let discoveredParent = self.findAncestor(targetId) {
-            return QTRoute.buildPath(upTo: discoveredParent.id, from: self)
+        } else if let discoveredDescendant = self.findDescendant(targetId) {
+            return QTRoute.buildPath(downTo: discoveredDescendant, from: self.id)
+        } else if let discoveredAncestor = self.findAncestor(targetId) {
+            return QTRoute.buildPath(upTo: discoveredAncestor.id, from: self)
         }
         return QTRoute.buildComplexPath(to: targetId, from: self)
     }
 
-    func findDescendant(_ id: QTRouteId) -> QTRoute? {
+    public func findDescendant(_ id: QTRouteId) -> QTRoute? {
         return QTRoute.findDescendant(id, from: self)
     }
 
-    static func findDescendant(_ id: QTRouteId, from route: QTRoute) -> QTRoute? {
+    public static func findDescendant(_ id: QTRouteId, from route: QTRoute) -> QTRoute? {
         return route.route(id) ?? route.routes.compactMap { $0.findDescendant(id) } .first
     }
 
-    func findAncestor(_ id: QTRouteId) -> QTRoute? {
+    public func findAncestor(_ id: QTRouteId) -> QTRoute? {
         return QTRoute.findAncestor(id, from: self)
     }
 
-    static func findAncestor(_ id: QTRouteId, from route:QTRoute) -> QTRoute? {
+    public static func findAncestor(_ id: QTRouteId, from route:QTRoute) -> QTRoute? {
         guard let parent = route.parent else { return nil }
         return (parent.id == id) ? parent : findAncestor(id, from: parent)
     }
 
-    func findRoot() -> QTRoute {
+    public func findRoot() -> QTRoute {
         return QTRoute.findRoot(from: self)
     }
 
-    static func findRoot(from route:QTRoute) -> QTRoute {
+    public static func findRoot(from route:QTRoute) -> QTRoute {
         return (route.parent == nil) ? route : findRoot(from: route.parent!)
     }
 
-    func findLowestCommonAncestor(otherRoute: QTRoute, root: QTRoute? = nil) -> QTRoute {
+    public func findLowestCommonAncestor(otherRoute: QTRoute, root: QTRoute? = nil) -> QTRoute {
         return QTRoute.findLowestCommonAncestor(lhs: self, rhs: otherRoute, root: root)
     }
 
-    static func findLowestCommonAncestor(lhs: QTRoute, rhs: QTRoute, root: QTRoute? = nil) -> QTRoute {
+    public static func findLowestCommonAncestor(lhs: QTRoute, rhs: QTRoute, root: QTRoute? = nil) -> QTRoute {
         let root = root ?? findRoot(from: lhs)
         let left:  [QTRoute] = QTRoute.buildPath(upTo: root.id, from: lhs).map { $0.route }
         let right: [QTRoute] = QTRoute.buildPath(upTo: root.id, from: rhs).map { $0.route }

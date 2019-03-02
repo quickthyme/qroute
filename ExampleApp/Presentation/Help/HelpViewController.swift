@@ -1,5 +1,6 @@
 
 import UIKit
+import QTRoute
 
 class HelpViewController: UIViewController, QTRoutable {
     var routeInput: QTRoutableInput?

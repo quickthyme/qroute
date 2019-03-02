@@ -1,5 +1,6 @@
 
 import XCTest
+import QTRoute
 
 class QTRoutePathTests: XCTestCase {
 
@@ -74,8 +75,8 @@ class QTRoutePathTests: XCTestCase {
     }
 
     func testFindPath_many() {
-        given("route plan with many nested routes (MockRoutePlan)") {
-            let root = MockRoutePlan()
+        given("route plan with many nested routes (MockQTRoutePlan)") {
+            let root = MockQTRoutePlan()
             let settings = root.routes.first { $0.id == "Settings" }!
             let profileSettings = settings.routes.first { $0.id == "Profile Settings" }!
             let help = root.routes.first { $0.id == "Help" }!

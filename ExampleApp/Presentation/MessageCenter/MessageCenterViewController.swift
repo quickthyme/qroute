@@ -1,5 +1,6 @@
 
 import UIKit
+import QTRoute
 
 class MessageCenterViewController: UIViewController, QTRoutable {
     var routeInput: QTRoutableInput?

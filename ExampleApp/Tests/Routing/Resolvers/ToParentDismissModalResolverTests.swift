@@ -1,10 +1,11 @@
 
 import XCTest
 import UIKit
+import QTRoute
 
 class ToParentDismissModalResolverTests: XCTestCase {
 
-    let subject: QTRouteResolver.ToParent = ToParentDismissModalResolver()
+    let subject: QTRouteResolver.ActionType.ToParent = ToParentDismissModalResolver()
 
     func test_resolve() {
 

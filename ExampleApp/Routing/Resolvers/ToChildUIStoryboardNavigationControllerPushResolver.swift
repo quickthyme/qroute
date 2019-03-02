@@ -1,7 +1,8 @@
 
 import UIKit
+import QTRoute
 
-func ToChildUIStoryboardNavigationControllerPushResolver() -> QTRouteResolver.ToChild {
+func ToChildUIStoryboardNavigationControllerPushResolver() -> QTRouteResolver.ActionType.ToChild {
     return { route, from, input, animated, completion in
         guard
             let fromVC = from as? UIViewController,

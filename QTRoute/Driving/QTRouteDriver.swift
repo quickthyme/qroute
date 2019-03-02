@@ -1,17 +1,18 @@
 
-class QTRouteDriver: QTRouteDriving {
+public final class QTRouteDriver: QTRouteDriving {
+    public init() {}
 
-    func driveParent(from source: QTRoutable, input: QTRoutableInput?, animated:Bool, completion: QTRoutableCompletion?) {
+    public func driveParent(from source: QTRoutable, input: QTRoutableInput?, animated:Bool, completion: QTRoutableCompletion?) {
         guard let parentId = source.routeResolver?.route.parent?.id else { completion?(nil); return }
         driveTo(parentId, from: source, input: input ?? [:], animated: animated, completion: completion)
     }
 
-    func driveSub(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?, animated:Bool, completion: QTRoutableCompletion?) {
+    public func driveSub(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?, animated:Bool, completion: QTRoutableCompletion?) {
         guard let clonePath = buildClonePath(to: targetId, from: source) else { completion?(nil); return }
         QTRouteDriver.nextStep(clonePath, source, input ?? [:], animated, completion)
     }
 
-    func driveTo(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?, animated:Bool, completion: QTRoutableCompletion?) {
+    public func driveTo(_ targetId: QTRouteId, from source: QTRoutable, input: QTRoutableInput?, animated:Bool, completion: QTRoutableCompletion?) {
         guard let path = source.routeResolver?.route.findPath(to: targetId) else { completion?(nil); return }
         QTRouteDriver.nextStep(path, source, input ?? [:], animated, completion)
     }

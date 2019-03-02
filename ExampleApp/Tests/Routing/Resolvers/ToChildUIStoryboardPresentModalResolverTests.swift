@@ -1,10 +1,11 @@
 
 import XCTest
 import UIKit
+import QTRoute
 
 class ToChildUIStoryboardPresentModalResolverTests: XCTestCase {
 
-    let subject: QTRouteResolver.ToChild = ToChildUIStoryboardPresentModalResolver()
+    let subject: QTRouteResolver.ActionType.ToChild = ToChildUIStoryboardPresentModalResolver()
     let inputStream: QTRoutableInput = [
         "somethingForSusan":"123.45.678.910.11.12",
         "somethingForBruce":[1,-1]

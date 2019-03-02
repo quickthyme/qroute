@@ -1,5 +1,6 @@
 
 import UIKit
+import QTRoute
 
 class RootInjector: NSObject {
     @IBOutlet weak var viewController: RootViewController!
