@@ -21,10 +21,11 @@ Either add it as a *submodule* (for use with **Xcode**), otherwise use **SwiftPM
 When importing the library for use in an Xcode project (such as for an iOS or OSX app), then the
 simplest thing to do is add it as a git *submodule*:
   
+```
+    mkdir -p submodule/qtroute
+    git submodule add https://github.com/quickthyme/qtroute.git submodule/qtroute
 
-    `mkdir -p submodule/qtroute`
-
-    `git submodule add https://github.com/quickthyme/qtroute.git submodule/qtroute`
+```
 
 Next, link the **QTRoute.xcodeproj** as a dependency of your project by dragging it from the Finder
 into your open project or workspace.

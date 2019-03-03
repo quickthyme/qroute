@@ -12,10 +12,9 @@
 
 <br />
 
-## [Example App](https://github.com/quickthyme/qtroute-example-ios)
+## [Getting Started](docs/getting-started.md)
 
-There is an example app *[qtroute-example-ios](https://github.com/quickthyme/qtroute-example-ios)*,
-written for iOS that demonstrates how one might go about using various navigation mechanisms.
+Install and start building right away using this quick-start [overview](docs/getting-started.md).
 
 <br />
 
@@ -23,10 +22,10 @@ written for iOS that demonstrates how one might go about using various navigatio
 
 More details on how to use QTRoute in an application can be found [here](docs/reference).
 
-
-
 <br />
 
-## [Getting Started](docs/getting-started.md)
+## [Example App](https://github.com/quickthyme/qtroute-example-ios)
 
-Install and start building right away using this quick-start [overview](docs/getting-started.md).
+There is an example app *[qtroute-example-ios](https://github.com/quickthyme/qtroute-example-ios)*,
+written for iOS that demonstrates how one might go about using various navigation mechanisms.
+
