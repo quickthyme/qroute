@@ -27,7 +27,8 @@ is not provided for you, the included ExampleApp contains several view controlle
 
 ### *QTRouteDriving* QTRouteDriver
 
-Drives path navigation and resolver events. The `QTRouteDriver` class (and suitable testing "mock") is provided for you.
+Drives path navigation and resolver events. The `QTRouteDriver` class (and suitable testing "mock") is
+provided for you.
 
 <br />
 
@@ -53,9 +54,15 @@ driveSub(QTRouteId,
          animated: Bool,
          completion: QTRoutableCompletion?)
 ```
-Commands the `QTRouteDriver` to navigate to any route in the hierarchy, regardless of location, *as if it were*
-an *immediate logical descendant* from the current route. (Essentially a subroutine version of `driveTo`.) Pass
-any dependency requirements via the `input` parameter.
+Commands the `QTRouteDriver` to navigate to any route in the hierarchy, regardless of location,
+*as if it were* an *immediate logical descendant* from the current route. (Essentially a subroutine
+version of `driveTo`.) Pass any dependency requirements via the `input` parameter.
+
+**NOTE**: This works by cloning the target route (and its children) and then binding the clone's
+parent to the current route. Once you navigate back, the cloned sub-tree will no longer exist.
+This allows you to do many fun and *dangerous* things. For instance, you can stack the same
+series of routables indefinitely like in a menu-driven app, or drive global modals. But you can
+also create routes that would be irrational if you're not careful.
 
 <br />
 

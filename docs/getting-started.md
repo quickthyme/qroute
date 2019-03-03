@@ -38,14 +38,13 @@ linking phase, and you're all set!
 
 #### Using the Swift Package Manager
 
-For non-Xcode folks, QTRoute supports the [Swift Package Manager](https://swift.org/package-manager/).
-It works fine in any Swift project on any Swift platform, including OSX and Linux.
+QTRoute supports the [Swift Package Manager](https://swift.org/package-manager/).
+It works fine in any Swift project on any Swift platform, including OSX and Linux. Just add the
+dependency to your `Package.swift` file:
 
-Just add the dependency to your `Package.swift` file:
-
-  - Package Name: `QTRoute`
-  - Package Url: `https://github.com/quickthyme/qtroute.git`
-  - Package version: `1.0.0`
+  - package: `QTRoute`
+  - version: `1.0.0`
+  - url: `https://github.com/quickthyme/qtroute.git`
 
 Then just ...
 
