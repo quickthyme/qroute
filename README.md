@@ -1,6 +1,6 @@
 # ![kyoot-root](docs/icon.png) QTRoute
 
-[![Build status](https://build.appcenter.ms/v0.1/apps/73deb936-f18b-48aa-b738-d5f840b4d5d7/branches/master/badge)](https://appcenter.ms)
+[![Build Status](https://travis-ci.org/quickthyme/qtroute.svg?branch=master)](https://travis-ci.org/quickthyme/qtroute)
 
 **QTRoute** /'kyoot•root/ - *n* - Declarative general purpose UI navigation and routing model.
 
