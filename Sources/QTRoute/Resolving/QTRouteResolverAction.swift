@@ -9,13 +9,6 @@ public extension QTRouteResolver {
 
     public struct DefaultAction {
 
-        public static func ToSelf() -> ActionType.ToSelf {
-            return { from, input, _, completion  in
-                QTRouteResolver.mergeInputDependencies(target: from, input: input)
-                completion(from)
-            }
-        }
-
         public static func ToSelfNoOp() -> ActionType.ToSelf {
             return { _, _, _, _ in /* no-op */ }
         }
@@ -26,6 +19,19 @@ public extension QTRouteResolver {
 
         public static func ToParentNoOp() -> ActionType.ToParent {
             return { _, _, _, _ in /* no-op */ }
+        }
+
+        public static func ToSelf() -> ActionType.ToSelf {
+            return { from, input, _, completion  in
+                QTRouteResolver.mergeInputDependencies(target: from, input: input)
+                completion(from)
+            }
+        }
+
+        public static func ToChildKeyed(_ actions: [QTRouteId:ActionType.ToChild]) -> ActionType.ToChild {
+            return { to, from, input, animated, completion  in
+                actions[to.id]?(to, from, input, animated, completion)
+            }
         }
     }
 }

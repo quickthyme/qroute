@@ -12,7 +12,7 @@ class QTRouteResolverTests: XCTestCase {
     override func setUp() {
         stubResolvers = StubQTResolverActions()
         subject = QTRouteResolver(route,
-                                  toChild: stubResolvers.ToChild(),
+                                  toChild: stubResolvers.ToChild1(),
                                   toParent: stubResolvers.ToParent(),
                                   toSelf: stubResolvers.ToSelf())
         mockRoutable = MockQTRoutable(subject)
@@ -38,7 +38,7 @@ class QTRouteResolverTests: XCTestCase {
                                         animated: false,
                                         completion: {_ in})
             then("it should use the ToChild method") {
-                XCTAssertTrue(stubResolvers.didCall_ToChild)
+                XCTAssertTrue(stubResolvers.didCall_ToChild1)
             }
         }
     }
@@ -51,6 +51,62 @@ class QTRouteResolverTests: XCTestCase {
                                        completion: {_ in})
             then("it should use the ToSelf method") {
                 XCTAssertTrue(stubResolvers.didCall_ToSelf)
+            }
+        }
+    }
+
+    func testResolveRouteToChildKeyed() {
+        given("keyed actions and a couple routes") {
+            let route1 = QTRoute("route1")
+            let route2 = QTRoute("route2")
+            subject = QTRouteResolver(
+                route1,
+                toChild: QTRouteResolver
+                    .DefaultAction.ToChildKeyed([
+                        route1.id: stubResolvers.ToChild1(),
+                        route2.id: stubResolvers.ToChild2()
+                        ]),
+                toParent: stubResolvers.ToParent(),
+                toSelf: stubResolvers.ToSelf())
+            mockRoutable = MockQTRoutable(subject)
+
+            when("calling resolveRouteToChild for unregistered route") {
+                stubResolvers.reset()
+                subject.resolveRouteToChild(QTRoute("route9"),
+                                            from: mockRoutable,
+                                            input: [:],
+                                            animated: false,
+                                            completion: {_ in})
+                then("it should not call either method") {
+                    XCTAssertFalse(stubResolvers.didCall_ToChild1)
+                    XCTAssertFalse(stubResolvers.didCall_ToChild2)
+                }
+            }
+
+            when("calling resolveRouteToChild for route 1") {
+                stubResolvers.reset()
+                subject.resolveRouteToChild(route1,
+                                            from: mockRoutable,
+                                            input: [:],
+                                            animated: false,
+                                            completion: {_ in})
+                then("it should use the ToChild1 method") {
+                    XCTAssertTrue(stubResolvers.didCall_ToChild1)
+                    XCTAssertFalse(stubResolvers.didCall_ToChild2)
+                }
+            }
+
+            when("calling resolveRouteToChild for route 2") {
+                stubResolvers.reset()
+                subject.resolveRouteToChild(route2,
+                                            from: mockRoutable,
+                                            input: [:],
+                                            animated: false,
+                                            completion: {_ in})
+                then("it should use the ToChild2 method") {
+                    XCTAssertTrue(stubResolvers.didCall_ToChild2)
+                    XCTAssertFalse(stubResolvers.didCall_ToChild1)
+                }
             }
         }
     }
