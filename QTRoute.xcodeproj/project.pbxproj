@@ -7,26 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC1E3C9C2228A26F0080C4A2 /* QTRouteResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */; };
-		DC23AC5F222A575D00A00D40 /* QTRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F639C2220C169003842BB /* QTRoute.swift */; };
-		DC23AC60222A575D00A00D40 /* QTRoutePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD12223677000CC080C /* QTRoutePath.swift */; };
-		DC23AC61222A575D00A00D40 /* QTRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE836A52221D5D000E714F8 /* QTRoutable.swift */; };
-		DC23AC62222A575D00A00D40 /* QTRouteDriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE836A12221D5C200E714F8 /* QTRouteDriving.swift */; };
-		DC23AC63222A575D00A00D40 /* QTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD52223CC5E00CC080C /* QTRouteDriver.swift */; };
-		DC23AC64222A575D00A00D40 /* QTRouteDriverStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */; };
-		DC23AC65222A575D00A00D40 /* QTRouteResolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC544929222611A800578EC8 /* QTRouteResolving.swift */; };
-		DC23AC66222A575D00A00D40 /* QTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */; };
-		DC23AC6C222A5A6200A00D40 /* QTRouteResolverAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC6B222A5A6200A00D40 /* QTRouteResolverAction.swift */; };
-		DC23AC8A222A68DD00A00D40 /* MockQTRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54492C222615C300578EC8 /* MockQTRoutable.swift */; };
-		DC23AC8C222A68DD00A00D40 /* MockQTRoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B622213A5D00C2B296 /* MockQTRoutePlan.swift */; };
-		DC23AC8D222A68DD00A00D40 /* MockQTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD92223D1E000CC080C /* MockQTRouteResolver.swift */; };
-		DC23AC8E222A68DD00A00D40 /* StubQTResolverActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E3C9F2228C3A80080C4A2 /* StubQTResolverActions.swift */; };
 		DC23AC92222A696A00A00D40 /* libQTRoute.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23AC58222A56AE00A00D40 /* libQTRoute.a */; };
-		DC23ACF0222A731E00A00D40 /* MockQTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23AC7B222A67B100A00D40 /* MockQTRouteDriver.swift */; };
-		DC9A7BD0222359B200CC080C /* QTRoutePathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BCF222359B200CC080C /* QTRoutePathTests.swift */; };
-		DC9A7BD82223D0CA00CC080C /* QTRouteDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A7BD72223D0CA00CC080C /* QTRouteDriverTests.swift */; };
-		DCE836882221C37D00E714F8 /* QTRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571AE2221395F00C2B296 /* QTRouteTests.swift */; };
-		DCE836892221C38000E714F8 /* BDDTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */; };
+		DC5E91EF222B5651003B7DD1 /* QTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91E5222B5651003B7DD1 /* QTRouteResolver.swift */; };
+		DC5E91F0222B5651003B7DD1 /* QTRouteResolverAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91E6222B5651003B7DD1 /* QTRouteResolverAction.swift */; };
+		DC5E91F1222B5651003B7DD1 /* QTRouteResolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91E7222B5651003B7DD1 /* QTRouteResolving.swift */; };
+		DC5E91F2222B5651003B7DD1 /* QTRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91E8222B5651003B7DD1 /* QTRoute.swift */; };
+		DC5E91F3222B5651003B7DD1 /* QTRoutePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91E9222B5651003B7DD1 /* QTRoutePath.swift */; };
+		DC5E91F4222B5651003B7DD1 /* QTRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91EA222B5651003B7DD1 /* QTRoutable.swift */; };
+		DC5E91F5222B5651003B7DD1 /* QTRouteDriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91EC222B5651003B7DD1 /* QTRouteDriving.swift */; };
+		DC5E91F6222B5651003B7DD1 /* QTRouteDriverStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91ED222B5651003B7DD1 /* QTRouteDriverStep.swift */; };
+		DC5E91F7222B5651003B7DD1 /* QTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91EE222B5651003B7DD1 /* QTRouteDriver.swift */; };
+		DC5E9216222B56A9003B7DD1 /* MockQTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91FC222B567D003B7DD1 /* MockQTRouteDriver.swift */; };
+		DC5E9217222B56A9003B7DD1 /* MockQTRouteResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91FD222B567D003B7DD1 /* MockQTRouteResolver.swift */; };
+		DC5E9218222B56A9003B7DD1 /* MockQTRoutePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91FE222B567D003B7DD1 /* MockQTRoutePlan.swift */; };
+		DC5E9219222B56A9003B7DD1 /* MockQTRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91FF222B567D003B7DD1 /* MockQTRoutable.swift */; };
+		DC5E921A222B56A9003B7DD1 /* StubQTResolverActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9200222B567D003B7DD1 /* StubQTResolverActions.swift */; };
+		DC5E921B222B56B3003B7DD1 /* QTRoutePathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9201222B567D003B7DD1 /* QTRoutePathTests.swift */; };
+		DC5E921D222B56B3003B7DD1 /* QTRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9203222B567D003B7DD1 /* QTRouteTests.swift */; };
+		DC5E921E222B56B3003B7DD1 /* QTRouteResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9204222B567D003B7DD1 /* QTRouteResolverTests.swift */; };
+		DC5E921F222B56B8003B7DD1 /* QTRouteDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9208222B567D003B7DD1 /* QTRouteDriverTests.swift */; };
+		DC5E9220222B56BE003B7DD1 /* BDDTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9206222B567D003B7DD1 /* BDDTestHelpers.swift */; };
+		DC5E9221222B56BE003B7DD1 /* QTRouteResolverTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9207222B567D003B7DD1 /* QTRouteResolverTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,32 +53,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DC0159D1222AA18D00D786A2 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTests.swift; sourceTree = "<group>"; };
-		DC1E3C9F2228C3A80080C4A2 /* StubQTResolverActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubQTResolverActions.swift; sourceTree = "<group>"; };
-		DC1F639C2220C169003842BB /* QTRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRoute.swift; sourceTree = "<group>"; };
-		DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteDriverStep.swift; sourceTree = "<group>"; };
 		DC23AC58222A56AE00A00D40 /* libQTRoute.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQTRoute.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC23AC6B222A5A6200A00D40 /* QTRouteResolverAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolverAction.swift; sourceTree = "<group>"; };
-		DC23AC7B222A67B100A00D40 /* MockQTRouteDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQTRouteDriver.swift; sourceTree = "<group>"; };
-		DC4571AE2221395F00C2B296 /* QTRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteTests.swift; sourceTree = "<group>"; };
-		DC4571B622213A5D00C2B296 /* MockQTRoutePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQTRoutePlan.swift; sourceTree = "<group>"; };
-		DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDDTestHelpers.swift; sourceTree = "<group>"; };
 		DC4E06D2222678B000A69630 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		DC544929222611A800578EC8 /* QTRouteResolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolving.swift; sourceTree = "<group>"; };
-		DC54492C222615C300578EC8 /* MockQTRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQTRoutable.swift; sourceTree = "<group>"; };
-		DC54493F2226472600578EC8 /* UIViewControllerTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerTestHelpers.swift; sourceTree = "<group>"; };
-		DC9A7BCF222359B200CC080C /* QTRoutePathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRoutePathTests.swift; sourceTree = "<group>"; };
-		DC9A7BD12223677000CC080C /* QTRoutePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRoutePath.swift; sourceTree = "<group>"; };
-		DC9A7BD52223CC5E00CC080C /* QTRouteDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteDriver.swift; sourceTree = "<group>"; };
-		DC9A7BD72223D0CA00CC080C /* QTRouteDriverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteDriverTests.swift; sourceTree = "<group>"; };
-		DC9A7BD92223D1E000CC080C /* MockQTRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockQTRouteResolver.swift; sourceTree = "<group>"; };
-		DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolver.swift; sourceTree = "<group>"; };
+		DC5E91E0222B562B003B7DD1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		DC5E91E1222B562B003B7DD1 /* reference.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = reference.md; sourceTree = "<group>"; };
+		DC5E91E5222B5651003B7DD1 /* QTRouteResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteResolver.swift; sourceTree = "<group>"; };
+		DC5E91E6222B5651003B7DD1 /* QTRouteResolverAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteResolverAction.swift; sourceTree = "<group>"; };
+		DC5E91E7222B5651003B7DD1 /* QTRouteResolving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteResolving.swift; sourceTree = "<group>"; };
+		DC5E91E8222B5651003B7DD1 /* QTRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRoute.swift; sourceTree = "<group>"; };
+		DC5E91E9222B5651003B7DD1 /* QTRoutePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRoutePath.swift; sourceTree = "<group>"; };
+		DC5E91EA222B5651003B7DD1 /* QTRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRoutable.swift; sourceTree = "<group>"; };
+		DC5E91EC222B5651003B7DD1 /* QTRouteDriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteDriving.swift; sourceTree = "<group>"; };
+		DC5E91ED222B5651003B7DD1 /* QTRouteDriverStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteDriverStep.swift; sourceTree = "<group>"; };
+		DC5E91EE222B5651003B7DD1 /* QTRouteDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteDriver.swift; sourceTree = "<group>"; };
+		DC5E91FC222B567D003B7DD1 /* MockQTRouteDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRouteDriver.swift; sourceTree = "<group>"; };
+		DC5E91FD222B567D003B7DD1 /* MockQTRouteResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRouteResolver.swift; sourceTree = "<group>"; };
+		DC5E91FE222B567D003B7DD1 /* MockQTRoutePlan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRoutePlan.swift; sourceTree = "<group>"; };
+		DC5E91FF222B567D003B7DD1 /* MockQTRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockQTRoutable.swift; sourceTree = "<group>"; };
+		DC5E9200222B567D003B7DD1 /* StubQTResolverActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubQTResolverActions.swift; sourceTree = "<group>"; };
+		DC5E9201222B567D003B7DD1 /* QTRoutePathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRoutePathTests.swift; sourceTree = "<group>"; };
+		DC5E9203222B567D003B7DD1 /* QTRouteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteTests.swift; sourceTree = "<group>"; };
+		DC5E9204222B567D003B7DD1 /* QTRouteResolverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTests.swift; sourceTree = "<group>"; };
+		DC5E9206222B567D003B7DD1 /* BDDTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDDTestHelpers.swift; sourceTree = "<group>"; };
+		DC5E9207222B567D003B7DD1 /* QTRouteResolverTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTestHelpers.swift; sourceTree = "<group>"; };
+		DC5E9208222B567D003B7DD1 /* QTRouteDriverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteDriverTests.swift; sourceTree = "<group>"; };
+		DC5E9224222B5A3C003B7DD1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCE8367E2221C32F00E714F8 /* QTRouteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QTRouteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCE836822221C32F00E714F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCE836A12221D5C200E714F8 /* QTRouteDriving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteDriving.swift; sourceTree = "<group>"; };
-		DCE836A52221D5D000E714F8 /* QTRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRoutable.swift; sourceTree = "<group>"; };
-		DCFDE7262228E2AD0050F70E /* QTRouteResolverTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				DC4E06D2222678B000A69630 /* README.md */,
-				DC1F639B2220C0E6003842BB /* QTRoute */,
-				DC23AC7F222A68A400A00D40 /* SharedTestDoubles */,
-				DCE8369F2221D38E00E714F8 /* SharedTestHelpers */,
+				DC5E91DF222B562B003B7DD1 /* docs */,
+				DC5E91E2222B5651003B7DD1 /* Sources */,
+				DC5E91F8222B567D003B7DD1 /* Tests */,
 				DC1F63852220BC63003842BB /* Products */,
 				DC23AC91222A696A00A00D40 /* Frameworks */,
 			);
@@ -120,52 +121,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DC1F639B2220C0E6003842BB /* QTRoute */ = {
-			isa = PBXGroup;
-			children = (
-				DC0159D1222AA18D00D786A2 /* module.modulemap */,
-				DC1F639C2220C169003842BB /* QTRoute.swift */,
-				DC9A7BD12223677000CC080C /* QTRoutePath.swift */,
-				DCE836A52221D5D000E714F8 /* QTRoutable.swift */,
-				DC23AC6E222A635E00A00D40 /* Driving */,
-				DC23AC67222A57E700A00D40 /* Resolving */,
-				DC4571AD2221395F00C2B296 /* Tests */,
-			);
-			path = QTRoute;
-			sourceTree = "<group>";
-		};
-		DC23AC67222A57E700A00D40 /* Resolving */ = {
-			isa = PBXGroup;
-			children = (
-				DC544929222611A800578EC8 /* QTRouteResolving.swift */,
-				DCC5082A2227D5ED00804586 /* QTRouteResolver.swift */,
-				DC23AC6B222A5A6200A00D40 /* QTRouteResolverAction.swift */,
-			);
-			path = Resolving;
-			sourceTree = "<group>";
-		};
-		DC23AC6E222A635E00A00D40 /* Driving */ = {
-			isa = PBXGroup;
-			children = (
-				DCE836A12221D5C200E714F8 /* QTRouteDriving.swift */,
-				DC9A7BD52223CC5E00CC080C /* QTRouteDriver.swift */,
-				DC23AC50222A2BDA00A00D40 /* QTRouteDriverStep.swift */,
-			);
-			path = Driving;
-			sourceTree = "<group>";
-		};
-		DC23AC7F222A68A400A00D40 /* SharedTestDoubles */ = {
-			isa = PBXGroup;
-			children = (
-				DC54492C222615C300578EC8 /* MockQTRoutable.swift */,
-				DC23AC7B222A67B100A00D40 /* MockQTRouteDriver.swift */,
-				DC4571B622213A5D00C2B296 /* MockQTRoutePlan.swift */,
-				DC9A7BD92223D1E000CC080C /* MockQTRouteResolver.swift */,
-				DC1E3C9F2228C3A80080C4A2 /* StubQTResolverActions.swift */,
-			);
-			path = SharedTestDoubles;
-			sourceTree = "<group>";
-		};
 		DC23AC91222A696A00A00D40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,26 +128,96 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC4571AD2221395F00C2B296 /* Tests */ = {
+		DC5E91DF222B562B003B7DD1 /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				DCE836822221C32F00E714F8 /* Info.plist */,
-				DC4571AE2221395F00C2B296 /* QTRouteTests.swift */,
-				DC9A7BCF222359B200CC080C /* QTRoutePathTests.swift */,
-				DC9A7BD72223D0CA00CC080C /* QTRouteDriverTests.swift */,
-				DC1E3C9A2228A2680080C4A2 /* QTRouteResolverTests.swift */,
+				DC5E91E0222B562B003B7DD1 /* icon.png */,
+				DC5E91E1222B562B003B7DD1 /* reference.md */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		DC5E91E2222B5651003B7DD1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E91E3222B5651003B7DD1 /* QTRoute */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		DC5E91E3222B5651003B7DD1 /* QTRoute */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E91E8222B5651003B7DD1 /* QTRoute.swift */,
+				DC5E91E9222B5651003B7DD1 /* QTRoutePath.swift */,
+				DC5E91EA222B5651003B7DD1 /* QTRoutable.swift */,
+				DC5E91EB222B5651003B7DD1 /* Driving */,
+				DC5E91E4222B5651003B7DD1 /* Resolving */,
+			);
+			path = QTRoute;
+			sourceTree = "<group>";
+		};
+		DC5E91E4222B5651003B7DD1 /* Resolving */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E91E5222B5651003B7DD1 /* QTRouteResolver.swift */,
+				DC5E91E6222B5651003B7DD1 /* QTRouteResolverAction.swift */,
+				DC5E91E7222B5651003B7DD1 /* QTRouteResolving.swift */,
+			);
+			path = Resolving;
+			sourceTree = "<group>";
+		};
+		DC5E91EB222B5651003B7DD1 /* Driving */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E91EC222B5651003B7DD1 /* QTRouteDriving.swift */,
+				DC5E91ED222B5651003B7DD1 /* QTRouteDriverStep.swift */,
+				DC5E91EE222B5651003B7DD1 /* QTRouteDriver.swift */,
+			);
+			path = Driving;
+			sourceTree = "<group>";
+		};
+		DC5E91F8222B567D003B7DD1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E9224222B5A3C003B7DD1 /* Info.plist */,
+				DC5E91FA222B567D003B7DD1 /* QTRouteTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		DCE8369F2221D38E00E714F8 /* SharedTestHelpers */ = {
+		DC5E91FA222B567D003B7DD1 /* QTRouteTests */ = {
 			isa = PBXGroup;
 			children = (
-				DC4571B922213D1800C2B296 /* BDDTestHelpers.swift */,
-				DC54493F2226472600578EC8 /* UIViewControllerTestHelpers.swift */,
-				DCFDE7262228E2AD0050F70E /* QTRouteResolverTestHelpers.swift */,
+				DC5E9203222B567D003B7DD1 /* QTRouteTests.swift */,
+				DC5E9201222B567D003B7DD1 /* QTRoutePathTests.swift */,
+				DC5E9208222B567D003B7DD1 /* QTRouteDriverTests.swift */,
+				DC5E9204222B567D003B7DD1 /* QTRouteResolverTests.swift */,
+				DC5E9205222B567D003B7DD1 /* helpers */,
+				DC5E91FB222B567D003B7DD1 /* mocks */,
 			);
-			path = SharedTestHelpers;
+			path = QTRouteTests;
+			sourceTree = "<group>";
+		};
+		DC5E91FB222B567D003B7DD1 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E91FC222B567D003B7DD1 /* MockQTRouteDriver.swift */,
+				DC5E91FD222B567D003B7DD1 /* MockQTRouteResolver.swift */,
+				DC5E91FE222B567D003B7DD1 /* MockQTRoutePlan.swift */,
+				DC5E91FF222B567D003B7DD1 /* MockQTRoutable.swift */,
+				DC5E9200222B567D003B7DD1 /* StubQTResolverActions.swift */,
+			);
+			path = mocks;
+			sourceTree = "<group>";
+		};
+		DC5E9205222B567D003B7DD1 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E9206222B567D003B7DD1 /* BDDTestHelpers.swift */,
+				DC5E9207222B567D003B7DD1 /* QTRouteResolverTestHelpers.swift */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +228,7 @@
 			buildConfigurationList = DC23AC5C222A56AE00A00D40 /* Build configuration list for PBXNativeTarget "QTRoute" */;
 			buildPhases = (
 				DC23AC54222A56AE00A00D40 /* Sources */,
-				DC0159D2222AA40700D786A2 /* Copy modulemap */,
+				DC0159D2222AA40700D786A2 /* Derive modulemap */,
 				DC23AC55222A56AE00A00D40 /* Frameworks */,
 				DC23AC56222A56AE00A00D40 /* CopyFiles */,
 			);
@@ -282,7 +307,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DC0159D2222AA40700D786A2 /* Copy modulemap */ = {
+		DC0159D2222AA40700D786A2 /* Derive modulemap */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,14 +316,14 @@
 			);
 			inputPaths = (
 			);
-			name = "Copy modulemap";
+			name = "Derive modulemap";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "TARGET_DIR=${BUILT_PRODUCTS_DIR}/include/${PRODUCT_MODULE_NAME}/\nmkdir -p \"${TARGET_DIR}\"\ncp \"${DERIVED_SOURCES_DIR}/\"*-Swift.h \"${TARGET_DIR}/\"\ncp \"${PROJECT_DIR}/${PRODUCT_MODULE_NAME}/module.modulemap\" \"${TARGET_DIR}/\"\n";
+			shellScript = "TARGET_DIR=${BUILT_PRODUCTS_DIR}/include/${PRODUCT_MODULE_NAME}/\nmkdir -p \"${TARGET_DIR}\"\ncp \"${DERIVED_SOURCES_DIR}/\"*-Swift.h \"${TARGET_DIR}/\"\necho \"module QTRoute {\\n    header \\\"QTRoute-Swift.h\\\"\\n}\" > \"${TARGET_DIR}/module.modulemap\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -307,15 +332,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC23AC64222A575D00A00D40 /* QTRouteDriverStep.swift in Sources */,
-				DC23AC5F222A575D00A00D40 /* QTRoute.swift in Sources */,
-				DC23AC61222A575D00A00D40 /* QTRoutable.swift in Sources */,
-				DC23AC63222A575D00A00D40 /* QTRouteDriver.swift in Sources */,
-				DC23AC62222A575D00A00D40 /* QTRouteDriving.swift in Sources */,
-				DC23AC60222A575D00A00D40 /* QTRoutePath.swift in Sources */,
-				DC23AC66222A575D00A00D40 /* QTRouteResolver.swift in Sources */,
-				DC23AC65222A575D00A00D40 /* QTRouteResolving.swift in Sources */,
-				DC23AC6C222A5A6200A00D40 /* QTRouteResolverAction.swift in Sources */,
+				DC5E91F5222B5651003B7DD1 /* QTRouteDriving.swift in Sources */,
+				DC5E91F2222B5651003B7DD1 /* QTRoute.swift in Sources */,
+				DC5E91F0222B5651003B7DD1 /* QTRouteResolverAction.swift in Sources */,
+				DC5E91EF222B5651003B7DD1 /* QTRouteResolver.swift in Sources */,
+				DC5E91F3222B5651003B7DD1 /* QTRoutePath.swift in Sources */,
+				DC5E91F4222B5651003B7DD1 /* QTRoutable.swift in Sources */,
+				DC5E91F6222B5651003B7DD1 /* QTRouteDriverStep.swift in Sources */,
+				DC5E91F1222B5651003B7DD1 /* QTRouteResolving.swift in Sources */,
+				DC5E91F7222B5651003B7DD1 /* QTRouteDriver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,16 +348,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC23AC8E222A68DD00A00D40 /* StubQTResolverActions.swift in Sources */,
-				DCE836892221C38000E714F8 /* BDDTestHelpers.swift in Sources */,
-				DC23ACF0222A731E00A00D40 /* MockQTRouteDriver.swift in Sources */,
-				DC23AC8D222A68DD00A00D40 /* MockQTRouteResolver.swift in Sources */,
-				DC1E3C9C2228A26F0080C4A2 /* QTRouteResolverTests.swift in Sources */,
-				DC23AC8C222A68DD00A00D40 /* MockQTRoutePlan.swift in Sources */,
-				DC23AC8A222A68DD00A00D40 /* MockQTRoutable.swift in Sources */,
-				DCE836882221C37D00E714F8 /* QTRouteTests.swift in Sources */,
-				DC9A7BD82223D0CA00CC080C /* QTRouteDriverTests.swift in Sources */,
-				DC9A7BD0222359B200CC080C /* QTRoutePathTests.swift in Sources */,
+				DC5E9220222B56BE003B7DD1 /* BDDTestHelpers.swift in Sources */,
+				DC5E9219222B56A9003B7DD1 /* MockQTRoutable.swift in Sources */,
+				DC5E921F222B56B8003B7DD1 /* QTRouteDriverTests.swift in Sources */,
+				DC5E9221222B56BE003B7DD1 /* QTRouteResolverTestHelpers.swift in Sources */,
+				DC5E9218222B56A9003B7DD1 /* MockQTRoutePlan.swift in Sources */,
+				DC5E9217222B56A9003B7DD1 /* MockQTRouteResolver.swift in Sources */,
+				DC5E921D222B56B3003B7DD1 /* QTRouteTests.swift in Sources */,
+				DC5E921B222B56B3003B7DD1 /* QTRoutePathTests.swift in Sources */,
+				DC5E921A222B56A9003B7DD1 /* StubQTResolverActions.swift in Sources */,
+				DC5E9216222B56A9003B7DD1 /* MockQTRouteDriver.swift in Sources */,
+				DC5E921E222B56B3003B7DD1 /* QTRouteResolverTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,8 +520,9 @@
 		DCE836862221C32F00E714F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = QTRoute/Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,8 +538,9 @@
 		DCE836872221C32F00E714F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = QTRoute/Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

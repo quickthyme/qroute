@@ -1,6 +1,8 @@
+.DS_Store
+/Packages
+.build/
 build/
 DerivedData/
-.DS_Store
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -19,8 +21,3 @@ xcuserdata/
 *.dSYM
 timeline.xctimeline
 playground.xcworkspace
-.build/
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output

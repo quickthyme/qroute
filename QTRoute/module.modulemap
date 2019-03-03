@@ -1,3 +1,0 @@
-module QTRoute {
-    header "QTRoute-Swift.h"
-}
