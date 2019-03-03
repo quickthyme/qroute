@@ -28,9 +28,11 @@ public extension QTRouteResolver {
             }
         }
 
-        public static func ToChildKeyed(_ actions: [QTRouteId:ActionType.ToChild]) -> ActionType.ToChild {
-            return { to, from, input, animated, completion  in
-                actions[to.id]?(to, from, input, animated, completion)
+        public static func ToChildKeyed(_ actions: [QTRouteId:ActionType.ToChild],
+                                        `default`: ActionType.ToChild? = nil) -> ActionType.ToChild {
+            return {
+                actions[$0.id]?($0, $1, $2, $3, $4)
+                    ?? `default`?($0, $1, $2, $3, $4)
             }
         }
     }

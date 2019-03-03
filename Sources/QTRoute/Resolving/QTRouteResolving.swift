@@ -14,7 +14,7 @@ public protocol QTRouteResolving: class {
 
 public extension QTRouteResolving {
     public func resolveRouteToSelf(from: QTRoutable, input: QTRoutableInput, animated: Bool, completion: @escaping QTRoutableCompletion) {
-        Self.mergeInputDependencies(target: from, input: input)
+        mergeInputDependencies(target: from, input: input)
         completion(from)
     }
 

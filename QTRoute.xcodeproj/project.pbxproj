@@ -26,6 +26,8 @@
 		DC5E921E222B56B3003B7DD1 /* QTRouteResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9204222B567D003B7DD1 /* QTRouteResolverTests.swift */; };
 		DC5E921F222B56B8003B7DD1 /* QTRouteDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9208222B567D003B7DD1 /* QTRouteDriverTests.swift */; };
 		DC5E9220222B56BE003B7DD1 /* BDDTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9206222B567D003B7DD1 /* BDDTestHelpers.swift */; };
+		DC70C827222C90E90068CCB6 /* QTRouteResolverActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C826222C90E90068CCB6 /* QTRouteResolverActionTests.swift */; };
+		DC70C829222C93050068CCB6 /* QTRouteResolverMergeInputTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C828222C93050068CCB6 /* QTRouteResolverMergeInputTests.swift */; };
 		DCA6DB64222BBC1B0098D765 /* MockQTRouteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E91FC222B567D003B7DD1 /* MockQTRouteDriver.swift */; };
 		DCA6DB65222BBC230098D765 /* QTRouteResolverTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E9207222B567D003B7DD1 /* QTRouteResolverTestHelpers.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		DC5E9207222B567D003B7DD1 /* QTRouteResolverTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteResolverTestHelpers.swift; sourceTree = "<group>"; };
 		DC5E9208222B567D003B7DD1 /* QTRouteDriverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTRouteDriverTests.swift; sourceTree = "<group>"; };
 		DC5E9224222B5A3C003B7DD1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC70C826222C90E90068CCB6 /* QTRouteResolverActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolverActionTests.swift; sourceTree = "<group>"; };
+		DC70C828222C93050068CCB6 /* QTRouteResolverMergeInputTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTRouteResolverMergeInputTests.swift; sourceTree = "<group>"; };
 		DCA6DB63222BA4F00098D765 /* getting-started.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "getting-started.md"; sourceTree = "<group>"; };
 		DCE8367E2221C32F00E714F8 /* QTRouteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QTRouteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -195,6 +199,8 @@
 				DC5E9201222B567D003B7DD1 /* QTRoutePathTests.swift */,
 				DC5E9208222B567D003B7DD1 /* QTRouteDriverTests.swift */,
 				DC5E9204222B567D003B7DD1 /* QTRouteResolverTests.swift */,
+				DC70C826222C90E90068CCB6 /* QTRouteResolverActionTests.swift */,
+				DC70C828222C93050068CCB6 /* QTRouteResolverMergeInputTests.swift */,
 				DC5E9205222B567D003B7DD1 /* helpers */,
 				DC5E91FB222B567D003B7DD1 /* mocks */,
 			);
@@ -350,7 +356,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC70C827222C90E90068CCB6 /* QTRouteResolverActionTests.swift in Sources */,
 				DC5E9220222B56BE003B7DD1 /* BDDTestHelpers.swift in Sources */,
+				DC70C829222C93050068CCB6 /* QTRouteResolverMergeInputTests.swift in Sources */,
 				DC5E9219222B56A9003B7DD1 /* MockQTRoutable.swift in Sources */,
 				DCA6DB64222BBC1B0098D765 /* MockQTRouteDriver.swift in Sources */,
 				DC5E921F222B56B8003B7DD1 /* QTRouteDriverTests.swift in Sources */,

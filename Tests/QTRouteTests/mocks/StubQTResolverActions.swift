@@ -5,6 +5,7 @@ public class StubQTResolverActions {
     func reset() {
         didCall_ToChild1 = false
         didCall_ToChild2 = false
+        didCall_ToChild3 = false
         didCall_ToParent = false
         didCall_ToSelf = false
     }
@@ -20,6 +21,13 @@ public class StubQTResolverActions {
     public func ToChild2() -> QTRouteResolver.ActionType.ToChild {
         return { [weak self] _, _, _, _, _ in
             self?.didCall_ToChild2 = true
+        }
+    }
+
+    public var didCall_ToChild3 = false
+    public func ToChild3() -> QTRouteResolver.ActionType.ToChild {
+        return { [weak self] _, _, _, _, _ in
+            self?.didCall_ToChild3 = true
         }
     }
 
