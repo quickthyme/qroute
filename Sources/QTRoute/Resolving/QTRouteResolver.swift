@@ -1,5 +1,5 @@
 
-public class QTRouteResolver: QTRouteResolving {
+public final class QTRouteResolver: QTRouteResolving {
 
     public var route: QTRoute
     private let toChildAction: ActionType.ToChild

@@ -19,7 +19,7 @@ Either add it as a *submodule* (for use with **Xcode**), otherwise use **SwiftPM
 #### Using Xcode
 
 When importing the library for use in an Xcode project (such as for an iOS or OSX app), then the
-simplest thing to do is add it as a git *submodule*:
+thing to do is add it as a git *submodule*:
   
 ```
     mkdir -p submodule/qtroute
@@ -39,8 +39,7 @@ linking phase, and you're all set!
 #### Using the Swift Package Manager
 
 For non-Xcode folks, QTRoute supports the [Swift Package Manager](https://swift.org/package-manager/).
-As it is purely written in Swift, and has no other dependencies, it should be compatible with any target
-and platform including MacOS and Linux.
+It works fine in any Swift project on any Swift platform, including OSX and Linux.
 
 Just add the dependency to your `Package.swift` file:
 

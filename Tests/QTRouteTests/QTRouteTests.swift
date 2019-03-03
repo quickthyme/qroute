@@ -21,47 +21,35 @@ class QTRouteTests: XCTestCase {
                     }
                 }
 
-                with("root route 'Log')") {
-                    let route = routePlanRoot.route("Log")!
-                    with("1 child route: 'Log Entry Detail'") {
-                        XCTAssertEqual(route.routes.count, 1)
-                        let child = route.route("Log Entry Detail")!
-                        with("2 runtime dependencies (id, name)") {
-                            let deps = child.dependencies
-                            XCTAssertNotNil(deps.first {$0 == "logId" })
-                            XCTAssertNotNil(deps.first {$0 == "logName" })
-                        }
-                        with("parent property set") {
-                            XCTAssertEqual(child.parent, route)
-                        }
-                    }
+                with("root route 'Alpha')") {
+                    XCTAssertNotNil(routePlanRoot.route("Alpha"))
                 }
 
-                with("root route 'To-Do')") {
-                    let route = routePlanRoot.route("To-Do")!
-                    with("1 child route: 'To-Do Detail'") {
+                with("root route 'Bravo')") {
+                    let route = routePlanRoot.route("Bravo")!
+                    with("1 child route: 'BravoOne'") {
                         XCTAssertEqual(route.routes.count, 1)
-                        let toDoDetail = route.route("To-Do Detail")!
+                        let bravoOne = route.route("BravoOne")!
                         with("1 runtime dependency (id)") {
-                            let deps = toDoDetail.dependencies
-                            XCTAssertNotNil(deps.first {$0 == "todoId" })
+                            let deps = bravoOne.dependencies
+                            XCTAssertNotNil(deps.first {$0 == "bravoScoreIndex" })
                         }
                         with("parent property set") {
-                            XCTAssertEqual(toDoDetail.parent, route)
+                            XCTAssertEqual(bravoOne.parent, route)
                         }
-                        with("1 child route: 'To-Do Edit Image'") {
-                            XCTAssertEqual(toDoDetail.routes.count, 1)
-                            XCTAssertNotNil(toDoDetail.route("To-Do Edit Image"))
+                        with("1 child route: 'BravoOneAlpha'") {
+                            XCTAssertEqual(bravoOne.routes.count, 1)
+                            XCTAssertNotNil(bravoOne.route("BravoOneAlpha"))
                         }
                     }
                 }
 
-                with("root route 'Settings')") {
-                    let route = routePlanRoot.route("Settings")!
-                    with("2 child routes: ['Profile Settings','Payment Settings'") {
+                with("root route 'Charlie')") {
+                    let route = routePlanRoot.route("Charlie")!
+                    with("2 child routes: ['CharlieOne','CharlieTwo'") {
                         XCTAssertEqual(route.routes.count, 2)
-                        let child1 = route.route("Profile Settings")!
-                        let child2 = route.route("Payment Settings")!
+                        let child1 = route.route("CharlieOne")!
+                        let child2 = route.route("CharlieTwo")!
                         with("no runtime dependencies") {
                             XCTAssertEqual(child1.dependencies.count, 0)
                             XCTAssertEqual(child2.dependencies.count, 0)
@@ -73,12 +61,12 @@ class QTRouteTests: XCTestCase {
                     }
                 }
 
-                with("root route 'Help')") {
-                    let route = routePlanRoot.route("Help")!
-                    with("2 child routes: ['Contact Us','Message Center'") {
+                with("root route 'Zach')") {
+                    let route = routePlanRoot.route("Zach")!
+                    with("2 child routes: ['ZachOne','ZachTwo'") {
                         XCTAssertEqual(route.routes.count, 2)
-                        let child1 = route.route("Contact Us")!
-                        let child2 = route.route("Message Center")!
+                        let child1 = route.route("ZachOne")!
+                        let child2 = route.route("ZachTwo")!
                         with("no runtime dependencies") {
                             XCTAssertEqual(child1.dependencies.count, 0)
                             XCTAssertEqual(child2.dependencies.count, 0)
@@ -97,10 +85,10 @@ class QTRouteTests: XCTestCase {
         given("routePlan") {
             let routePlanRoot = MockQTRoutePlan()
             when("debugDescription called") {
-//                print(routePlanRoot)
+                print(routePlanRoot)
                 let desc = routePlanRoot.debugDescription
                 then("the output should match the expected length") {
-                    XCTAssertEqual(desc.lengthOfBytes(using: .utf8), 310)
+                    XCTAssertEqual(desc.lengthOfBytes(using: .utf8), 239)
                 }
             }
         }
@@ -113,10 +101,10 @@ class QTRouteTests: XCTestCase {
                 let result = Set<QTRoute>(routePlanRoot.routes)
                 then("it should be able to retrieve all four routes") {
                     XCTAssertEqual(result.count, 4)
-                    XCTAssertNotNil(result.first{ $0.id == "Log" })
-                    XCTAssertNotNil(result.first{ $0.id == "To-Do" })
-                    XCTAssertNotNil(result.first{ $0.id == "Settings" })
-                    XCTAssertNotNil(result.first{ $0.id == "Help" })
+                    XCTAssertNotNil(result.first{ $0.id == "Alpha" })
+                    XCTAssertNotNil(result.first{ $0.id == "Bravo" })
+                    XCTAssertNotNil(result.first{ $0.id == "Charlie" })
+                    XCTAssertNotNil(result.first{ $0.id == "Zach" })
                 }
             }
         }
@@ -128,7 +116,7 @@ class QTRouteTests: XCTestCase {
             when("the root routes are flattened") {
                 let flats = routePlanRoot.flattened
                 then("it should contain all the routes") {
-                    XCTAssertEqual(flats.count, 12)
+                    XCTAssertEqual(flats.count, 11)
                 }
             }
         }
@@ -137,15 +125,15 @@ class QTRouteTests: XCTestCase {
     func testShallowClone() {
         given("route from routePlan") {
             let routePlanRoot = MockQTRoutePlan()
-            let route = routePlanRoot.route("To-Do")!.route("To-Do Detail")!
+            let route = routePlanRoot.route("Bravo")!.route("BravoOne")!
             when("shallow cloning") {
                 let result = QTRoute(shallowClone: route)
                 then("it should not be the same object") {
                     XCTAssert(result !== route)
                 }
                 then("it should copy the id and runtime dependencies") {
-                    XCTAssertEqual(result.id, "To-Do Detail")
-                    XCTAssertNotNil(result.dependencies.first { $0 == "todoId" })
+                    XCTAssertEqual(result.id, "BravoOne")
+                    XCTAssertNotNil(result.dependencies.first { $0 == "bravoScoreIndex" })
                 }
                 with("parent set to nil") {
                     XCTAssertNil(result.parent)
@@ -160,29 +148,29 @@ class QTRouteTests: XCTestCase {
     func testDeepClone() {
         given("route from routePlan") {
             let routePlanRoot = MockQTRoutePlan()
-            let route = routePlanRoot.route("To-Do")!
+            let route = routePlanRoot.route("Bravo")!
             when("deep cloning") {
                 let result = QTRoute(deepClone: route)
                 then("it should not be the same object") {
                     XCTAssert(result !== route)
                 }
                 then("it should copy the id and runtime dependencies") {
-                    XCTAssertEqual(result.id, "To-Do")
+                    XCTAssertEqual(result.id, "Bravo")
                 }
                 with("parent set to nil") {
                     XCTAssertNil(result.parent)
                 }
                 with("child routes deeply cloned") {
-                    let child1 = route.route("To-Do Detail")
-                    let child2 = child1?.route("To-Do Edit Image")
-                    let childClone1 = result.route("To-Do Detail")
-                    let childClone2 = childClone1?.route("To-Do Edit Image")
+                    let child1 = route.route("BravoOne")
+                    let child2 = child1?.route("BravoOneAlpha")
+                    let childClone1 = result.route("BravoOne")
+                    let childClone2 = childClone1?.route("BravoOneAlpha")
                     XCTAssertNotNil(childClone1)
                     XCTAssertNotNil(childClone1)
                     XCTAssert(childClone1 !== child1)
                     XCTAssert(childClone2 !== child2)
                     with("runtime dependencies set") {
-                        XCTAssertNotNil(childClone1?.dependencies.first { $0 == "todoId" })
+                        XCTAssertNotNil(childClone1?.dependencies.first { $0 == "bravoScoreIndex" })
                     }
                     with("parent set to parent") {
                         XCTAssertEqual(childClone1?.parent, result)

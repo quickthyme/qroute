@@ -4,15 +4,14 @@ import QTRoute
 public func MockQTRoutePlan() -> QTRoute {
     return
         QTRoute("Root",
-              QTRoute("Log",
-                    QTRoute("Log Entry Detail", dependencies: ["logId", "logName"])),
-              QTRoute("To-Do",
-                    QTRoute("To-Do Detail", dependencies: ["todoId"],
-                            QTRoute("To-Do Edit Image"))),
-              QTRoute("Settings",
-                    QTRoute("Profile Settings"),
-                    QTRoute("Payment Settings")),
-              QTRoute("Help",
-                    QTRoute("Contact Us"),
-                    QTRoute("Message Center")))
+              QTRoute("Alpha"),
+              QTRoute("Bravo",
+                    QTRoute("BravoOne", dependencies: ["bravoScoreIndex"],
+                            QTRoute("BravoOneAlpha"))),
+              QTRoute("Charlie",
+                    QTRoute("CharlieOne"),
+                    QTRoute("CharlieTwo")),
+              QTRoute("Zach",
+                    QTRoute("ZachOne"),
+                    QTRoute("ZachTwo")))
 }

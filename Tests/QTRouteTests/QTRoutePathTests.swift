@@ -77,37 +77,37 @@ class QTRoutePathTests: XCTestCase {
     func testFindPath_many() {
         given("route plan with many nested routes (MockQTRoutePlan)") {
             let root = MockQTRoutePlan()
-            let settings = root.routes.first { $0.id == "Settings" }!
-            let profileSettings = settings.routes.first { $0.id == "Profile Settings" }!
-            let help = root.routes.first { $0.id == "Help" }!
-            let contactUs = help.routes.first { $0.id == "Contact Us" }!
-            let messageCenter = help.routes.first { $0.id == "Message Center" }!
+            let charlie = root.routes.first { $0.id == "Charlie" }!
+            let charlieOne = charlie.routes.first { $0.id == "CharlieOne" }!
+            let help = root.routes.first { $0.id == "Zach" }!
+            let zachOne = help.routes.first { $0.id == "ZachOne" }!
+            let zachTwo = help.routes.first { $0.id == "ZachTwo" }!
 
-            when("'Message Center' tries to find empty target") {
-                let path = messageCenter.findPath(to: "")
+            when("'ZachTwo' tries to find empty target") {
+                let path = zachTwo.findPath(to: "")
                 then("it should return empty path") {
                     XCTAssertEqual(path, [])
                 }
             }
 
-            when("'Message Center' tries to find invalid Route") {
-                let path = messageCenter.findPath(to: "Invalid")
+            when("'ZachTwo' tries to find invalid Route") {
+                let path = zachTwo.findPath(to: "Invalid")
                 then("it should return empty path") {
                     XCTAssertEqual(path, [])
                 }
             }
 
-            when("'Message Center' tries to find 'Help'") {
-                let path = messageCenter.findPath(to: "Help")
-                then("it should return path with single step UP to Help [(UP, Help)]") {
+            when("'ZachTwo' tries to find 'Zach'") {
+                let path = zachTwo.findPath(to: "Zach")
+                then("it should return path with single step UP to Zach [(UP, Zach)]") {
                     XCTAssertEqual(path.count, 1)
                     XCTAssertEqual(path, [.UP(help)])
                 }
             }
 
-            when("'Message Center' tries to find 'Root'") {
-                let path = messageCenter.findPath(to: "Root")
-                then("it should return path with two steps UP to Root [(UP, Help), (UP, Root)]") {
+            when("'ZachTwo' tries to find 'Root'") {
+                let path = zachTwo.findPath(to: "Root")
+                then("it should return path with two steps UP to Root [(UP, Zach), (UP, Root)]") {
                     XCTAssertEqual(path.count, 2)
                     XCTAssertEqual(path,
                                    [.UP(help),
@@ -116,51 +116,51 @@ class QTRoutePathTests: XCTestCase {
                 }
             }
 
-            when("'Root' tries to find 'Message Center'") {
-                let path = root.findPath(to: "Message Center")
-                then("it should return path with two steps DOWN to Message Center [(DOWN, Help), (DOWN, Message Center)]") {
+            when("'Root' tries to find 'ZachTwo'") {
+                let path = root.findPath(to: "ZachTwo")
+                then("it should return path with two steps DOWN to ZachTwo [(DOWN, Zach), (DOWN, ZachTwo)]") {
                     XCTAssertEqual(path.count, 2)
                     XCTAssertEqual(path,
                                    [.DOWN(help),
-                                    .DOWN(messageCenter)]
+                                    .DOWN(zachTwo)]
                     )
                 }
             }
 
-            when("'Message Center' tries to find 'Contact Us'") {
-                let path = messageCenter.findPath(to: "Contact Us")
-                then("it should return path with two steps: [(UP, Help), (DOWN, Contact Us)]") {
+            when("'ZachTwo' tries to find 'ZachOne'") {
+                let path = zachTwo.findPath(to: "ZachOne")
+                then("it should return path with two steps: [(UP, Zach), (DOWN, ZachOne)]") {
                     XCTAssertEqual(path.count, 2)
                     XCTAssertEqual(path,
                                    [.UP(help),
-                                    .DOWN(contactUs)]
+                                    .DOWN(zachOne)]
                     )
                 }
             }
 
-            when("'Message Center' tries to find 'Profile Settings'") {
-                let path = messageCenter.findPath(to: "Profile Settings")
+            when("'ZachTwo' tries to find 'CharlieOne'") {
+                let path = zachTwo.findPath(to: "CharlieOne")
                 then("it should return path with four steps: [UP, UP, DOWN, DOWN]") {
                     XCTAssertEqual(path.count, 4)
                     XCTAssertEqual(path,
                                    [.UP(help),
                                     .UP(root),
-                                    .DOWN(settings),
-                                    .DOWN(profileSettings)]
+                                    .DOWN(charlie),
+                                    .DOWN(charlieOne)]
                     )
                 }
             }
 
-            when("'Message Center' tries to find lowest common ancestor for 'Contact Us'") {
-                let commonAncestor = messageCenter.findLowestCommonAncestor(otherRoute: contactUs)
-                then("it should return 'Help'") {
+            when("'ZachTwo' tries to find lowest common ancestor for 'ZachOne'") {
+                let commonAncestor = zachTwo.findLowestCommonAncestor(otherRoute: zachOne)
+                then("it should return 'Zach'") {
                     XCTAssertEqual(commonAncestor, help)
                 }
             }
 
-            when("'Message Center' tries to find lowest common ancestor for invalid route") {
+            when("'ZachTwo' tries to find lowest common ancestor for invalid route") {
                 let foreignRoute = QTRoute("La La Land")
-                let commonAncestor = messageCenter.findLowestCommonAncestor(otherRoute: foreignRoute)
+                let commonAncestor = zachTwo.findLowestCommonAncestor(otherRoute: foreignRoute)
                 then("it should return root") {
                     XCTAssertEqual(commonAncestor, root)
                 }
