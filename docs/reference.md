@@ -1,33 +1,33 @@
-# ![kyoot-root](icon.png) QTRoute
+# ![qroute](icon.png) QRoute
 
-**QTRoute** /'kyoot•root/ - *n* - Declarative general purpose application routing and UI navigation model.
+**QRoute** /'kyoo•root/ - *n* - Declarative general purpose application routing and UI navigation model.
 
 ## Reference Documentation
 
-The essential pieces required in order to implement QTRoute in an application.
+The essential pieces required in order to implement QRoute in an application.
 
 <br />
 
-### QTRoute
+### QRoute
 
 The basic element of any route plan. Each "route" is a data structure that represents a contextual view
 or "scene" presented by the application. It can include child routes and run-time dependencies.
 
 <br />
 
-### *QTRoutable* CustomRoutable
+### *QRoutable* CustomRoutable
 
 This protocol is to be implemented by the view controller (or presenter, etc) for a given route. While one
 is not provided for you, the included ExampleApp contains several view controller examples.
 
- - **routeResolver: QTRouteResolving** *(Required)*
- - **routeInput: QTRouteInput** *(Required)*
+ - **routeResolver: QRouteResolving** *(Required)*
+ - **routeInput: QRouteInput** *(Required)*
 
 <br />
 
-### *QTRouteDriving* QTRouteDriver
+### *QRouteDriving* QRouteDriver
 
-Drives path navigation and resolver events. The `QTRouteDriver` class (and suitable testing "mock") is
+Drives path navigation and resolver events. The `QRouteDriver` class (and suitable testing "mock") is
 provided for you.
 
 <br />
@@ -35,26 +35,26 @@ provided for you.
 **driveParent()**
 
 ```
-driveParent(from: QTRoutable,
-            input: QTRoutableInput,
+driveParent(from: QRoutable,
+            input: QRoutableInput,
             animated: Bool,
-            completion: QTRoutableCompletion?)
+            completion: QRoutableCompletion?)
 ```
 
-Commands the `QTRouteDriver` to navigate to the *immediate logical parent* from `QTRoutable`.
+Commands the `QRouteDriver` to navigate to the *immediate logical parent* from `QRoutable`.
 
 <br />
 
 **driveSub()**
 
 ```
-driveSub(QTRouteId,
-         from: QTRoutable,
-         input: QTRoutableInput,
+driveSub(QRouteId,
+         from: QRoutable,
+         input: QRoutableInput,
          animated: Bool,
-         completion: QTRoutableCompletion?)
+         completion: QRoutableCompletion?)
 ```
-Commands the `QTRouteDriver` to navigate to any route in the hierarchy, regardless of location,
+Commands the `QRouteDriver` to navigate to any route in the hierarchy, regardless of location,
 *as if it were* an *immediate logical descendant* from the current route. (Essentially a subroutine
 version of `driveTo`.) Pass any dependency requirements via the `input` parameter.
 
@@ -69,43 +69,43 @@ also create routes that would be irrational if you're not careful.
 **driveTo()**
 
 ```
-driveTo(QTRouteId,
-        from: QTRoutable,
-        input: QTRoutableInput,
+driveTo(QRouteId,
+        from: QRoutable,
+        input: QRoutableInput,
         animated: Bool,
-        completion: QTRoutableCompletion?)
+        completion: QRoutableCompletion?)
 ```
-Commands the `QTRouteDriver` to navigate to any other route in the hierarchy, regardless of location.
+Commands the `QRouteDriver` to navigate to any other route in the hierarchy, regardless of location.
 Calling this method will cause the `driver` to follow the nearest path to the destination route, raising the
-navigation events along the way to your custom `QTRouteResolving` `resolvers`. Pass any dependency
+navigation events along the way to your custom `QRouteResolving` `resolvers`. Pass any dependency
 requirements via the `input` parameter.
 
 <br />
 
-### *QTRouteResolving* QTRouteResolver
+### *QRouteResolving* QRouteResolver
 
 The `resolver` is where you implement the actual navigation within your application by responding
-to navigation events triggered by the `QTRouteDriver`. The project includes a general purpose
-`QTRouteResolver` which supports composition, or you can build one from scratch. It is normal to
-have several of these in your project. The [Example App](https://github.com/quickthyme/qtroute-example-ios)
+to navigation events triggered by the `QRouteDriver`. The project includes a general purpose
+`QRouteResolver` which supports composition, or you can build one from scratch. It is normal to
+have several of these in your project. The [Example App](https://github.com/quickthyme/qroute-example-ios)
 contains several resolver examples that you can use as a template.
 
- - **route: QTRoute** *(Required)*
+ - **route: QRoute** *(Required)*
 
 <br />
 
 **resolveRouteToChild()** *(Required)*
 
 ```
-resolveRouteToChild(QTRoute,
-                    from: QTRoutable,
-                    input: QTRoutableInput,
+resolveRouteToChild(QRoute,
+                    from: QRoutable,
+                    input: QRoutableInput,
                     animated: Bool,
-                    completion: QTRoutableCompletion)
+                    completion: QRoutableCompletion)
 ```
 The resolver is expected to perform the required steps to navigate to one of its *immediate logical
-descendants* matching the given `QTRoute`. If the navigation is successful, the resolver must invoke
-the `QTRoutableCompletion` block before exiting. Not invoking the completion handler will abort and
+descendants* matching the given `QRoute`. If the navigation is successful, the resolver must invoke
+the `QRoutableCompletion` block before exiting. Not invoking the completion handler will abort and
 cancel any remaining routing steps.
 
 <br />
@@ -113,13 +113,13 @@ cancel any remaining routing steps.
 **resolveRouteToParent()** *(Required)*
 
 ```
-resolveRouteToParent(from: QTRoutable,
-                     input: QTRoutableInput,
+resolveRouteToParent(from: QRoutable,
+                     input: QRoutableInput,
                      animated: Bool,
-                     completion: QTRoutableCompletion)
+                     completion: QRoutableCompletion)
 ```
 The resolver is expected to perform the required steps to navigate to its *immediate logical parent*. If the
-navigation is successful, the resolver must invoke the `QTRoutableCompletion` block before exiting. Not
+navigation is successful, the resolver must invoke the `QRoutableCompletion` block before exiting. Not
 invoking the completion handler will abort and cancel any remaining routing steps.
 
 <br />
@@ -127,10 +127,10 @@ invoking the completion handler will abort and cancel any remaining routing step
 **resolveRouteToSelf()** *(Optional)*
 
 ```
-resolveRouteToSelf(from: QTRoutable,
-                   input: QTRoutableInput,
+resolveRouteToSelf(from: QRoutable,
+                   input: QRoutableInput,
                    animated: Bool,
-                   completion: QTRoutableCompletion)
+                   completion: QRoutableCompletion)
 ```
 The default implementation ignores the result, but does merge input dependencies and calls the completion
 handler passing the current routable, which should be sufficient most of the time. This event will be invoked
@@ -141,7 +141,7 @@ a "refresh" or "re-route" on the current routable, or in cases where the target 
 
 If you choose to implement this, then the resolver is expected to perform the required steps to navigate
 to *itself*, in whatever which way that may be interpreted. If the navigation is successful, the resolver must
-invoke the `QTRoutableCompletion` block before exiting.
+invoke the `QRoutableCompletion` block before exiting.
 
 **†** While performing a `driveSub()` against *self*, the driver will invoke `resolveRouteToChild()` instead.
 
@@ -150,15 +150,15 @@ invoke the `QTRoutableCompletion` block before exiting.
 **mergeInputDependencies()** *(Optional)*
 
 ```
-mergeInputDependencies(target: QTRoutable,
-                       input: QTRoutableInput)
+mergeInputDependencies(target: QRoutable,
+                       input: QRoutableInput)
 ```
 The default implementation merges only those values defined as one of the target route's dependencies.
 However, this is not called by default, so your custom `resolver` must invoke it when necessary.
 
 <br />
 
-### QTRoutableInput
+### QRoutableInput
 
 ```
 [String:Any]
@@ -167,9 +167,9 @@ If a given route has declared any dependencies, you can use the contents of the 
 
 <br />
 
-### QTRoutableCompletion
+### QRoutableCompletion
 
 ```
-(QTRoutable?)->()
+(QRoutable?)->()
 ```
 Once any given navigation step completes, call the completion handler, passing the destination *routable*.
