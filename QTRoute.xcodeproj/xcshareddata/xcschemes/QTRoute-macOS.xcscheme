@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
-               BuildableName = "libQTRoute.a"
-               BlueprintName = "QTRoute"
+               BlueprintIdentifier = "DC70C82D222CA73B0068CCB6"
+               BuildableName = "libQTRoute-macOS.a"
+               BlueprintName = "QTRoute-macOS"
                ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCE8367D2221C32F00E714F8"
-               BuildableName = "QTRouteTests.xctest"
-               BlueprintName = "QTRouteTests"
+               BlueprintIdentifier = "DC70C843222CA8960068CCB6"
+               BuildableName = "QTRoute-macOSTests.xctest"
+               BlueprintName = "QTRoute-macOSTests"
                ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -41,13 +41,21 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
-            BuildableName = "libQTRoute.a"
-            BlueprintName = "QTRoute"
+            BlueprintIdentifier = "DC70C82D222CA73B0068CCB6"
+            BuildableName = "libQTRoute-macOS.a"
+            BlueprintName = "QTRoute-macOS"
+            ReferencedContainer = "container:QTRoute.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DC70C843222CA8960068CCB6"
+            BuildableName = "QTRoute-macOSTests.xctest"
+            BlueprintName = "QTRoute-macOSTests"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -56,9 +64,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCE8367D2221C32F00E714F8"
-               BuildableName = "QTRouteTests.xctest"
-               BlueprintName = "QTRouteTests"
+               BlueprintIdentifier = "DC70C843222CA8960068CCB6"
+               BuildableName = "QTRoute-macOSTests.xctest"
+               BlueprintName = "QTRoute-macOSTests"
                ReferencedContainer = "container:QTRoute.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -66,9 +74,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
-            BuildableName = "libQTRoute.a"
-            BlueprintName = "QTRoute"
+            BlueprintIdentifier = "DC70C82D222CA73B0068CCB6"
+            BuildableName = "libQTRoute-macOS.a"
+            BlueprintName = "QTRoute-macOS"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -88,9 +96,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
-            BuildableName = "libQTRoute.a"
-            BlueprintName = "QTRoute"
+            BlueprintIdentifier = "DC70C82D222CA73B0068CCB6"
+            BuildableName = "libQTRoute-macOS.a"
+            BlueprintName = "QTRoute-macOS"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -106,9 +114,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC23AC57222A56AE00A00D40"
-            BuildableName = "libQTRoute.a"
-            BlueprintName = "QTRoute"
+            BlueprintIdentifier = "DC70C82D222CA73B0068CCB6"
+            BuildableName = "libQTRoute-macOS.a"
+            BlueprintName = "QTRoute-macOS"
             ReferencedContainer = "container:QTRoute.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
