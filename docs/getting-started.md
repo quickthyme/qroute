@@ -43,7 +43,7 @@ It works fine in any Swift project on any Swift platform, including OSX and Linu
 dependency to your `Package.swift` file:
 
   - package: `QTRoute`
-  - version: `1.0.0`
+  - version: `1.0.1`
   - url: `https://github.com/quickthyme/qtroute.git`
 
 Then just ...
