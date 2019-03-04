@@ -380,7 +380,6 @@
 			buildConfigurationList = DC23AC5C222A56AE00A00D40 /* Build configuration list for PBXNativeTarget "QTRoute-iOS" */;
 			buildPhases = (
 				DC23AC54222A56AE00A00D40 /* Sources */,
-				DC0159D2222AA40700D786A2 /* Derive modulemap */,
 				DC23AC55222A56AE00A00D40 /* Frameworks */,
 				DC23AC56222A56AE00A00D40 /* CopyFiles */,
 			);
@@ -578,27 +577,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DC0159D2222AA40700D786A2 /* Derive modulemap */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Derive modulemap";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#TARGET_DIR=${BUILT_PRODUCTS_DIR}/include/${PRODUCT_MODULE_NAME}/\n#mkdir -p \"${TARGET_DIR}\"\n#cp \"${DERIVED_SOURCES_DIR}/\"*-Swift.h \"${TARGET_DIR}/\"\n#echo \"module QTRoute {\\n    header \\\"QTRoute-Swift.h\\\"\\n}\" > \"${TARGET_DIR}/module.modulemap\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC23AC54222A56AE00A00D40 /* Sources */ = {
