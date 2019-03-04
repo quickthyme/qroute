@@ -3,7 +3,6 @@
 [![version](https://img.shields.io/badge/version-1.0.1-informational.svg?style=flat) ](https://github.com/quickthyme/qtroute/releases)
 [![build status](https://travis-ci.org/quickthyme/qtroute.svg?branch=master)](https://travis-ci.org/quickthyme/qtroute)
 [![swiftpm_compatible](https://img.shields.io/badge/swift_pm-compatible-brightgreen.svg?style=flat) ](https://swift.org/package-manager/)
-[![platform_compatible](https://img.shields.io/badge/swift-linux | ios | macos | tvos | watchos-lightgrey.svg?style=flat) ](https://swift.org/compiler-stdlib/)
 [![license_MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
 
 **QTRoute** /'kyoot•root/ - *n* - Declarative general purpose application routing and UI navigation model.
