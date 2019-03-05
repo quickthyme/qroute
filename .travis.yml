@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode10.1
-xcode_project: QTRoute.xcodeproj
-xcode_scheme: QTRoute-iOS
+xcode_project: QRoute.xcodeproj
+xcode_scheme: QRoute-iOS
 xcode_destination: platform=iOS Simulator,name=iPhone X

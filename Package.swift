@@ -3,14 +3,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "QTRoute",
+    name: "QRoute",
     products: [
-        .library(name: "QTRoute", targets: ["QTRoute"]),
+        .library(name: "QRoute", targets: ["QRoute"]),
     ],
     dependencies: [
     ],
     targets: [
-        .target(name: "QTRoute", dependencies: []),
-        .testTarget(name: "QTRouteTests", dependencies: ["QTRoute"]),
+        .target(name: "QRoute", dependencies: []),
+        .testTarget(name: "QRouteTests", dependencies: ["QRoute"]),
     ]
 )
