@@ -10,19 +10,27 @@
   - human readable composition of complex navigation hierarchies
   - automatic pathfinding between routes
   - declarative, test-friendly solution for driving view navigation
-  - asynchronous event-driven visitor pattern compatible with any kind of navigation
+  - compatible with any kind of navigation
   - mediation of input dependencies
 
 <br />
+
+## [Introduction](docs/introduction.md)
+
+An [introduction](docs/introduction.md) to the library and what it does.
+
+
 
 ## [Getting Started](docs/getting-started.md)
 
 Install and start building right away using this quick-start [overview](docs/getting-started.md).
 
 
+
 ## [Reference Documentation](docs/reference.md)
 
 More details on how to use QRoute in an application can be found [here](docs/reference).
+
 
 
 ## [Example App](https://github.com/quickthyme/qroute-example-ios)
