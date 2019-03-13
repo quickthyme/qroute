@@ -43,7 +43,6 @@ It works fine in any Swift project on any Swift platform, including OSX and Linu
 dependency to your `Package.swift` file:
 
   - package: `QRoute`
-  - version: `1.0.1`
   - url: `https://github.com/quickthyme/qroute.git`
 
 Then just ...
@@ -119,4 +118,21 @@ That's it, nothing else to do except start using it.
         }
     }
 
+```
+
+<br />
+
+### 6) Write some *tests*:
+
+```
+    when("making selection") {
+        mockRouteDriver.reset()
+        subject.toDoTableViewManager(ToDoTableViewManager(), didSelectId: 36)
+
+        then("it should drive to ToDoDetail with toDoId input") {
+            XCTAssertEqual(mockRouteDriver.timesCalled_driveTo, 1)
+            XCTAssertEqual(mockRouteDriver.valueFor_driveTo_targetId, AppRoute.id.ToDoDetail)
+            XCTAssertEqual(mockRouteDriver.valueFor_driveTo_input?["toDoId"] as? Int, 36)
+        }
+    }
 ```

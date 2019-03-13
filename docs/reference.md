@@ -85,10 +85,15 @@ requirements via the `input` parameter.
 ### *QRouteResolving* QRouteResolver
 
 The `resolver` is where you implement the actual navigation within your application by responding
-to navigation events triggered by the `QRouteDriver`. The project includes a general purpose
-`QRouteResolver` which supports composition, or you can build one from scratch. It is normal to
-have several of these in your project. The [Example App](https://github.com/quickthyme/qroute-example-ios)
-contains several resolver examples that you can use as a template.
+to navigation events triggered by the `QRouteDriver`. Navigation events are *always scheduled on the
+main thread*.
+
+Generally, you should just use the provided `QRouteResolver` which supports composition, and likely
+suitable for most needs. You *can* create a subclass if necessary, but using composition is generally
+a better way to go and therefore encouraged. (I mean this *is* a declarative router, after all.)
+
+The [Example App](https://github.com/quickthyme/qroute-example-ios) contains several resolver
+examples that you can use as a starting template.
 
  - **route: QRoute** *(Required)*
 
