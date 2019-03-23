@@ -2,28 +2,28 @@
 public extension QRouteResolver {
 
     public struct ActionType {
-        public typealias ToChild  = (QRoute, QRoutable, QRoutableInput, Bool, @escaping QRoutableCompletion) -> ()
-        public typealias ToParent = (QRoutable, QRoutableInput, Bool, @escaping QRoutableCompletion) -> ()
-        public typealias ToSelf   = (QRoutable, QRoutableInput, Bool, @escaping QRoutableCompletion) -> ()
+        public typealias ToChild  = (QRoute, QRoutable, Input, Bool, @escaping Completion) -> ()
+        public typealias ToParent = (QRoutable, Input, Bool, @escaping Completion) -> ()
+        public typealias ToSelf   = (QRoutable, Input, Bool, @escaping Completion) -> ()
     }
 
     public struct DefaultAction {
 
         public static func ToSelfNoOp() -> ActionType.ToSelf {
-            return { _, _, _, _ in /* no-op */ }
+            return { _, _, _, _ in }
         }
 
         public static func ToChildNoOp() -> ActionType.ToChild {
-            return { _, _, _, _, _ in /* no-op */ }
+            return { _, _, _, _, _ in }
         }
 
         public static func ToParentNoOp() -> ActionType.ToParent {
-            return { _, _, _, _ in /* no-op */ }
+            return { _, _, _, _ in }
         }
 
         public static func ToSelf() -> ActionType.ToSelf {
             return { from, input, _, completion  in
-                QRouteResolver.mergeInputDependencies(target: from, input: input)
+                QRouteResolver.mergeInputDependencies(resolver: from.routeResolver, input: input)
                 completion(from)
             }
         }

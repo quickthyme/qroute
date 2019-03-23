@@ -2,9 +2,9 @@
 import XCTest
 import QRoute
 
-class QRouteDriverTests: XCTestCase {
+class QRouteWalkingDriverTests: XCTestCase {
 
-    var subject: QRouteDriver!
+    var subject: QRouteWalkingDriver!
 
     func linearAncestors() -> (first: QRoute, second: QRoute, third: QRoute) {
         let third = QRoute("third")
@@ -14,7 +14,7 @@ class QRouteDriverTests: XCTestCase {
     }
 
     override func setUp() {
-        subject = QRouteDriver()
+        subject = QRouteWalkingDriver()
     }
 
     func test_driveTo_nowhere() {
@@ -272,7 +272,7 @@ class QRouteDriverTests: XCTestCase {
 
                         wait(for: [expectComplete], timeout: 0.1)
                         then("it should arrive back at 'BravoOne'") {
-                            XCTAssertEqual(backResult?.routeResolver?.route, bravoOne)
+                            XCTAssertEqual(backResult?.routeResolver.route, bravoOne)
                         }
                     }
                 }
