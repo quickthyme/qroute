@@ -2,19 +2,19 @@
 public protocol QRouteDriving: class {
 
     func driveParent(from source: QRoutable,
-                     input: QRoutableInput?,
+                     input: QRouteResolving.Input?,
                      animated:Bool,
-                     completion: QRoutableCompletion?)
+                     completion: QRouteResolving.Completion?)
 
     func driveSub(_ targetId: QRouteId,
                   from source: QRoutable,
-                  input: QRoutableInput?,
+                  input: QRouteResolving.Input?,
                   animated:Bool,
-                  completion: QRoutableCompletion?)
+                  completion: QRouteResolving.Completion?)
 
     func driveTo(_ targetId: QRouteId,
                  from source: QRoutable,
-                 input: QRoutableInput?,
+                 input: QRouteResolving.Input?,
                  animated:Bool,
-                 completion: QRoutableCompletion?)
+                 completion: QRouteResolving.Completion?)
 }

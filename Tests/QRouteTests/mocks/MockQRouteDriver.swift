@@ -17,12 +17,12 @@ class MockQRouteDriver: QRouteDriving {
     }
 
     var timesCalled_driveParent: Int = 0
-    var valueFor_driveParent_input: QRoutableInput?
-    var valueFor_driveParent_completion: QRoutableCompletion?
+    var valueFor_driveParent_input: QRouteResolving.Input?
+    var valueFor_driveParent_completion: QRouteResolving.Completion?
 
-    func driveParent(from source: QRoutable, input: QRoutableInput?,
+    func driveParent(from source: QRoutable, input: QRouteResolving.Input?,
                      animated: Bool,
-                     completion: QRoutableCompletion?) {
+                     completion: QRouteResolving.Completion?) {
         timesCalled_driveParent += 1
         valueFor_driveParent_input = input
         valueFor_driveParent_completion = completion
@@ -31,12 +31,12 @@ class MockQRouteDriver: QRouteDriving {
 
     var timesCalled_driveSub: Int = 0
     var valueFor_driveSub_targetId: QRouteId?
-    var valueFor_driveSub_input: QRoutableInput?
-    var valueFor_driveSub_completion: QRoutableCompletion?
+    var valueFor_driveSub_input: QRouteResolving.Input?
+    var valueFor_driveSub_completion: QRouteResolving.Completion?
 
-    func driveSub(_ targetId: QRouteId, from source: QRoutable, input: QRoutableInput?,
+    func driveSub(_ targetId: QRouteId, from source: QRoutable, input: QRouteResolving.Input?,
                   animated: Bool,
-                  completion: QRoutableCompletion?) {
+                  completion: QRouteResolving.Completion?) {
         timesCalled_driveSub += 1
         valueFor_driveSub_targetId = targetId
         valueFor_driveSub_input = input
@@ -46,12 +46,12 @@ class MockQRouteDriver: QRouteDriving {
 
     var timesCalled_driveTo: Int = 0
     var valueFor_driveTo_targetId: QRouteId?
-    var valueFor_driveTo_input: QRoutableInput?
-    var valueFor_driveTo_completion: QRoutableCompletion?
+    var valueFor_driveTo_input: QRouteResolving.Input?
+    var valueFor_driveTo_completion: QRouteResolving.Completion?
 
-    func driveTo(_ targetId: QRouteId, from source: QRoutable, input: QRoutableInput?,
+    func driveTo(_ targetId: QRouteId, from source: QRoutable, input: QRouteResolving.Input?,
                  animated: Bool,
-                 completion: QRoutableCompletion?) {
+                 completion: QRouteResolving.Completion?) {
         timesCalled_driveTo += 1
         valueFor_driveTo_targetId = targetId
         valueFor_driveTo_input = input

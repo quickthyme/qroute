@@ -12,9 +12,9 @@ class QRouteResolverTests: XCTestCase {
     override func setUp() {
         stubResolvers = StubQResolverActions()
         subject = QRouteResolver(route,
-                                  toChild: stubResolvers.ToChild1(),
-                                  toParent: stubResolvers.ToParent(),
-                                  toSelf: stubResolvers.ToSelf())
+                                 toChild: stubResolvers.ToChild1(),
+                                 toParent: stubResolvers.ToParent(),
+                                 toSelf: stubResolvers.ToSelf())
         mockRoutable = MockQRoutable(subject)
     }
 
@@ -68,21 +68,25 @@ class QRouteResolverTests: XCTestCase {
                                                animated: false,
                                                completion: comletion)
 
-                then("it should call completion passing the soure routable with merged dependencies") {
+                then("it should call completion passing the source routable with merged dependencies") {
                     XCTAssert(captured.value === mockRoutable)
-                    XCTAssertEqual(captured.value?.routeInput?["number"] as? Int, 9)
+                    XCTAssertEqual(captured.value?.routeResolver.input["number"] as? Int, 9)
                 }
             }
         }
     }
 
     private class DefaultImplementationResolver: QRouteResolving {
+
+        var input: Input = [:]
+        var onInput: QRouteResolving.OnInput = { _ in }
+
         var route: QRoute = QRoute("A", dependencies: ["number"])
-        func resolveRouteToChild(_ route: QRoute, from: QRoutable, input: QRoutableInput,
+        func resolveRouteToChild(_ route: QRoute, from: QRoutable, input: Input,
                                  animated: Bool,
-                                 completion: @escaping QRoutableCompletion) { /**/ }
-        func resolveRouteToParent(from: QRoutable, input: QRoutableInput,
+                                 completion: @escaping Completion) { /**/ }
+        func resolveRouteToParent(from: QRoutable, input: Input,
                                   animated: Bool,
-                                  completion: @escaping QRoutableCompletion) { /**/ }
+                                  completion: @escaping Completion) { /**/ }
     }
 }
