@@ -1,4 +1,4 @@
 
 public protocol QRoutable: class {
-    var routeResolver: QRouteResolving { get }
+    var routeResolver: QRouteResolving! { get }
 }
