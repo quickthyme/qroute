@@ -18,6 +18,8 @@ class QRoutePathTests: XCTestCase {
             when("trying to find path to itself") {
                 let path = route.findPath(to: "island")
                 then("it should return path to self") {
+                    XCTAssertNotNil(path.first)
+                    XCTAssert(path.first!.route === route)
                     XCTAssertEqual(path, [.SELF(route)])
                 }
             }
@@ -99,7 +101,7 @@ class QRoutePathTests: XCTestCase {
 
             when("'ZachTwo' tries to find 'Zach'") {
                 let path = zachTwo.findPath(to: "Zach")
-                then("it should return path with single step UP to Zach [(UP, Zach)]") {
+                then("it should return path with single step UP to Zach [.UP(Zach)]") {
                     XCTAssertEqual(path.count, 1)
                     XCTAssertEqual(path, [.UP(help)])
                 }
@@ -107,11 +109,9 @@ class QRoutePathTests: XCTestCase {
 
             when("'ZachTwo' tries to find 'Root'") {
                 let path = zachTwo.findPath(to: "Root")
-                then("it should return path with two steps UP to Root [(UP, Zach), (UP, Root)]") {
+                then("it should return path with two steps UP to Root [.UP(Zach), .UP(Root)]") {
                     XCTAssertEqual(path.count, 2)
-                    XCTAssertEqual(path,
-                                   [.UP(help),
-                                    .UP(root)]
+                    XCTAssertEqual(path, [.UP(help), .UP(root)]
                     )
                 }
             }
