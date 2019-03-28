@@ -1,6 +1,6 @@
 # ![qroute](icon.png) QRoute
 
-**QRoute** /'kyoo•root/ - *n* - Declarative general purpose application routing and UI navigation model.
+**QRoute** /'kyoo•root/ - *n* - Declarative *walking* router for UI navigation.
 
 ## Introduction
 
