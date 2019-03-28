@@ -1,6 +1,6 @@
 # ![qroute](icon.png) QRoute
 
-**QRoute** /'kyoo•root/ - *n* - Declarative general purpose application routing and UI navigation model.
+**QRoute** /'kyoo•root/ - *n* - Declarative *walking* router for UI navigation.
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ When importing the library for use in an Xcode project (such as for an iOS or OS
 thing to do is add it as a git *submodule*:
   
 ```
-    mkdir -p submodule/qroute
+    mkdir -p submodule
     git submodule add https://github.com/quickthyme/qroute.git submodule/qroute
 
 ```

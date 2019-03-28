@@ -52,6 +52,33 @@ public class QRoute: Hashable, CustomDebugStringConvertible {
     }
 }
 
+public extension QRoute {
+    func findDescendant(_ id: QRouteId) -> QRoute? {
+        return QRoute.findDescendant(id, from: self)
+    }
+
+    static func findDescendant(_ id: QRouteId, from route: QRoute) -> QRoute? {
+        return route.route(id) ?? route.routes.compactMap { $0.findDescendant(id) } .first
+    }
+
+    func findAncestor(_ id: QRouteId) -> QRoute? {
+        return QRoute.findAncestor(id, from: self)
+    }
+
+    static func findAncestor(_ id: QRouteId, from route:QRoute) -> QRoute? {
+        guard let parent = route.parent else { return nil }
+        return (parent.id == id) ? parent : findAncestor(id, from: parent)
+    }
+
+    func findRoot() -> QRoute {
+        return QRoute.findRoot(from: self)
+    }
+
+    static func findRoot(from route:QRoute) -> QRoute {
+        return (route.parent == nil) ? route : findRoot(from: route.parent!)
+    }
+}
+
 fileprivate extension QRoute {
 
     func debugRouteDescription() -> String {

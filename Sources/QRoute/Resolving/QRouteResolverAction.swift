@@ -1,13 +1,13 @@
 
 public extension QRouteResolver {
 
-    public struct ActionType {
+    struct ActionType {
         public typealias ToChild  = (QRoute, QRoutable, Input, Bool, @escaping Completion) -> ()
         public typealias ToParent = (QRoutable, Input, Bool, @escaping Completion) -> ()
         public typealias ToSelf   = (QRoutable, Input, Bool, @escaping Completion) -> ()
     }
 
-    public struct DefaultAction {
+    struct DefaultAction {
 
         public static func ToSelfNoOp() -> ActionType.ToSelf {
             return { _, _, _, _ in }
@@ -28,10 +28,10 @@ public extension QRouteResolver {
             }
         }
 
-        public static func ToChildKeyed(_ actions: [QRouteId:ActionType.ToChild],
-                                        `default`: ActionType.ToChild? = nil) -> ActionType.ToChild {
+        public static func ToChildSwitch(_ caseMatchId: [ QRouteId: ActionType.ToChild ],
+                                         `default`: ActionType.ToChild? = nil) -> ActionType.ToChild {
             return {
-                actions[$0.id]?($0, $1, $2, $3, $4)
+                caseMatchId[$0.id]?($0, $1, $2, $3, $4)
                     ?? `default`?($0, $1, $2, $3, $4)
             }
         }

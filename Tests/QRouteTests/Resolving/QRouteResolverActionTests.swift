@@ -13,12 +13,12 @@ class QRouteResolverActionTests: XCTestCase {
         stubActions = StubQResolverActions()
     }
 
-    func testResolveRouteToChildKeyed() {
-        given("ToChildKeyed with 2 actions, no default, and some routes") {
+    func testResolveRouteToChildSwitch() {
+        given("ToChildSwitch with 2 actions, no default, and some routes") {
             let route1 = QRoute("route1")
             let route2 = QRoute("route2")
             let subject = QRouteResolver.DefaultAction
-                .ToChildKeyed([
+                .ToChildSwitch([
                     route1.id: stubActions.ToChild1(),
                     route2.id: stubActions.ToChild2()])
 
@@ -36,7 +36,7 @@ class QRouteResolverActionTests: XCTestCase {
                                              input: [:],
                                              animated: false,
                                              completion: {_ in})
-                then("it should not call either method") {
+                then("it should not call any method") {
                     XCTAssertFalse(stubActions.didCall_ToChild1)
                     XCTAssertFalse(stubActions.didCall_ToChild2)
                     XCTAssertFalse(stubActions.didCall_ToParent)
@@ -76,12 +76,12 @@ class QRouteResolverActionTests: XCTestCase {
         }
     }
 
-    func testResolveRouteToChildKeyed_default() {
-        given("ToChildKeyed with 2 actions, a default action, and 2 routes") {
+    func testResolveRouteToChildSwitch_default() {
+        given("ToChildSwitch with 2 actions, a default action, and 2 routes") {
             let route1 = QRoute("route1")
             let route2 = QRoute("route2")
             let subject = QRouteResolver.DefaultAction
-                .ToChildKeyed([route1.id: stubActions.ToChild1(),
+                .ToChildSwitch([route1.id: stubActions.ToChild1(),
                                route2.id: stubActions.ToChild2()],
                               default: stubActions.ToChild3())
 

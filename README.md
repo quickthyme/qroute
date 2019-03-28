@@ -5,13 +5,24 @@
 [![swiftpm_compatible](https://img.shields.io/badge/swift_pm-compatible-brightgreen.svg?style=flat) ](https://swift.org/package-manager/)
 ![license](https://img.shields.io/github/license/quickthyme/qroute.svg?color=black)
 
-**QRoute** /'kyoo•root/ - *n* - Declarative general purpose application routing and UI navigation model.
+**QRoute** /'kyoo•root/ - *n* - Declarative *walking* router for UI navigation.
 
   - human readable composition of complex navigation hierarchies
   - automatic pathfinding between routes
   - declarative, test-friendly solution for driving view navigation
   - compatible with any kind of navigation
   - mediation of input dependencies
+
+The QRoute walking router is specifically designed to handle situations where you have
+a hierarchical arrangement of scenes, pages, windows, or views, and you need a clean,
+declarative way in which to define, orchestrate, and drive sweeping, multi-step
+navigation routines.
+
+QRoute will determine the nearest path and then `drive` your custom `resolvers`
+*(the components that integrate with your particular UI navigation framework)*,
+asynchronously invoking them in the correct order, until finally arriving at the
+destination.
+
 
 <br />
 
