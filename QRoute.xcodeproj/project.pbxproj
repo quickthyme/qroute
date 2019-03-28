@@ -531,6 +531,7 @@
 				TargetAttributes = {
 					DC23AC57222A56AE00A00D40 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					DC70C82D222CA73B0068CCB6 = {
 						CreatedOnToolsVersion = 10.1;
@@ -549,6 +550,7 @@
 					};
 					DCE8367D2221C32F00E714F8 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -877,7 +879,7 @@
 				PRODUCT_MODULE_NAME = QRoute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -891,7 +893,7 @@
 				PRODUCT_MODULE_NAME = QRoute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1081,7 +1083,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.quickthyme.QRoute-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1099,7 +1101,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.quickthyme.QRoute-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
