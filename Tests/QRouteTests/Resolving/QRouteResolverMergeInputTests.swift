@@ -6,7 +6,7 @@ class QRouteResolverMergeInputTests: XCTestCase {
 
     var subject: QRouteResolver!
     var stubResolvers: StubQResolverActions!
-    var mockRoutable: MockQRoutable!
+    var mockRoutable: QRoutableMock!
     let route = QRoute("route", dependencies: ["needInput"])
     var onInputValue: QRouteResolving.Input!
 
@@ -18,7 +18,7 @@ class QRouteResolverMergeInputTests: XCTestCase {
                                  toParent: stubResolvers.ToParent(),
                                  toSelf: stubResolvers.ToSelf(),
                                  onInput: { self.onInputValue = $0 })
-        mockRoutable = MockQRoutable(subject)
+        mockRoutable = QRoutableMock(subject)
     }
 
     func test_mergeInputDependencies_filter() {

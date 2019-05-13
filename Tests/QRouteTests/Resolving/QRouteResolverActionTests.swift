@@ -6,7 +6,7 @@ class QRouteResolverActionTests: XCTestCase {
 
     var resolver: QRouteResolver!
     var stubActions: StubQResolverActions!
-    var mockRoutable: MockQRoutable!
+    var mockRoutable: QRoutableMock!
     let route = QRoute("route")
 
     override func setUp() {
@@ -27,7 +27,7 @@ class QRouteResolverActionTests: XCTestCase {
                 toChild: subject,
                 toParent: stubActions.ToParent(),
                 toSelf: stubActions.ToSelf())
-            mockRoutable = MockQRoutable(resolver)
+            mockRoutable = QRoutableMock(resolver)
 
             when("calling resolveRouteToChild for unregistered route") {
                 stubActions.reset()
@@ -90,7 +90,7 @@ class QRouteResolverActionTests: XCTestCase {
                 toChild: subject,
                 toParent: stubActions.ToParent(),
                 toSelf: stubActions.ToSelf())
-            mockRoutable = MockQRoutable(resolver)
+            mockRoutable = QRoutableMock(resolver)
 
             when("calling resolveRouteToChild for unregistered route") {
                 stubActions.reset()
