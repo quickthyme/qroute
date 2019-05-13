@@ -1,4 +1,3 @@
-
 public final class QRouteWalkingDriver: QRouteDriving {
     public init() {}
 

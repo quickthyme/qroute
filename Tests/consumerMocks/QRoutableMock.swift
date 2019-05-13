@@ -1,7 +1,6 @@
-
 import QRoute
 
-public class MockQRoutable: QRoutable {
+public class QRoutableMock: QRoutable {
     public var routeResolver: QRouteResolving!
 
     public init(_ routeResolver: QRouteResolving) {

@@ -6,7 +6,7 @@ class QRouteResolverTests: XCTestCase {
 
     var subject: QRouteResolver!
     var stubResolvers: StubQResolverActions!
-    var mockRoutable: MockQRoutable!
+    var mockRoutable: QRoutableMock!
     let route = QRoute("route")
 
     override func setUp() {
@@ -15,7 +15,7 @@ class QRouteResolverTests: XCTestCase {
                                  toChild: stubResolvers.ToChild1(),
                                  toParent: stubResolvers.ToParent(),
                                  toSelf: stubResolvers.ToSelf())
-        mockRoutable = MockQRoutable(subject)
+        mockRoutable = QRoutableMock(subject)
     }
 
     func testResolveRouteToParent() {
