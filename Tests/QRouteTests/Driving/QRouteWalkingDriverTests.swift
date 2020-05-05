@@ -1,4 +1,3 @@
-
 import XCTest
 import QRoute
 
@@ -60,12 +59,18 @@ class QRouteWalkingDriverTests: XCTestCase {
                                     finalResolver = $0?.routeResolver as? QRouteResolverMock
                                     expectComplete.fulfill() })
 
-                wait(for: [expectComplete], timeout: 0.1)
+                wait(for: [expectComplete], timeout: 2.0)
                 then("it should have routed to parent one times landing on 'first'") {
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToChild()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToSelf()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToParent()"), 1)
                     XCTAssertEqual(finalResolver?.routeTrail, [first])
+
+                    with("finalDestination and pathNode inputs make it to the end") {
+                        let finalInput = finalResolver?.getArgument("resolveRouteToParent()", "input") as? [String: Any]
+                        XCTAssertEqual(finalInput?[QRouteResolvingInputKey.finalDestination] as? QRouteId, "first")
+                        XCTAssertNotNil(finalInput?[QRouteResolvingInputKey.pathNode] as? QRoutePathNode)
+                    }
                 }
             }
         }
@@ -87,12 +92,18 @@ class QRouteWalkingDriverTests: XCTestCase {
                                     finalResolver = $0?.routeResolver as? QRouteResolverMock
                                     expectComplete.fulfill() })
 
-                wait(for: [expectComplete], timeout: 0.1)
+                wait(for: [expectComplete], timeout: 2.0)
                 then("it should have routed to child one times landing on third") {
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToChild()"), 1)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToSelf()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToParent()"), 0)
                     XCTAssertEqual(finalResolver?.routeTrail, [third])
+
+                    with("finalDestination and pathNode inputs make it to the end") {
+                        let finalInput = finalResolver?.getArgument("resolveRouteToChild()", "input") as? [String: Any]
+                        XCTAssertEqual(finalInput?[QRouteResolvingInputKey.finalDestination] as? QRouteId, "third")
+                        XCTAssertNotNil(finalInput?[QRouteResolvingInputKey.pathNode] as? QRoutePathNode)
+                    }
                 }
             }
         }
@@ -115,12 +126,18 @@ class QRouteWalkingDriverTests: XCTestCase {
                                     finalResolver = $0?.routeResolver as? QRouteResolverMock
                                     expectComplete.fulfill() })
 
-                wait(for: [expectComplete], timeout: 0.1)
+                wait(for: [expectComplete], timeout: 2.0)
                 then("it should have routed to self one times") {
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToChild()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToSelf()"), 1)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToParent()"), 0)
                     XCTAssertEqual(finalResolver?.routeTrail, [second])
+
+                    with("finalDestination and pathNode inputs make it to the end") {
+                        let finalInput = finalResolver?.getArgument("resolveRouteToSelf()", "input") as? [String: Any]
+                        XCTAssertEqual(finalInput?[QRouteResolvingInputKey.finalDestination] as? QRouteId, "second")
+                        XCTAssertNotNil(finalInput?[QRouteResolvingInputKey.pathNode] as? QRoutePathNode)
+                    }
                 }
             }
         }
@@ -142,13 +159,19 @@ class QRouteWalkingDriverTests: XCTestCase {
                                     finalResolver = $0?.routeResolver as? QRouteResolverMock
                                     expectComplete.fulfill() })
 
-                wait(for: [expectComplete], timeout: 0.1)
+                wait(for: [expectComplete], timeout: 2.0)
                 then("it should have routed to child two times landing on 'third'") {
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToChild()"), 2)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToSelf()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToParent()"), 0)
                     XCTAssertEqual(finalResolver?.routeTrail, [second, third])
                     XCTAssertEqual(finalResolver?.route, third)
+
+                    with("finalDestination and pathNode inputs make it to the end") {
+                        let finalInput = finalResolver?.getArgument("resolveRouteToChild()", "input") as? [String: Any]
+                        XCTAssertEqual(finalInput?[QRouteResolvingInputKey.finalDestination] as? QRouteId, "third")
+                        XCTAssertNotNil(finalInput?[QRouteResolvingInputKey.pathNode] as? QRoutePathNode)
+                    }
                 }
             }
         }
@@ -170,12 +193,18 @@ class QRouteWalkingDriverTests: XCTestCase {
                                     finalResolver = $0?.routeResolver as? QRouteResolverMock
                                     expectComplete.fulfill() })
 
-                wait(for: [expectComplete], timeout: 0.1)
+                wait(for: [expectComplete], timeout: 2.0)
                 then("it should have routed to parent two times landing on 'first'") {
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToChild()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToSelf()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToParent()"), 2)
                     XCTAssertEqual(finalResolver?.routeTrail, [second, first])
+
+                    with("finalDestination and pathNode inputs make it to the end") {
+                        let finalInput = finalResolver?.getArgument("resolveRouteToParent()", "input") as? [String: Any]
+                        XCTAssertEqual(finalInput?[QRouteResolvingInputKey.finalDestination] as? QRouteId, "first")
+                        XCTAssertNotNil(finalInput?[QRouteResolvingInputKey.pathNode] as? QRoutePathNode)
+                    }
                 }
             }
         }
@@ -202,12 +231,18 @@ class QRouteWalkingDriverTests: XCTestCase {
                                     finalResolver = $0?.routeResolver as? QRouteResolverMock
                                     expectComplete.fulfill() })
 
-                wait(for: [expectComplete], timeout: 0.1)
+                wait(for: [expectComplete], timeout: 2.0)
                 then("it should have routed to parent 3 times and child 2 times landing at 'ZachTwo'") {
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToChild()"), 2)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToSelf()"), 0)
                     XCTAssertEqual(finalResolver?.getTimesCalled("resolveRouteToParent()"), 3)
                     XCTAssertEqual(finalResolver?.routeTrail, [bravoOne, bravo, root, help, zachTwo])
+
+                    with("finalDestination and pathNode inputs make it to the end") {
+                        let finalInput = finalResolver?.getArgument("resolveRouteToChild()", "input") as? [String: Any]
+                        XCTAssertEqual(finalInput?[QRouteResolvingInputKey.finalDestination] as? QRouteId, "ZachTwo")
+                        XCTAssertNotNil(finalInput?[QRouteResolvingInputKey.pathNode] as? QRoutePathNode)
+                    }
                 }
             }
         }
@@ -234,7 +269,7 @@ class QRouteWalkingDriverTests: XCTestCase {
                                     finalResolver = $0?.routeResolver as? QRouteResolverMock
                                     expectComplete.fulfill() })
 
-                wait(for: [expectComplete], timeout: 0.1)
+                wait(for: [expectComplete], timeout: 2.0)
                 then("it should have routed to child 1 times landing at 'ZachTwo' clone") {
                     let zachTwoClone = finalResolver!.route
                     XCTAssertEqual(finalResolver?.routeTrail, [zachTwoClone])
@@ -270,7 +305,7 @@ class QRouteWalkingDriverTests: XCTestCase {
                                                 backResult = $0; expectComplete.fulfill(); }
                         )
 
-                        wait(for: [expectComplete], timeout: 0.1)
+                        wait(for: [expectComplete], timeout: 2.0)
                         then("it should arrive back at 'BravoOne'") {
                             XCTAssertEqual(backResult?.routeResolver.route, bravoOne)
                         }

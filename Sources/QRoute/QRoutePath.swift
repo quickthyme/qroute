@@ -1,4 +1,3 @@
-
 public typealias QRoutePath = Array<QRoutePathNode>
 
 public enum QRoutePathNode: Hashable {

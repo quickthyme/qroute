@@ -1,4 +1,3 @@
-
 public protocol QRouteResolving: class {
     typealias Input = [String:Any]
     typealias Completion = (QRoutable?)->()
@@ -14,6 +13,11 @@ public protocol QRouteResolving: class {
 
     func mergeInputDependencies(input: Input)
     static func mergeInputDependencies(resolver: QRouteResolving, input: Input)
+}
+
+public struct QRouteResolvingInputKey {
+    public static let finalDestination = "QRouteResolvingInputKey.finalDestination"
+    public static let pathNode = "QRouteResolvingInputKey.pathNode"
 }
 
 public extension QRouteResolving {
@@ -32,7 +36,8 @@ public extension QRouteResolving {
 }
 
 fileprivate func _mergeInputDependencies(_ resolver: QRouteResolving, _ newInput: QRouteResolving.Input) {
-    let dependencies = resolver.route.dependencies
+    let dependencies = [QRouteResolvingInputKey.finalDestination,
+                        QRouteResolvingInputKey.pathNode] + resolver.route.dependencies
     let filteredInput = newInput.filter { key, val in dependencies.contains(key) }
     resolver.input = resolver.input.merging(filteredInput, uniquingKeysWith: { (_, new) in new })
 }

@@ -1,4 +1,3 @@
-
 import QRoute
 
 public class StubQResolverActions {

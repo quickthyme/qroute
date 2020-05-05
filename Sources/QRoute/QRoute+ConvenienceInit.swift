@@ -1,4 +1,3 @@
-
 public extension QRoute {
     convenience init(_ id:QRouteId, dependencies: [String], _ routes: QRoute...) {
         self.init(id: id, dependencies: dependencies, routes: routes)
