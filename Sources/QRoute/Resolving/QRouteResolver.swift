@@ -1,4 +1,3 @@
-
 public final class QRouteResolver: QRouteResolving {
 
     public init(_ route: QRoute,

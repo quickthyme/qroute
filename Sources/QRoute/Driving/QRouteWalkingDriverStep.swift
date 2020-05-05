@@ -1,11 +1,20 @@
-
 import Dispatch
 
 internal final class QRouteWalkingDriverStep {
 
-    static func perform(_ routable: QRoutable, _ pathNode: QRoutePathNode, _ input: QRouteResolving.Input,
+    static func perform(_ routable: QRoutable,
+                        _ pathNode: QRoutePathNode,
+                        _ finalDestination: QRouteId,
+                        _ input: QRouteResolving.Input,
                         _ animated: Bool,
                         _ stepCompletion: @escaping QRouteResolving.Completion) {
+
+        let input = input.merging(
+            [
+                QRouteResolvingInputKey.finalDestination: finalDestination,
+                QRouteResolvingInputKey.pathNode: pathNode
+            ],
+            uniquingKeysWith: { (_, new) in new })
 
         switch (pathNode) {
 

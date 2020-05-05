@@ -1,4 +1,3 @@
-
 public protocol QRouteDriving: class {
 
     func driveParent(from source: QRoutable,

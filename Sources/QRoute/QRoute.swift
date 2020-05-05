@@ -1,4 +1,3 @@
-
 public typealias QRouteId = String
 
 public class QRoute: Hashable, CustomDebugStringConvertible {
