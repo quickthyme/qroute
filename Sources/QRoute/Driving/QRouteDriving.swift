@@ -1,4 +1,4 @@
-public protocol QRouteDriving: class {
+public protocol QRouteDriving: AnyObject {
 
     func driveParent(from source: QRoutable,
                      input: QRouteResolving.Input?,

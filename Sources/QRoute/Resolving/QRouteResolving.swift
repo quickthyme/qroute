@@ -1,4 +1,4 @@
-public protocol QRouteResolving: class {
+public protocol QRouteResolving: AnyObject {
     typealias Input = [String:Any]
     typealias Completion = (QRoutable?)->()
     typealias OnInput = (Input)->()
