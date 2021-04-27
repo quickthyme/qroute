@@ -1,3 +1,3 @@
-public protocol QRoutable: class {
+public protocol QRoutable: AnyObject {
     var routeResolver: QRouteResolving! { get }
 }
